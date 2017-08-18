@@ -1,0 +1,179 @@
+// Services
+
+
+.template-cosmetic-services {
+	
+	.section.hero {
+		background-image: url(assets/images/heros/services-hero.png);
+	}
+
+	.section.default {
+ 		
+		.entry-content {
+			
+			margin-bottom: 0;
+
+			h2 {
+				border-bottom: 4px solid rgba(128,128,128,.8);
+    			padding: 15px;
+			}
+			
+			*:last-child {
+				margin-bottom: 0;	
+			}
+		}
+		
+		.row > .columns {
+			margin-bottom: 30px;	
+		}
+		
+ 	}
+	
+	
+
+/* Global modules across services */
+
+#benefits-list {
+	
+	margin-top:30px;
+
+
+ 	.benefits {
+
+ 		margin: 15px auto !important;
+ 		padding: 25px;
+ 		border-bottom: 1px solid #f3f3f3;
+
+ 		strong { 
+
+ 			@media #{$large-up} {
+ 				font-size: 20px;
+ 			}
+ 		}
+
+
+ 		// Font awesome icons
+ 		i.fa {
+ 			font-size: 40px;
+ 			color: #a9d075;
+			margin: 0 auto;
+    		display: block; 			
+    		text-align:center;
+    		min-width: 100px;
+    		float:right;
+
+ 			// Center it
+ 			&:before {
+ 				margin: 0 auto;
+    			display: block;
+ 			}
+ 		}
+ 	}
+}
+
+#menu-choose-service {
+	border-radius: 10px;
+	background-color:  #f4f4f4;
+	padding-top:20px;
+	max-width:400px;
+}
+
+
+#services-premium-intro { 
+		//background-color: #7fa54e;
+		border-radius:10px; 
+
+		// Awesome copy to showcase ths section
+		.column#awesome-copy { 
+			padding: 20px 30px 0 50px;
+			background-image: url(assets/images/heros/services-hero.png);
+    		background-repeat: no-repeat;
+    		background-size: cover;
+    		min-height: 318px;
+	
+			
+			h3 {
+				line-height: 36px;
+				margin-bottom: 30px;
+				margin-top: 30px;
+			}
+
+			p {
+				font-size: 20px;
+				margin-bottom: 0;
+				line-height: 30px;
+			}
+
+			h3, p {
+				color: #fff;
+			}
+		}
+
+		// An awesome image to kick-off 
+		.column#awesome-image {
+			padding:0;
+
+			// Placeholder, switch to background canvas
+			img {
+				width: 100%;
+    			max-height: 318px;
+    			min-height: 318px;
+			}
+		}
+	}
+
+/* End of global */
+
+	.featured-block {
+		border: 1px solid $dark-gray;
+		
+		
+		
+		.thumbnail {
+ 			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: right center;
+			
+			width: 100%;
+			min-height: 300px;
+			
+		
+		}
+		
+		
+		@media #{$large-up} {
+      		padding-left: 52%;
+			position: relative;
+			
+			.thumbnail {
+				width: 52%;
+				height: 100%;
+				min-height: 0;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+		}
+		
+		
+		.details {
+			
+			display: table-cell;
+			vertical-align: middle;
+			
+			padding: 40px 30px;
+			
+			h5 {
+				color: $blue;
+				margin-bottom: 15px;
+			}
+			
+			p {
+				color: #666;
+				line-height: 22px;	
+			}
+		}
+		
+	}
+	
+}

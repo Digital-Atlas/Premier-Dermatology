@@ -1,0 +1,70 @@
+// Services
+
+
+.template-medical-services {
+	
+	.section.hero {
+		background-image: url(assets/images/heros/services-hero.png);
+	}
+
+	.section.default {
+ 		
+		.entry-content {
+						
+			*:last-child {
+				margin-bottom: 0;	
+			}
+		}
+		
+		.row > .columns {
+			margin-bottom: 30px;	
+		}
+		
+ 	}
+	
+	.sub-section.testimonials {
+		background-color: $blue;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-image: url(assets/images/services/services-medical-testimonial.jpg);	
+		
+		margin: 60px 0 0;
+		padding: 30px 30px 15px;
+		
+		@media #{$large-up} {
+      		padding: 60px 60px 20px;
+		}
+		
+		.column {
+			padding-bottom: 20px;
+			
+			@media #{$large-up} {
+      			padding-bottom: 40px;
+			}
+			
+			> * {
+ 				color: $white;	
+ 			}
+		}
+		
+		h3 {
+			color:$white;	
+			margin-bottom: 40px;
+		}
+		
+		
+		
+		.testimonial-text {
+			line-height: 22px;
+		}
+		
+		.testimonial-description {
+			p {
+				font-size: 12px;	
+				margin-bottom: 10px;
+			}
+		}
+	}
+	
+}

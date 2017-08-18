@@ -1,0 +1,118 @@
+// Services
+
+
+.template-spa-services {
+	
+	.section.hero {
+		background-image: url(assets/images/heros/services-hero.png);
+	}
+
+	.section.default {
+ 		
+		.entry-content {
+						
+			*:last-child {
+				margin-bottom: 0;	
+			}
+		}
+		
+		.row > .columns {
+			margin-bottom: 30px;	
+		}
+		
+ 	}
+	
+	.sub-section.team {
+	
+		
+		padding: 75px 0 0;
+		
+		
+		h3 {
+			margin-bottom: 15px;	
+		}
+		
+		.grid {
+		
+			margin-bottom: 25px;
+			
+			.column {
+				margin-bottom: 50px;
+				
+				> a {
+					border: 1px solid #b9b9b9;
+					display: block;
+					
+					&:hover {
+						background: $blue;
+							
+						.details > * {
+							color: #FFF;	
+						}
+						
+						.icon-more {
+							border: 1px solid #FFF;
+							&:before {	
+								background-image: url(assets/images/arrow-white.svg);
+							}
+							
+						}
+					}
+				}
+				
+				
+				
+				img {
+					width: 100%;	
+				}
+				
+				.details {
+					padding: 24px;
+					text-align: center;	
+					
+					> * {
+						color: #474747;	
+					}
+					
+					h4 {
+						font-size: 18px;
+						margin-bottom: 4px;	
+					}
+					
+					p {
+						font-size: 13px;	
+						line-height: 15px;
+						margin-bottom: 4px;
+					}
+					
+				}
+				
+				.icon-more {
+					display: block;
+					width: 28px;
+					height: 28px;
+					border-radius: 100%;
+					border: 1px solid #474747;
+					position: relative;
+					margin: 0 auto 24px;
+					&:before {
+						content: '';
+						display: inline-block;
+						background-image: url(assets/images/arrow-gray.svg);
+						background-repeat: no-repeat;
+						background-size: contain;
+						width: 100%;
+						height: 16px;
+						position: absolute;
+						top: 50%;
+						left: 85%;
+						transform: translate(-50%,-50%);
+					}
+				}
+			}
+					
+		}
+		
+	}
+	
+}

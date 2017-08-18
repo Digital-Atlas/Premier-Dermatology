@@ -1,0 +1,77 @@
+// Book Appointment
+
+.template-book-appointment {
+	
+	.section.locations {
+
+		@media #{$small-up} {
+			margin-top:30px;
+		}
+
+		@media #{$large-up} {
+			margin-top:60px;
+		}
+
+	}
+
+/* Overrides similar classes in _locations.scss */
+	.expanding-grid .items {
+    	padding: 0;
+    	list-style: none;
+    	margin: 0 auto;
+    	margin-top:60px;
+	}
+
+	.expanding-grid .items .column {
+					
+
+			.appointment-book~ul {
+				list-style-type: square;
+			    margin-left: 30px;
+			    text-align: left;
+			    padding: 20px 0 20px 0px;
+			    width: 260px;
+			    /* margin: 0 auto; */
+			    font-size: 16px;
+			}
+
+			.booking-details {
+				padding: 35px 45px 30px;	
+				text-align: center;
+				position: relative;		
+			}
+				
+			p {
+				font-size: 16px;
+				line-height: 20px;	
+				padding: 20px 20px 0 20px;
+			}				
+
+			.appointment-book {
+				margin: 15px auto;
+				margin: 0 auto;
+
+				a, span {
+					display: block;
+					border: 1px solid $blue;
+					font-size: 16px;
+					line-height: 19px;
+					color: $blue;
+					text-align: center;
+					padding: 10px 0 15px 0;	
+					text-transform: uppercase;
+					text-decoration: none;
+					font-weight: $global-weight-bold;
+					
+					&:hover {
+						background: $blue;
+						color: #fff;	
+					}
+				}
+
+			}
+				
+	}
+	
+	
+}

@@ -1,0 +1,56 @@
+// widgets
+
+.share-icons {
+
+	margin: 0;
+	padding: 20px 0;
+	vertical-align: middle;
+	
+/*
+	&:before {
+		content: '';	
+		display: inline-block;
+		vertical-align: middle;
+		font-size: 14px;
+		color: #9b9b9b;
+		font-weight: $global-weight-bold;
+ 		line-height: 32px;
+	}
+	*/
+	
+	li {
+		list-style-type: none;
+		display: inline-block;
+		margin: 0 10px 0 0;
+		vertical-align: middle;
+		
+		&:first-child {
+			margin-left: 0;	
+		}
+		
+		a {
+			background: $anchor-color;
+			border-radius: 50%;
+			width: 24px;
+			height: 24px;
+			display: block;
+			position: relative;
+			
+			@media #{$large-up} {
+      			width: 36px;
+				height: 36px;
+			}
+		}
+		
+		svg {
+			fill: #fff;
+ 			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+		}
+	
+		
+	}
+	
+}

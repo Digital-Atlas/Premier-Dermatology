@@ -1,0 +1,22 @@
+//
+// Sidebars
+//
+
+.widget-area {
+	
+	margin-bottom: 30px;
+	
+	@media #{$large-up} {
+    	padding-right: 30px; 
+		margin-bottom: 0; 
+	}
+	
+	.widget {
+
+		ul {
+			@include list-reset;
+		}
+	}
+
+
+}

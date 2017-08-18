@@ -1,0 +1,629 @@
+// Doctors
+
+
+.template-doctors {
+	
+
+	.section.hero {
+		background-image: url(assets/images/heros/global-hero.png);
+		
+		h1 {
+			color: #fff;
+			margin: 0;	
+		}
+		
+		h4 {
+			color: #fff;
+			display: inline-block;
+			font-size: 20px;
+			margin-top: 5px;
+			padding-top: 10px;
+			border-top: 3px solid #fff;	
+		}
+	}
+
+	.section.default {
+ 		
+		.entry-content {
+			
+			text-align: center;
+			
+			*:last-child {
+				//margin-bottom: 0;	
+			}
+		}
+ 	}
+
+	.section.doctors {
+		h3 {
+			margin-bottom: 15px;	
+		}
+	}
+	
+	.grid {
+		
+		margin-bottom: 25px;
+ 		
+		.column {
+			margin-bottom: 50px;
+			
+			> a {
+				border: 1px solid #b9b9b9;
+				display: block;
+				
+				&:hover {
+ 					background: $blue;
+						
+					.details > * {
+						color: #FFF;	
+					}
+					
+					.icon-more {
+						border: 1px solid #FFF;
+ 						&:before {	
+							background-image: url(assets/images/arrow-white.svg);
+						}
+						
+					}
+				}
+			}
+			
+			
+			
+			img {
+				width: 100%;	
+			}
+			
+			.details {
+				padding: 24px;
+				text-align: center;	
+				
+				> * {
+					color: #474747;	
+				}
+				
+				h4 {
+					font-size: 18px;
+					margin-bottom: 4px;	
+				}
+				
+				p {
+					font-size: 13px;	
+					line-height: 15px;
+					margin-bottom: 4px;
+				}
+				
+ 			}
+			
+			.icon-more {
+				display: block;
+				width: 28px;
+				height: 28px;
+				border-radius: 100%;
+				border: 1px solid #474747;
+ 				position: relative;
+				margin: 0 auto 24px;
+				&:before {
+					content: '';
+ 					display: inline-block;
+					background-image: url(assets/images/arrow-gray.svg);
+					background-repeat: no-repeat;
+					background-size: contain;
+					width: 100%;
+					height: 16px;
+					position: absolute;
+					top: 50%;
+					left: 85%;
+					transform: translate(-50%,-50%);
+ 				}
+			}
+		}
+				
+	}
+	
+}
+
+
+// Single
+
+.single-team {
+
+	.section.hero {
+		background-image: url(assets/images/heros/global-hero.png);
+		background-color: $blue;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+				
+		text-align: center;
+		
+		h1 {
+			/*
+			color: #fff;
+			margin: 0 auto 10px;
+			display: inline-block;	
+			border-bottom: 3px solid #fff;	
+ 			padding-bottom: 5px;
+ 			*/
+		}
+		
+		h4 {
+			color: #fff;
+ 			font-size: 20px;
+ 			min-width: 300px;
+ 			@media #{$large-up} {
+ 				min-width: 550px;
+ 			}
+ 		}
+	}
+	
+	
+	.site-main section {
+		
+		@media #{$small-up} {
+			padding: 35px 0;
+		}
+
+		padding: 70px 0;
+		
+		&:nth-child(even) {
+			background: #f4f4f4;
+		}
+	}
+	
+
+	.section.default {
+
+		@media #{$small-up} {
+			padding: 35px 0 30px;
+		}
+
+		@media #{$large-up} {
+			padding: 70px 0 60px;
+		}
+
+		#headshot img { 
+			@include breakpoint(small only) {
+				display: block;
+				margin:0 auto;
+				width:150px;
+			}
+		}
+
+		.entry-content {
+			
+			max-width: 750px;
+			margin-top: 30px;
+			
+			@media #{$large-up} {
+      			margin-top: 0;
+			}
+			
+			*:last-child {
+				margin-bottom: 0;	
+			}
+		}
+ 	}
+	
+	
+	.social-icons {
+		
+		@include list-reset;
+		padding-top: 10px;
+ 		
+		li {
+			display: inline-block;	
+			margin-right: 15px;
+		}
+		
+		a {
+			display: block;
+			width: 30px;
+			height: 30px;
+			padding: 2px;
+			border-radius: 100%;
+			background: $blue;
+			
+			svg {
+				fill: #fff;	
+			}
+			
+			&:hover {
+				background: $medium-blue;
+			}
+		}
+			
+	}
+	
+	
+	.locations {
+		
+		margin-bottom: 24px;
+		
+		.column {
+			margin-bottom: $global-margin;	
+		}
+		
+		h4 {
+			margin-bottom: 5px;
+			text-transform: uppercase;
+		}
+		
+		p {
+			margin-bottom: 10px;	
+		}
+		
+		.location-phone {
+			margin: 0 auto 10px;
+ 			text-align: left;
+			vertical-align: bottom;
+			
+			a {
+ 				font-weight: $global-weight-bold;
+				color: $blue;
+				line-height: 30px;
+				text-transform: uppercase;
+				
+				&:hover {
+					color: $green;	
+				}
+			}
+		}
+		
+		.icon-phone {
+			display: inline-block;
+			background-image: url(assets/images/locations/icon-phone.svg);
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 20px;
+			height: 20px;
+			position: relative;
+			top: 6px;
+			margin-right: 10px;
+		}
+	}
+	
+	
+	.awards {
+		
+		padding: 0 7.5px;
+		
+		ul {
+			@include list-reset;
+			margin: 0 -15px 0;
+			
+			li {
+				display: inline-block;	
+				padding: 0 7.5px 20px;
+			}
+			
+		}	
+	}
+	
+	.section.video-testimonial {
+		
+		padding: 0;
+		
+		.columns {
+			overflow: hidden;	
+			
+		}
+		
+		.video-block {
+
+			@media #{$small-up} {
+				padding: 30px 0;
+			}
+
+			@media #{$large-up} {
+				padding: 60px 0;
+			}
+
+			text-align: center;
+		}
+		
+		
+		.doctor-testimonial {
+			position: relative;
+ 			margin: 0 auto;
+			
+			
+			@include breakpoint(small only) {
+				background: #fff;
+				padding: 25px;
+				margin: 0 0 25px 0;
+			
+			}
+			
+			&.single {
+				max-width: 520px;
+			}
+			
+			@media #{$xlarge-up} {
+      			min-height: 0;
+  			}
+			
+			@media #{$medium-up} {
+      
+	  			&:before {
+					content: "";
+					display: block;
+					width: 100%;
+					height: 0;
+					padding-bottom: 100%;
+					background: #ffffff; 
+					border-radius: 50%;	
+					position: absolute;
+					top: 50%;
+					transform: translateY(-50%);
+					left: 0;
+				}
+				
+				.table {
+					display: table;	
+					height: 100%;
+					position: relative;
+					z-index: 2;
+					//min-height: 520px;
+					
+					@media #{$xlarge-up} {
+						min-height: 0;
+					}
+				}
+				
+				.cell {
+					display: table-cell;
+					vertical-align: middle;
+					text-align: center;
+					padding: 100px;
+					
+					*:last-child {
+						margin-bottom: 0;	
+					}
+				}
+	  
+			}
+		}
+		
+		
+	}
+	
+}
+
+
+.single-team .section.media-carousel {
+		
+		@media #{$small-up} {
+      		padding: 35px 0;
+		}
+		
+		@media #{$large-up} {
+      		padding: 70px 0;
+		}	
+	
+
+
+	h3 {
+		text-align: center;
+		margin-bottom: 40px;	
+	}
+	
+	.cta {
+ 		margin-bottom: 0;	
+		text-align: center;
+
+		a { 
+			@include breakpoint(small only) { 
+				margin-bottom: 15px;
+			}
+		}
+	}
+}
+
+.single-team .owl-carousel {
+	
+	margin-bottom: 50px;
+	
+	.owl-item {
+		width: 100%;
+		
+		@media #{$medium-up} {
+      		width: 50%;
+		}
+		
+		@media #{$large-up} {
+      		//width: 33.3333333%;
+		}	
+			
+	}
+	
+	.owl-column {
+	
+		a {
+			display: block;
+ 			background-repeat: no-repeat;
+			background-size: cover;
+			background-position: center center;	
+			height: auto!important;
+			width: 100%;
+			
+			@media #{$large-up} {
+      			//height: 275px;
+			}
+			
+			text-decoration: none;
+	
+		}
+		
+		.caption {
+			background: #f3f3f3;
+			font-size: 14px;
+			color: $dark-gray;
+			text-align: center;
+			padding: 10px 15px;	
+			
+			@media #{$xlarge-up} {
+      			font-size: 16px;
+			}
+		}
+	}
+	
+	.owl-nav {
+		padding: 15px 15px 0;
+		text-align: center;	
+ 	}
+	
+	.owl-prev,
+	.owl-next {
+		background-image: url(assets/images/arrow-grey-circle.svg);
+		background-repeat: no-repeat;
+		background-position: center bottom;
+		background-size: contain;
+		width: 48px;
+		height: 48px;
+		display: inline-block;
+		margin: 0 10px;
+	}
+	
+	.owl-prev {
+		transform: rotate(180deg);
+		
+	}
+	
+	.owl-next {
+		
+	}
+	
+	
+	@media only screen and (min-width : 1280px) {
+      	
+		padding: 0 80px;
+		
+		
+		.owl-nav {
+			padding: 0;
+		}
+		
+		.owl-prev,
+		.owl-next {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			margin: 0;
+		}
+		
+		.owl-prev {
+			left: 0;
+			 transform: translateY(-50%) rotate(180deg);
+		}
+		
+		.owl-next {
+			right: 0;
+		}
+	}
+	
+}
+
+
+
+.single-team {
+	
+	.testimonial-review {
+				
+		.quote {
+			display: table-cell;
+			vertical-align: middle;	
+			
+			padding-bottom: 30px;
+		
+			@media #{$large-up} {
+				padding-bottom: 0;
+			}
+		}
+		
+		.quote-text {
+			> * {
+				font-size: 24px;
+				line-height: 32px;	
+			}
+		}
+		
+		.quote-description {
+			line-height: 28px;
+		}
+		
+		.doctor-review {
+			height: 350px!important;
+			
+			iframe {
+				height: 350px!important;	
+			}
+		}
+		
+	}
+	
+	
+	.services {
+	
+		position: relative;
+		
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translateY(-50%);
+			background: url( assets/images/doctor-single/green-circles.png);
+			background-position: right center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 260px;
+			height: 100%;
+		}
+		
+		
+		.related-services {
+			margin-bottom: 60px;
+			
+			ul {
+				@include list-reset;
+					
+				li {
+					position: relative;
+					padding-left: 15px;
+					
+					&:before {
+						content: '\2022';	
+						font-size: 8px;
+						color: $dark-gray;
+						position: absolute;
+						left: 0;
+						top: 50%;
+						transform: translateY(-50%);
+					}
+				}
+					
+			}
+		}
+		
+		h4 {
+			margin-bottom: 30px;	
+		}
+		
+		
+	}
+
+	.accordion-title h4 {
+		margin-bottom: 0;	
+	}
+
+	.accordion-content .education {
+		
+		strong {
+			display: block;	
+		}
+			
+	}
+	
+}

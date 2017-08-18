@@ -1,0 +1,106 @@
+
+.blog {
+	
+	.section.hero {
+		h4 {
+			color: #fff;
+			display: inline-block;
+			font-size: 20px;
+			margin-top: 5px;
+			padding-top: 10px;
+			border-top: 3px solid #fff;	
+		}	
+	}
+	
+	.site-main {
+		padding: 30px 0 90px;	
+	}
+	
+	.hentry {
+		
+		margin-top: 30px;
+	
+       	img {
+			
+			margin: 0 0 30px 0;
+			
+			@media #{$large-up} {
+				float: left;
+				margin: 0 30px 0 0;	
+			}
+		}
+		
+		.entry-content {
+			overflow: hidden;	
+		}
+		
+		.entry-header a {
+			text-decoration: none;
+			color: $blue;
+			
+			&:hover {
+				color: $light-blue;	
+			}
+		}
+		
+	}
+	
+	.pagination {
+		padding-top: 30px;
+		text-align: center;
+		
+		a, span {
+			font-size: 18px;
+			color: $blue;
+			padding: 3px;
+			margin: 0 2px;	
+			font-weight: $global-weight-bold;
+		}
+			
+	}
+	
+}
+
+
+.single-post {
+	
+	.site-main {
+		padding: 60px 0;	
+	}
+	
+	.nav-links {
+		padding: 30px 0 0; 	
+		text-align: center;
+		
+		div {
+			padding: 0 0 20px;
+			
+			@media #{$medium-up} {
+      			padding: 0 20px;
+				display: inline-block;
+			}
+			
+			a {
+				color: $blue;
+				font-size: 16px;
+				font-weight: $global-weight-bold;	
+				display: block;
+				width: 100%;
+				text-align: center;
+				padding: 8px;
+				border: 1px solid $blue;
+				text-transform: capitalize;
+				
+				&:hover {
+					background: $blue;
+					color: $white;	
+				}
+				
+				@media #{$medium-up} {
+      				width: 150px;
+				}
+			}
+		}
+	}
+	
+}

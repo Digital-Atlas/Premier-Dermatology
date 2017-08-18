@@ -1,0 +1,483 @@
+//
+// Front Page
+//
+
+.home {
+	
+	.section {
+ 		position: relative;
+		margin: 0;
+	}
+	
+	
+	.hero {				
+		background-color: $blue;
+ 		background-repeat: no-repeat;
+		background-size: cover;
+		text-align: left;
+
+			@media #{$small-up} {
+				background-position: 70% 0 ;
+			}
+
+		
+		.wrap {
+			padding-top: 50px;
+			padding-bottom: 50px;
+			position: relative;
+			z-index: 2;	
+
+
+			@media #{$small-up} {
+				min-height: 300px;
+			}
+
+			@media #{$medium-up} {
+				min-height: 350px;
+			}
+
+
+		}
+		
+		
+		.panel {
+			background: rgba( #fcfcfc, .85 );	
+			display: inline-block;
+			padding: 40px 50px;
+			text-align: center;
+			
+			@media #{$xxlarge-up} {
+				margin-left: 90px;
+			}	
+			
+			
+			> * {
+				color: #212121;	
+			}
+			
+			h1 {
+				
+			}
+			
+			h5 {
+  				margin-top: 5px;
+				padding-top: 10px;
+				border-top: 3px solid $green;				
+			}
+		}
+		
+				
+	}
+	
+	
+	
+}
+
+
+.section.featured-menu {
+	
+	.home-featured {
+		margin-top: -30px;
+		position: relative;
+		z-index: 2;
+		display: none;
+		
+		@media only screen and (min-width : 768px) {
+      		display: block;
+ 			margin-top: -70px;
+		}
+		
+		@media #{$xxlarge-up} {
+      		padding: 0 90px;
+			margin-top: -90px;
+		}	
+	}
+	
+	ul {
+		@include list-reset;
+		
+ 		width: 100%;
+		margin: 0 auto;
+		
+		@media only screen and (min-width : 768px) {
+      		display: table;
+		}
+		
+		li {
+			margin: 0;
+ 			padding: 10px;
+			text-align: center;
+			position: relative;
+			
+			@media only screen and (min-width : 768px) {
+      			display: table-cell;
+				float: none;
+				width: auto;
+				clear: none;
+			}
+			
+			@media #{$xxlarge-up} {
+      			padding: 0;
+			}
+			
+			a {
+				display: block;
+				padding: 10px 20px;
+				position: relative;
+				z-index: 2;
+				
+				&:before {
+					content: '';
+					display: block;
+					background-position: center center;
+					background-size: contain;
+					background-repeat: no-repeat;
+					width: 50px;
+					height: 50px;
+					margin: 0 auto 10px;
+					
+					@media #{$xxlarge-up} {
+      					margin-top: 30px;
+					}
+				}
+					
+			}
+			
+			a {
+				color: #fff;
+				display: block;	
+				font-size: 16px;
+				font-weight: $global-weight-bold;
+				text-transform: uppercase;
+				line-height: 1;
+				
+				.description {
+					display: block;	
+					font-size: 12px;
+					font-weight: 400;
+					text-transform: none;
+					line-height: 20px;
+					padding-top: 5px;
+				}
+				
+				@media #{$xxlarge-up} {
+      				position: absolute;
+					bottom: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+				}
+				
+				&:hover {
+					opacity: .9;	
+				}
+			}
+			
+			
+			background-color: $green;	
+			
+			
+			&:nth-child(odd) {
+				background-color: $light-green;
+			}
+			
+			
+			&.locations  {
+				
+				@media #{$xxlarge-up} {
+      				width: 266px;
+					height: 183px;
+					background-color: transparent;
+					background-image: url(assets/images/home/home-location-green.png);
+					background-repeat: no-repeat;
+					background-position: center center;
+					background-size: 266px 183px;
+				}
+				
+				a {
+ 					&:before {
+						background-image: url(assets/images/home/home-locations-icon-white.svg);
+						width: 50px;
+						height: 50px;
+					}
+				}
+			}
+			
+			&.services {
+				
+				@media #{$xxlarge-up} {
+      				width: 266px;
+					height: 194px;
+					background-color: transparent;
+					background-image: url(assets/images/home/home-services-green.png);
+					background-repeat: no-repeat;
+					background-position: center center;
+					background-size: 266px 194px;
+				}
+				
+				a {
+					&:before {
+						background-image: url(assets/images/home/home-services-icon-white.svg);
+						width: 50px;
+						height: 50px;
+					}
+				}
+			}
+			
+			&.doctors {
+				
+				@media #{$xxlarge-up} {
+      				width: 266px;
+					height: 194px;
+					background-color: transparent;
+					background-image: url(assets/images/home/home-doctors-green.png);
+					background-repeat: no-repeat;
+					background-position: center center;
+					background-size: 266px 194px;
+				}
+				
+				a {
+					&:before {
+						background-image: url(assets/images/home/home-doctors-icon-white.svg);
+						width: 50px;
+						height: 50px;
+					}
+				}
+				
+			}
+			
+			&.appointment {
+				
+				@media #{$xxlarge-up} {
+      				width: 266px;
+					height: 183px;
+					background-color: transparent;
+					background-image: url(assets/images/home/home-appointment-green.png);
+					background-repeat: no-repeat;
+					background-position: center center;
+					background-size: 266px 183px;
+				}
+				
+				a {
+					&:before {
+						background-image: url(assets/images/home/home-appointment-icon-white.svg);
+						width: 50px;
+						height: 50px;
+					}
+				}
+				
+			}
+			
+			
+		}
+	}	
+	
+}
+
+.home .section.default {
+	
+	padding-bottom: 30px;
+	
+	.entry-content {
+		@media #{$large-up} {
+      		padding: 0 90px;
+		}	
+	}
+	
+	.featured-media img {
+		border: 1px solid #848484;	
+	}
+	
+	.columns {
+		padding-bottom: 30px;
+	}
+}
+
+
+.home .section.featured  {
+	
+	background: $light-gray;
+	padding-top: 35px;
+	
+	@media #{$large-up} {
+      padding-top: 60px;
+	}
+	
+	.wrap {
+		@media #{$xxlarge-up} {
+			padding: 0 50px;  
+		}	
+	}
+	
+	h2 {
+		text-align: center;	
+		margin-bottom: 35px;
+		
+		@media #{$large-up} {
+      		margin-bottom: 55px;
+		}
+	}
+	
+	.grid {
+	
+		padding-bottom: 25px;
+		
+		.column {
+
+			@media #{$small-up} {
+				margin-bottom: 25px;
+			}
+
+			@media #{$large-up} {
+				margin-bottom: 50px;
+			}
+			
+			
+			> a {
+ 				display: block;
+				
+				@media #{$xxlarge-up} {
+					padding: 0 20px;  
+				}
+			}
+			
+			
+			
+			img {
+				width: 100%;	
+			}
+			
+			.details {
+				padding: 24px;
+				text-align: center;	
+				background: #fff;
+				
+				> * {
+					color: #474747;	
+				}
+				
+				h4 {
+					color: $blue;
+					text-transform: uppercase;
+				}
+				
+				p {
+				}
+				
+			}
+			
+			.icon-more {
+				display: none;
+				width: 28px;
+				height: 28px;
+				border-radius: 100%;
+				border: 1px solid #474747;
+				position: relative;
+				margin: 0 auto 24px;
+				&:before {
+					content: '';
+					display: inline-block;
+					background-image: url(assets/images/arrow-gray.svg);
+					background-repeat: no-repeat;
+					background-size: contain;
+					width: 100%;
+					height: 16px;
+					position: absolute;
+					top: 50%;
+					left: 85%;
+					transform: translate(-50%,-50%);
+				}
+			}
+		}
+	}
+}
+
+
+
+.home .section.doctor-quotes {
+	
+	position: relative;
+		
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+ 			background: url( assets/images/home/green-circles.png);
+			background-position: right center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 260px;
+			height: 100%;
+		}
+	
+	
+			@media #{$small-up} {
+					padding: 35px 0 30px 0;
+			}
+
+			@media #{$medium-up} {
+					padding: 75px 0 60px 0;
+			}
+
+
+	.owl-theme .owl-dots .owl-dot {
+		span {
+			width: 15px;
+			height: 15px;
+			border-radius: 100%;
+			background: $gray;
+ 		}
+		
+		&.active {
+			span {
+				background: $blue;	
+			}
+		}
+	}
+	
+	.owl-carousel .owl-item img {
+		display: block;
+		width: auto;
+		border-radius: 100%;
+		border: 10px solid $light-gray;
+		margin: 0 auto 30px;
+		max-width: 250px;
+		
+		@media #{$large-up} {
+      		float: left;
+			margin: 0 60px 0 0;
+			max-width: none; 
+		}
+	}
+	
+	.testimonial {
+		@extend .clearfix;	
+	}
+	
+	.details {
+		overflow: hidden;	
+		
+		@include breakpoint(medium down) {
+			text-align: center;
+			padding-bottom: 24px;
+		}
+		
+		h3 {
+			margin-bottom: 24px;	
+		}
+		
+		p {
+			@media #{$large-up} {
+      			font-size: 24px;
+				line-height: 35px;
+			}
+			
+			&:last-child {
+				margin-bottom: 0;	
+			}
+		}
+	}
+	
+}
