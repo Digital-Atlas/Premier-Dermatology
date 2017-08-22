@@ -27,14 +27,19 @@
 			position: relative;
 			z-index: 2;	
 
-
-			@media #{$small-up} {
+			@include breakpoint(small only) {
 				min-height: 300px;
 			}
 
-			@media #{$medium-up} {
-				min-height: 350px;
+			@include breakpoint(medium) {
+				min-height: 350px; 
 			}
+
+			@include breakpoint(large) {
+				min-height: 450px;
+			}
+
+
 
 
 		}
@@ -324,6 +329,10 @@
 		
 		.column {
 
+			h4 { 
+				line-height: 1.2em;
+			}
+
 			@media #{$small-up} {
 				margin-bottom: 25px;
 			}
@@ -332,12 +341,13 @@
 				margin-bottom: 50px;
 			}
 			
+			.details 
 			
 			> a {
  				display: block;
 				
 				@media #{$xxlarge-up} {
-					padding: 0 20px;  
+					//padding: 0 20px;  
 				}
 			}
 			

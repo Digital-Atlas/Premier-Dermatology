@@ -64,3 +64,39 @@
 		color: $white;
 	}
 }
+
+
+a.button-action {
+				margin: 15px auto;
+				margin: 0 auto;
+				display: block;
+				border: 1px solid $blue;
+				font-size: 16px;
+				line-height: 19px;
+				color: $blue !important;
+				text-align: center;
+				padding: 10px 0 15px 0;	
+				text-transform: uppercase;
+				text-decoration: none;
+				font-weight: $global-weight-bold;
+					
+				&:hover {
+						background: $blue;
+						color: #fff !important;	
+					}
+
+
+				.icon-arrow.blue {
+					display: inline-block;
+					background-image: url(assets/images/arrow-blue.svg);
+					background-repeat: no-repeat;
+					background-size: contain;
+					width: 20px;
+					height: 20px;
+					position: relative;
+					top: 4px;
+					margin-left: 10px;
+				}
+
+
+			}

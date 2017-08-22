@@ -128,7 +128,7 @@ get_header(); ?>
 			}
 			
 			$attachment_id = get_field( 'photo' );
-			$photo = _s_get_acf_image( $attachment_id );
+			$photo_ = _s_get_acf_image( $attachment_id );
 			
 			if( !empty( $video ) ) {
 				$media = $video;
@@ -136,7 +136,8 @@ get_header(); ?>
 			if( !empty( $photo ) ) {
 				$media = $photo;
 			}
-			
+
+
  			if( !empty( $media ) ) {
 				
 				$content = sprintf( '<div class="small-12 large-6 columns">%s</div>', 
@@ -185,11 +186,14 @@ get_header(); ?>
 				foreach( $rows as $row ) {
 					
 					$photo = $row['grid_photo'];
+					
 					$background = '';
 					
 					if( !empty( $photo ) ) {
-						$photo = wp_get_attachment_image( $photo, 'large' );
-						//$background = sprintf( 'style="background-image: url(%s)"', $photo[0] );
+						//$photo = wp_get_attachment_image( $photo, 'large' );
+						$attachment_url = wp_get_attachment_url($photo);
+						$image_url = aq_resize( $attachment_url, 357, 272, true, true, true ); //resize & crop the image
+						$image = '<img src="' . $image_url . '" alt="Featured Image" />';
 					}
 					
 					$title = !empty(  $row['grid_title'] ) ? sprintf( '<%1$s>%2$s</%1$s>', 'h4', $row['grid_title'] ) : '';
@@ -203,9 +207,11 @@ get_header(); ?>
 						$url = $page;
 					}
 					
-					$details = sprintf( '<div class="details" data-equalizer-watch>%s%s</div>', $title, $description );
+					$button = sprintf('<a href="%s" class="button-action">Learn More <i class="icon icon-arrow blue"></i></a>', $url);
+
+					$details = sprintf( '<div class="details" data-equalizer-watch>%s%s%s</div>', $title, $description, $button);
 						
-					$columns .= sprintf( '<div class="column"><a href="%s">%s%s<i class="icon icon-more"></i></a></div>', $url, $photo, $details );
+					$columns .= sprintf( '<div class="column"><a href="%s">%s%s</a></div>', $url, $image, $details );
 					
 				}
 		
