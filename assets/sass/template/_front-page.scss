@@ -36,7 +36,11 @@
 			}
 
 			@include breakpoint(large) {
-				min-height: 450px;
+				min-height: 415px;
+			}
+
+			@include breakpoint(xlarge) {
+				min-height: 430px;
 			}
 
 
