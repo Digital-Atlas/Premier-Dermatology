@@ -8,6 +8,7 @@
 			loop:true,
 			autoplay: true,		
 			items: 1,
+			lazyload: true
 
 		}
 	  );
