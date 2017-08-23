@@ -23,17 +23,20 @@
 
 		
 		.wrap {
-			padding-top: 50px;
-			padding-bottom: 50px;
+
 			position: relative;
 			z-index: 2;	
 
 			@include breakpoint(small only) {
-				min-height: 300px;
+				min-height: 240px;
+				padding-top: 10px;
+				padding-bottom: 10px;
 			}
 
 			@include breakpoint(medium) {
 				min-height: 350px; 
+				padding-top: 50px;
+				padding-bottom: 50px;				
 			}
 
 			@include breakpoint(large) {
@@ -51,18 +54,44 @@
 		
 		
 		.panel {
-			background: rgba( #fcfcfc, .85 );	
-			display: inline-block;
-			padding: 40px 50px;
-			text-align: center;
+				
+			display: inline-block;		
 			
+
+
+			@include breakpoint(small only) {
+				padding: 40px 40px 20px 20px;
+				margin-right: 20%;
+				text-align: left;
+
+				h1 { 
+					color:#fff;
+					padding-bottom:5px;
+				}
+
+				h5 {
+					color:#fff;
+					font-size: 16px;
+					border-top: 0px;
+					border-top: 1px solid $green;
+				}
+			}
+
+			@include breakpoint(medium) {
+				padding: 80px 50px;
+				text-align: center;
+				//background: rgba( #fcfcfc, .35 );
+			}
+
 			@media #{$xxlarge-up} {
 				margin-left: 90px;
 			}	
 			
 			
 			> * {
-				color: #212121;	
+				//color: #212121;	
+				color: #fff;
+
 			}
 			
 			h1 {
