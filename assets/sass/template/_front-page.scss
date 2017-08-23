@@ -15,9 +15,10 @@
  		background-repeat: no-repeat;
 		background-size: cover;
 		text-align: left;
+		transition: 3s;
 
 			@media #{$small-up} {
-				background-position: 70% 0 ;
+				background-position: 70% 0 !important;
 			}
 
 		

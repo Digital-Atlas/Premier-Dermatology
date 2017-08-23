@@ -38,17 +38,72 @@ get_header(); ?>
 			
 			if( !empty( $photos ) ) {
 				$photo_ids = wp_list_pluck( $photos, 'ID' );
-				shuffle( $photo_ids );
+				//shuffle( $photo_ids );
 				
 				$photo = wp_get_attachment_image_src( $photo_ids[0], 'hero' );
 				
-				$background = sprintf( 'background-image: url(%s);', $photo[0] );
+				// Create an array to hold Hero images
+				$hero_images = array();
+				$max_hero_images = count($photo_ids);
+				
+				// Loop through array and add image src to array
+				$i = 0;
+				while ( $i <= ($max_hero_images -1) ) {
+					$hero_images[] =wp_get_attachment_image_src( $photo_ids[$i], 'hero' );
+					$i++;
+				}
+
+				?>
+
+
+				<style type="text/css">
+				/** Default background as fallback **/
+				#hero {
+ 					
+  					background: url("<?php echo $photo[0]; ?>") no-repeat 70% 0;
+  				}
+				</style>
+
+				<script type="text/javascript">
+					/* Source: https://codepen.io/dudleystorey/pen/qEoKzZ */
+
+					// Create our JS image array
+					var bgImageArray = [
+					
+					<?php
+					foreach ($hero_images as $image) {
+						echo sprintf('"%s",',$image[0]);
+					}
+					?>
+					],
+
+					secs = 4;
+					bgImageArray.forEach(function(img){
+					    new Image().src = img; 
+					    // caches images, avoiding white flash between background replacements
+					});
+
+					function backgroundSequence() {
+						window.clearTimeout();
+						var k = 0;
+						for (i = 0; i < bgImageArray.length; i++) {
+							setTimeout(function(){ 
+								document.getElementById("hero").style.background = "url(" + bgImageArray[k] + ") 70% 0 no-repeat";
+								document.getElementById("hero").style.backgroundSize ="cover";
+							if ((k + 1) === bgImageArray.length) { setTimeout(function() { backgroundSequence() }, (secs * 1000))} else { k++; }			
+							}, (secs * 1000) * i)	
+						}
+					}
+					backgroundSequence();					
+				</script>
+
+				<?php
 			}
 								
 			$args = array(
 				'html5'   => '<section %s>',
 				'context' => 'section',
-				'attr' => array( 'id' => 'hero', 'class' => 'section hero', 'style' => $background ),
+				'attr' => array( 'id' => 'hero', 'class' => 'section hero'), //, 'style' => $background ),
 				'echo' => false
 			);
 			
