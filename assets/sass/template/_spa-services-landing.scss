@@ -22,10 +22,44 @@
 		
  	}
 	
+
+ 	#spa-hero {
+ 		background-size: cover;
+    	background-repeat: no-repeat;
+    	padding-top:60px;
+    	height: 380px;
+    	border-radius: 10px;
+
+    	h2 { 
+    		color: #acc37e;
+    	}
+
+    	@include breakpoint(medium down) {
+    		background-position: 60% 0;
+
+    		.wrap {
+    			padding-left: 15px;
+    			color: #444;
+    		}    		
+    	}
+ 	}
+
+
+ 	.introductory-summary {
+ 		.columns { 
+ 			margin-bottom:0; 
+
+ 			h3 {
+ 				color: #acc37e;
+ 			}
+ 		}
+ 	}
+
+
 	.sub-section.team {
 	
 		
-		padding: 75px 0 0;
+		padding: 30px 0 0;
 		
 		
 		h3 {

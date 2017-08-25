@@ -58,8 +58,7 @@ get_header(); ?>
 
 				<style type="text/css">
 				/** Default background as fallback **/
-				#hero {
- 					
+				#hero { 					
   					background: url("<?php echo $photo[0]; ?>") no-repeat 70% 0;
   				}
 				</style>
@@ -262,7 +261,7 @@ get_header(); ?>
 						$url = $page;
 					}
 					
-					$button = sprintf('<a href="%s" class="button-action">Learn More <i class="icon icon-arrow blue"></i></a>', $url);
+					$button = sprintf('<a href="%s" class="btn white">Learn More</a>', $url);
 
 					$details = sprintf( '<div class="details" data-equalizer-watch>%s%s%s</div>', $title, $description, $button);
 						

@@ -174,3 +174,122 @@
 		 
 	}
 }
+
+
+/* Global modules across service landing pages */
+
+#menu-choose-service {
+	@include breakpoint(large) {
+		border: 1px solid #ddd;
+		border-radius: 10px;
+		padding-top:20px;
+		max-width:400px;
+	}
+	
+}
+
+#benefits-list {
+	
+ 	.benefits {
+
+ 		.column { 
+ 			padding-left:10px;
+ 			padding-right: 10px;
+
+			img {
+				@include breakpoint(medium down) {
+					width:100%;
+				}
+			}
+
+ 			.inner {
+				padding: 15px 10px 0 0;
+    			//background-color: #f4f4f4;
+    			//min-height: 220px;
+
+ 				h5 {
+ 					color: #acc37e;
+ 					margin-bottom:10px;
+ 				}
+
+ 				p {
+ 					line-height: 1.5em;
+ 				}
+ 			}
+ 		}
+
+ 		strong { 
+
+ 			@media #{$large-up} {
+ 				font-size: 20px;
+ 			}
+ 		}
+
+ 	}
+}
+
+.introductory-summary {
+	margin-top: 15px;
+	padding-left: 10px;
+}
+
+.infographic-stats {
+
+	margin-top: 30px;
+
+	> .column {
+ 		padding-left:10px;
+ 		padding-right: 10px;
+	}
+
+	> .column > .inner {
+		padding: 15px;
+		margin-bottom: 15px;
+		border: 1px solid #ddd;
+		width: 100%;
+		float:left;
+
+		.icon {
+			padding: 0;
+		}
+
+			img {	 // icon
+				padding-top: 10px;
+				margin: 0 auto;
+				display: block;
+			}
+
+	}
+
+	.data  {
+		font-weight: bold;
+		padding-left:0; // align to icon
+
+		h3 {
+			color: #ACC37E;
+		}
+	}
+
+}
+
+// Patient Testimonial and Video 
+.patient-review {
+
+	margin: 30px 0 0 0;
+
+	.testimonial {
+		font-size: 28px;
+		color: #a9d075;
+		font-weight: bold;
+		text-align:center;
+		padding: 15px;
+		border-top: 8px solid #a9d075;
+		border-bottom: 8px solid #a9d075;
+
+	}
+
+	.video {
+
+	}
+
+}

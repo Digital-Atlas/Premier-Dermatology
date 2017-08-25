@@ -65,37 +65,30 @@ get_template_part( 'template-parts/section', 'hero' );
 					}
 				
 					
+
+					// Benefits ACF Repeater
+					section_benefits();
 					
-					// Testimonials
-					section_testimonials();
-					function section_testimonials() {
-																				
-						$rows = get_field( 'testimonials' );
-						
-						if( empty( $rows ) ) {
-							return false;
-						}
-						
-						$columns = '';
-						
-						foreach( $rows as $row ) {
-							
-							$text = sprintf( '<div class="testimonial-text">%s</div>', _s_get_textarea( $row['text'] ) );
-							$description = '';
-							if( !empty( $row['description'] ) ) {
-								$description = sprintf( '<div class="testimonial-description">%s</div>', _s_get_textarea( $row['description'] ) );
-							}
-							
-							$columns .= sprintf( '<div class="column">%s%s</div>', $text, $description );
-							
-						}
-						
-						$heading = '<h3>What our patients are saying about us</h3>';
-						
-						$content = sprintf( '%s<div class="row small-up-1 large-up-2 grid">%s</div>', $heading, $columns );
-					
-						printf( '<section class="sub-section testimonials">%s</section>', $content );
+
+					// Introductory Summary ACF
+					section_summary();
+
+					function section_summary() {
+
+						$content = get_field('introduction_summary');
+
+						printf('<div class="introductory-summary row small-12">%s</div>', $content);
+
 					}
+
+
+					// Infographics ACF Repeater
+					section_infographic_stats();
+				
+					// Testimonial and Video 
+					section_testimonial();
+				
+
 					?>
 					</main>
 				

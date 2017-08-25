@@ -49,6 +49,8 @@
 	include_once( 'functions/resources.php' );
 	
 	include_once( 'functions/services.php' );
+
+	include_once( 'functions/pages.php' );
 	
 	include_once( 'functions/addtoany.php' );
 	

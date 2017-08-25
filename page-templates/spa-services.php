@@ -36,7 +36,6 @@ get_template_part( 'template-parts/section', 'hero' );
 		
 			</div>
 		
-		
 			<div class="medium-8 columns">
 				
 				<div id="primary" class="content-area">
@@ -45,7 +44,7 @@ get_template_part( 'template-parts/section', 'hero' );
 					<?php
 							
 					// Default
-					section_default();
+					//section_default();
 					function section_default() {
 								
 						global $post;
@@ -64,6 +63,48 @@ get_template_part( 'template-parts/section', 'hero' );
 					}
 				
 					
+					section_spa_hero();
+					function section_spa_hero() {
+
+						$background = get_field('spa_hero');
+						$content = get_field('spa_introductory_summary');
+						$args = array(
+							'html5'   => '<section %s>',
+							'context' => 'section',
+							'attr' => array( 'id' => 'spa-hero', 'class' => 'section', 'style' => 'background-image:url('. $background .')' ),
+							'echo' => false
+						);
+						
+						$out = _s_markup( $args );
+						$out .= '<div class="flex">';
+						$out .= _s_structural_wrap( 'open', false );
+						
+						
+						$out .= sprintf( '<div class="row columns small-8 medium-8 large-6">%s</div>', $content );
+						
+						$out .= _s_structural_wrap( 'close', false );
+						$out .= '</div>';
+						$out .= '</section>';
+						
+						echo $out;
+					}
+
+
+
+					section_addtl_summary();
+					function section_addtl_summary() {
+
+						$content = get_field('addtional_summary');
+						$file_attachment = get_field('spa_brochure');
+
+						if ($file_attachment) { 
+							$download_brochure = sprintf('<div class="columns small-12"><a class="btn white" href="%s" target="_blank" rel="noopener">Download Spa Brochure (PDF)</a></div>',$file_attachment);
+						}
+
+
+						printf('<div class="introductory-summary row"><div class="columns small-12 medium-11">%s</div>%s</div>', $content, $download_brochure);
+					}
+
 					// Team
 					section_team();
 					function section_team() {
