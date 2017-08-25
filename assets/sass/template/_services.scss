@@ -275,10 +275,16 @@
 // Patient Testimonial and Video 
 .patient-review {
 
-	margin: 30px 0 0 0;
+	@include breakpoint(small) {
+		margin: 30px 0 0 0;
+	}
+
+	@include breakpoint(large) {
+		margin: 45px 0 0 0;
+	}
 
 	.testimonial {
-		font-size: 28px;
+		font-size: 30px;
 		color: #a9d075;
 		font-weight: bold;
 		text-align:center;

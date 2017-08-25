@@ -59,7 +59,7 @@ function section_benefits() {
 					 				$video  = _s_get_foobox_video( $video_id );	
 								}
 
-							printf( '<div class="small-12 large-4 column testimonial"><span>%s</span></div><div class="small-12 large-8 column video">%s</div>', $testimonial, $video );								
+							printf( '<div class="small-12 large-6 column testimonial"><span>%s</span></div><div class="small-12 large-6 column video">%s</div>', $testimonial, $video );								
 
 
 						  
