@@ -175,23 +175,18 @@ get_header(); ?>
 			$video = '';
 			
 			$videos = get_field( 'video' );
-						
+			
 			if( !empty( $videos ) ) {
 				$video_id = $videos[0];
- 				$video  = _s_get_foobox_video( $video_id );	
-			}
-			
-			$attachment_id = get_field( 'photo' );
-			$photo_ = _s_get_acf_image( $attachment_id );
-			
-			if( !empty( $video ) ) {
+ 				$video  = _s_get_foobox_video( $video_id );					
 				$media = $video;
-			}
-			if( !empty( $photo ) ) {
+			} else {
+
+				$attachment_id = get_field( 'photo' );
+				$photo_ = _s_get_acf_image( $attachment_id );
 				$media = $photo;
 			}
-
-
+			
  			if( !empty( $media ) ) {
 				
 				$content = sprintf( '<div class="small-12 large-6 columns">%s</div>', 

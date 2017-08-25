@@ -232,15 +232,14 @@ function get_doctor_awards() {
 
 function get_doctor_video() {
 		
-	$video = get_field( 'video' );
+	$video_id = get_field( 'video' );
 	
-	if( empty( $video ) ) {
+	if( empty( $video_id ) ) {
 		return false;
 	}
 	
- 	$video_id = $video[0]->ID;
-		
-	return _s_get_foobox_video( $video_id );	
+ 	//$video_id = $video[0]->ID;	
+	return _s_get_foobox_video( $video_id[0] );	
 		 
  }
  

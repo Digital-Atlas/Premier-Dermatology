@@ -320,6 +320,10 @@
 	.entry-content {
 		@media #{$large-up} {
       		padding: 0 90px;
+
+      		p {
+      			font-size:18px;
+      		}
 		}	
 	}
 	
