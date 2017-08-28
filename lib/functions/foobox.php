@@ -109,7 +109,7 @@ function foobox_gallery( $photos, $thumbnail_size = 'foobox-thumbnail', $default
 		$attachment_id = $photo['ID'];
 		$img = wp_get_attachment_image( $attachment_id, 'foobox-thumbnail', '', array( 'class' => 'background-image' ) );
  		$out .= $img;
-        $out .= '</div>';           
+        $out .= '</a></div>';           
 	
 	endforeach;
 	

@@ -146,15 +146,20 @@ if( !empty( $terms ) ) {
 						
 						if( !empty( $gallery ) ) {
 							
-							print( '<div class="entry-content">' );
+							//print( '<div class="entry-content">' );
 								
 								echo $before_and_after_description;
 								
 								echo $gallery;
-						
-							echo '</div>';
+
+							//echo '</div>';
 							
 						}
+
+						if (!empty ($gallery)) {
+							printf("<p><small>*Before and after photos are unretouched from Dr. Matthew R. Kelleher's actual patients.</small><p>");
+						}
+
 						
 					}
 					
