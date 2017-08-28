@@ -120,7 +120,9 @@ function _s_footer_copyright() {
 					<h4>Connect With Us</h4>
 					<?php
 					$social_profiles = array( 
-											'facebook' => 'https://www.facebook.com/premierdermillinois/'
+											'facebook' => 'https://www.facebook.com/premierdermillinois/',
+											'twitter' => 'https://twitter.com/premierdermil',
+											'instagram' => 'https://www.instagram.com/premierdermillinois/'
 										);
 											
 					_s_do_social_icons( $social_profiles );
