@@ -122,7 +122,9 @@ function _s_footer_copyright() {
 					$social_profiles = array( 
 											'facebook' => 'https://www.facebook.com/premierdermillinois/',
 											'twitter' => 'https://twitter.com/premierdermil',
-											'instagram' => 'https://www.instagram.com/premierdermillinois/'
+											'youtube' => 'https://www.youtube.com/channel/UCqiOz5Pra2VpEo3qK35Y8cA',
+											'instagram' => 'https://www.instagram.com/premierdermillinois/',
+
 										);
 											
 					_s_do_social_icons( $social_profiles );
