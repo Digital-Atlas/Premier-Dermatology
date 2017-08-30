@@ -87,6 +87,10 @@
 	
 	.video-block {
 		//border: 1px solid $medium-gray;	
+
+		img {
+			max-width:800px // Limit size of FooBox thumbnail, IE
+		}
 	}
 	
 	
