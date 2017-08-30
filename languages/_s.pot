@@ -118,6 +118,10 @@ msgstr ""
 msgid "Spa Services Landing"
 msgstr ""
 
+#: page-templates/surgical-services.php:2
+msgid "Surgical Services Landing"
+msgstr ""
+
 #: template-parts/content-none.php:13
 msgid "Nothing Found"
 msgstr ""

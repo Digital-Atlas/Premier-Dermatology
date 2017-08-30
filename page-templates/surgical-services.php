@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Medical Services Landing
+Template Name: Surgical Services Landing
 */
 
 get_header(); ?>
@@ -23,13 +23,13 @@ get_template_part( 'template-parts/section', 'hero' );
 					
 					<div class="show-for-large">
 					<h4>Choose a Service:</h4>
-					<?php echo get_services_list( 7 ); ?>
+					<?php echo get_services_list( 11 ); ?>
 					</div>
 					
 					<div class="hide-for-large">
 						<button class="button services" type="button" data-toggle="service-dropdown">Choose a Service</button>
 						<div class="dropdown-pane services bottom" id="service-dropdown" data-dropdown>
-							<?php echo get_services_list( 7 ); ?>
+							<?php echo get_services_list( 11 ); ?>
 						</div>
 					</div>
 				
@@ -65,19 +65,17 @@ get_template_part( 'template-parts/section', 'hero' );
 					}
 				
 					
-
-					// Benefits ACF Repeater
-					section_benefits();
-					
-
 					// Introductory Summary ACF
 					section_summary();
 
+					// Benefits ACF Repeater
+					section_benefits();					
+
 					// Infographics ACF Repeater
-					section_infographic_stats();
+					//section_infographic_stats();
 				
 					// Testimonial and Video 
-					section_testimonial();
+					//section_testimonial();
 				
 
 					?>

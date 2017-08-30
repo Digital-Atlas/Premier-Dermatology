@@ -110,13 +110,15 @@ Header
 			background: $light-gray;
 			display: block;
  			z-index: 2;
+ 			min-width: 445px;
 			
 			ul {
-				display: flex;		
+				display: block;
 			}
 			
 			li {
-				flex: 1 1 100%;
+				//flex: 1 1 100%;
+				float:left;
 				padding: 0 30px;
 				margin: 0;
 				text-align: center;

@@ -50,19 +50,30 @@ function section_benefits() {
 
 	function section_testimonial() {
 
-							printf('<div class="patient-review small-12 medium-12">');
+					if ( get_field('testimonial') ):
 
-								$testimonial = get_field('testimonial');
-								$video_id = get_field('featured_video');
+							$testimonial = get_field('testimonial');
+							$video_id = get_field('featured_video');
+
+							printf('<div class="patient-review small-12 medium-12">');
 
 								if( !empty( $video_id ) ) {
 					 				$video  = _s_get_foobox_video( $video_id );	
 								}
 
 							printf( '<div class="small-12 large-6 column testimonial"><span>%s</span></div><div class="small-12 large-6 column video">%s</div>', $testimonial, $video );								
-
-
-						  
-						       
-						     printf('</div>');
+						 
+						    printf('</div>');
+					endif;
 					}
+
+function section_summary() {
+
+	if (get_field('introduction_summary')):
+		
+		$content = get_field('introduction_summary');
+
+		printf('<div class="introductory-summary row small-12">%s</div>', $content);
+	endif;
+
+}					
