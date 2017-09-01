@@ -81,14 +81,14 @@ get_template_part( 'template-parts/section', 'hero' );
 					</div>
 
 					<?
-					printf('<section class="section melanoma"><div class="melanoma-summary row small-12 medium-8 medium-centered">%s</div></div>', get_field('melanoma_summary'));
+					printf('<section class="section melanoma"><div class="melanoma-summary row small-12 medium-8 medium-centered">%s</div>', get_field('melanoma_summary'));
 					?>
 
 					</section>
 
 					</main>
 				
-				
+			
 
 	
 </section>
