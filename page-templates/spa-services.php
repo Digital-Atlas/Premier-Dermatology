@@ -68,23 +68,9 @@ get_template_part( 'template-parts/section', 'hero' );
 
 						$background = get_field('spa_hero');
 						$content = get_field('spa_introductory_summary');
-						$args = array(
-							'html5'   => '<section %s>',
-							'context' => 'section',
-							'attr' => array( 'id' => 'spa-hero', 'class' => 'section', 'style' => 'background-image:url('. $background .')' ),
-							'echo' => false
-						);
-						
-						$out = _s_markup( $args );
-						$out .= '<div class="flex">';
-						$out .= _s_structural_wrap( 'open', false );
-						
-						
-						$out .= sprintf( '<div class="row columns small-8 medium-8 large-6">%s</div>', $content );
-						
-						$out .= _s_structural_wrap( 'close', false );
-						$out .= '</div>';
-						$out .= '</section>';
+
+						$out .= sprintf( '<section class="default row" id="spa-hero"><div class="columns small-12 large-6">%s</div><div  style="background-image:url(%s);" class="columns small-12 large-6 background"></div></section>', $content, $background );
+		
 						
 						echo $out;
 					}

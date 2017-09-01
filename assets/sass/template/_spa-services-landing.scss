@@ -38,24 +38,23 @@
 	
 
  	#spa-hero {
- 		background-size: cover;
-    	background-repeat: no-repeat;
-    	padding-top:60px;
-    	height: 380px;
-    	border-radius: 10px;
+
+ 		margin-bottom: 45px;
+ 		
+ 		p { 
+ 			margin-bottom:0;
+ 		}
 
     	h2 { 
     		color: #acc37e;
     	}
 
-    	@include breakpoint(medium down) {
-    		background-position: 60% 0;
-
-    		.wrap {
-    			padding-left: 15px;
-    			color: #444;
-    		}    		
+    	.background {
+			background-size: cover; 
+			background-position: center center;  
+			min-height: 260px;  border-radius: 10px;		
     	}
+
  	}
 
 
