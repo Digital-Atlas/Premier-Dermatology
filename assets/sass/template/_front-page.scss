@@ -67,12 +67,15 @@
 				h1 { 
 					color:#fff;
 					padding-bottom:5px;
+					text-align:left;
 				}
 
 				h5 {
 					color:#fff;
 					font-size: 16px;
-					border-top: 0px;
+					//border-top: 0px;
+  					margin-top: 5px;
+					padding-top: 10px;					
 					//border-top: 1px solid $green;
 				}
 			}
@@ -94,15 +97,6 @@
 
 			}
 			
-			h1 {
-				
-			}
-			
-			h5 {
-  				margin-top: 5px;
-				padding-top: 10px;
-				border-top: 3px solid $green;				
-			}
 		}
 		
 				
@@ -451,7 +445,7 @@
 			display: block;
 			position: absolute;
 			bottom: 0;
-			left: 0;
+			left: -60px;
  			background: url( assets/images/home/green-circles.png);
 			background-position: right center;
 			background-repeat: no-repeat;

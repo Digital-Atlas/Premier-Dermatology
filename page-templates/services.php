@@ -85,7 +85,7 @@ get_template_part( 'template-parts/section', 'hero' );
 		}
 		
 		if( !empty( $columns ) ) {
-			$content = sprintf( '<div class="row small-up-1 large-up-3 grid" data-equalizer data-equalize-on="large">%s</div>', $columns );
+			$content = sprintf( '<div class="row small-up-1 large-up-4 grid" data-equalizer data-equalize-on="large">%s</div>', $columns );
  		}
 		
 				

@@ -13,9 +13,14 @@ function section_benefits() {
 
 								$image = sprintf('<img src="%s" alt="Image" />', get_sub_field('image'));
 								$title = get_sub_field('benefit_title');
-								$copy = get_sub_field('benefit_text');
 
-						        printf('<div class="column small-12 medium-12 large-4">%s<div class="inner"><h5>%s</h5><p>%s<p></div></div>', $image, $title, $copy);
+								if (empty(get_sub_field('benefit_text'))):
+									$copy = '';
+								else:
+									$copy = get_sub_field('benefit_text');
+								endif; 
+
+						        printf('<div class="column small-12 medium-12 large-4 block">%s<div class="inner"><h5>%s</h5>%s</div></div>', $image, $title, $copy);
 						        //printf('<div class="column small-10 medium-10"><strong>%s</strong><br />%s</div>', get_sub_field('benefit_title'), get_sub_field('benefit_text'));						        
 						       
 						    endwhile;
@@ -67,13 +72,73 @@ function section_benefits() {
 					endif;
 					}
 
-function section_summary() {
 
-	if (get_field('introduction_summary')):
+
+	function section_summary($breakpoint_classes = '') {
+
+		if (get_field('introduction_summary')):
+			
+			$content = get_field('introduction_summary');
+
+			printf('<div class="introductory-summary row small-12 %s">%s</div>', $breakpoint_classes, $content);
+		endif;
+
+	}					
+
+
+	function section_surgical_services() {
 		
-		$content = get_field('introduction_summary');
 
-		printf('<div class="introductory-summary row small-12">%s</div>', $content);
-	endif;
+		$attr = array ('class' => 'section default services-listing');
 
-}					
+		_s_section_open( $attr );
+	
+		//printf ('<div id="surgical-services">');
+		
+		$args = array(
+			'post_type'      => 'service',
+			'posts_per_page' => -1,
+			'post_status'    => 'publish',
+			'orderby' 		 => 'menu_order',
+			'order'          => 'ASC',
+			'tax_query' => array(
+					array(
+						'taxonomy' => 'service_cat',
+						'field'    => 'slug',
+						'terms'    => 'surgical',
+					),
+				),			
+ 		);
+
+		// Use $loop, a custom variable we made up, so it doesn't overwrite anything
+		$loop = new WP_Query( $args );
+	
+		// have_posts() is a wrapper function for $wp_query->have_posts(). Since we
+		// don't want to use $wp_query, use our custom variable instead.
+
+		
+
+		if ( $loop->have_posts() ) : 
+		
+			$columns = $sections = '';
+ 						
+ 			while ( $loop->have_posts() ) : $loop->the_post(); 
+
+ 			$title = sprintf('<h5>%s</h5>', get_the_title());
+ 			
+ 			$body = sprintf('%s', get_the_content());
+ 			$body = preg_replace ("/<h2>(.*?)<\/h2>/i", "", $body);
+
+
+ 			$output = sprintf('<div class="row columns small-12 medium-11 item-service">%s<p>%s</p></div>', $title, $body);
+
+ 			echo $output;
+
+ 			endwhile;
+
+ 		endif;
+		wp_reset_postdata();
+		
+		_s_section_close();
+
+	}

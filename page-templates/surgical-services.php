@@ -15,30 +15,7 @@ get_template_part( 'template-parts/section', 'hero' );
 
 	<div class="wrap">
 
-		<div class="row">
-		
-			<div class="large-4 columns" id="menu-choose-service">
-				<div id="secondary" class="widget-area" role="complementary">
-					
-					
-					<div class="show-for-large">
-					<h4>Choose a Service:</h4>
-					<?php echo get_services_list( 11 ); ?>
-					</div>
-					
-					<div class="hide-for-large">
-						<button class="button services" type="button" data-toggle="service-dropdown">Choose a Service</button>
-						<div class="dropdown-pane services bottom" id="service-dropdown" data-dropdown>
-							<?php echo get_services_list( 11 ); ?>
-						</div>
-					</div>
-				
-				</div>
-		
-			</div>
-		
-		
-			<div class="large-8 columns">
+			<div class="large-10 medium-centered columns">
 				
 				<div id="primary" class="content-area">
 				
@@ -63,14 +40,35 @@ get_template_part( 'template-parts/section', 'hero' );
 						echo '</div>';
 						
 					}
+					?>
+
+					</main>
+				</div>
+
+
+			</div> <!-- Close wrap -->
 				
-					
-					// Introductory Summary ACF
-					section_summary();
+			<?php 
 
 					// Benefits ACF Repeater
-					section_benefits();					
+					section_benefits();		
+					
+					printf('</div>'); // Close .wrap
 
+					printf('<div class="skin-cancer-treatments-hero"><h2>Skin Cancer Treatments</h2></div>');
+
+
+
+
+					printf('<section class="section default services"><div class="wrap">');
+					
+					// Introductory Summary ACF
+					section_summary('small-10 medium-8 medium-centered');
+
+					// Surgical Services Query
+					section_surgical_services();
+
+			
 					// Infographics ACF Repeater
 					//section_infographic_stats();
 				
@@ -79,16 +77,19 @@ get_template_part( 'template-parts/section', 'hero' );
 				
 
 					?>
+
+					</div>
+
+					<?
+					printf('<section class="section melanoma"><div class="melanoma-summary row small-12 medium-8 medium-centered">%s</div></div>', get_field('melanoma_summary'));
+					?>
+
+					</section>
+
 					</main>
 				
 				
-				</div>
-		
-		</div>
-		
-	</div>
-	
-	</div>
+
 	
 </section>
 

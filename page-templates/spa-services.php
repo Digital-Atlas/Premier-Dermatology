@@ -137,8 +137,6 @@ get_template_part( 'template-parts/section', 'hero' );
 		
 	</div>
 	
-	</div>
-	
 </section>
 
 <?php
