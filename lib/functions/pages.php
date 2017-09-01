@@ -14,7 +14,7 @@ function section_benefits() {
 								$image = sprintf('<img src="%s" alt="Image" />', get_sub_field('image'));
 								$title = get_sub_field('benefit_title');
 
-								if (empty(get_sub_field('benefit_text') == true)):
+								if (!get_sub_field('benefit_text')):
 									$copy = '';
 								else:
 									$copy = get_sub_field('benefit_text');
