@@ -48,15 +48,21 @@ $expanded-area-bg-color: #888;
  				position: relative;
 				
 				@media #{$large-up} {
-      				height: 240px;
+      				height: 200px;
 				}
 				
-				> div {
+				> div.inner {
+					display: block;
+				    width: 100%;
+				    height: 100%;
+				    background-color: rgba(0, 115, 170, 0.2);
+					/*
 					text-align: center;
 					position: absolute;
 					top: 50%;
 					transform: translateY(-50%);
 					width: 100%;
+					
 					
 					h3 {
 						color: #fff;
@@ -66,7 +72,7 @@ $expanded-area-bg-color: #888;
 						@include breakpoint(medium down) {
 							font-size: 26px;
 						}
-					}
+					}*/
 				}
 				
 			}

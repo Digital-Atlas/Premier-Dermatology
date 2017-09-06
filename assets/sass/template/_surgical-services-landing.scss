@@ -60,6 +60,9 @@
  			text-align: center; 
  			margin-bottom: 15px;
  				img {  
+ 					@include breakpoint(small only) {
+ 						max-height: 50px;
+ 					}
  					max-height: 100px;
  					width: auto;
  					}
