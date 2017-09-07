@@ -111,7 +111,7 @@ get_template_part( 'template-parts/section', 'hero' );
 	
 	
 	
-	// Plans
+	// Insurance Plans
 	section_plans();
 	function section_plans() {
 		
@@ -160,7 +160,26 @@ get_template_part( 'template-parts/section', 'hero' );
 		_s_section_close();
 	}
 	
-	
+	// Addendum
+
+	section_addendum();
+	function section_addendum() {
+
+		$addendum = get_field('addendum');
+
+		$attr = array( 'class' => 'section addendum' );
+		
+		_s_section_open( $attr );
+
+		echo '<div class="column row"><div class="entry-content">';
+
+		printf('%s', $addendum);
+
+		echo '</div></div>';
+ 		
+		_s_section_close();
+
+	}
 	
 	
 	
