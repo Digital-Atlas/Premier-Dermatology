@@ -56,8 +56,7 @@
 		.panel {
 				
 			display: inline-block;		
-			
-
+			text-align:left;
 
 			@include breakpoint(small only) {
 				padding: 40px 40px 20px 20px;
