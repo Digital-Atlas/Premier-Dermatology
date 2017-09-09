@@ -215,7 +215,7 @@ function section_hero() {
 		
 		// Review 		
 		if( !empty( $review_id ) ) {
- 			$review = sprintf( '<div class="doctor-review" data-equalizer-watch>%s</div>', get_doctor_review( $review_id ) );
+ 			$review = sprintf( '<div class="doctor-review">%s</div>', get_doctor_review( $review_id ) );
 			
 			$content .= sprintf( '<div class="small-12 large-6 columns">%s</div>', $review );
 		}
