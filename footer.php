@@ -144,5 +144,18 @@ function _s_footer_copyright() {
  </footer><!-- #colophon -->
 
 <?php wp_footer(); ?>
+
+<?php if (is_singular()): ?>
+<script>
+jQuery(document).ready(function(){
+    $ = jQuery; 
+    $('p').each(function() {
+    var $this = $(this);
+    if($this.html().replace(/\s|&nbsp;/g, '').length == 0)
+        $this.remove();
+}); 
+
+});</script>
+<?php endif; ?>
 </body>
 </html>

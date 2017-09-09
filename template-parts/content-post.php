@@ -12,8 +12,14 @@
 	
 	<?php
 	if( !is_single() && has_post_thumbnail() ) {
-		printf( '<a href="%s">', get_permalink() );
-		the_post_thumbnail( 'post-thumbnail' );	
+  		$thumb = get_post_thumbnail_id();
+  		$attachment_url = wp_get_attachment_url($thumb, 'large');
+ 		$image_url = aq_resize( $attachment_url, 400, null, true, true, true ); //resize & crop the image
+		$image = '<img src="' . $image_url . '" alt="Featured Image" />';			
+		printf( '<a href="%s">%s', get_permalink(),$image );
+	
+
+		//the_post_thumbnail( 'post-thumbnail' );	
 		echo '</a>';
 	}
 	?>

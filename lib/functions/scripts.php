@@ -90,6 +90,8 @@ function add_async_attribute($tag, $handle) {
    return $tag;
 }
 
+
+// Google Analytics
 add_action( 'wp_footer', 'add_analytics');
 
 function add_analytics() {

@@ -24,7 +24,7 @@ function kr_enqueue_stylesheet() {
 add_image_size( 'hero', 1800, 999 ); 
 add_image_size( 'doctor-thumbnail', 250, 250 ); 
 add_image_size( 'award-thumbnail', 100, 60 ); 
-add_image_size( 'post-thumbnail', 350, 180, true ); 
+add_image_size( 'post-thumbnail', 350, 220, true ); 
  //add_image_size( 'banner', 1500, 1500 );
 //add_image_size( 'event-thumbnail', 450, 286, array( 'center', 'top' ) ); 
 //add_image_size( 'homepage-link-thumbnail', 640, 540, array( 'center', 'top' ) ); 

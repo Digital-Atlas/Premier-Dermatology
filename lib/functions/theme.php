@@ -50,3 +50,4 @@ function _s_wrap_text( $string, $search = '#', $replace = 'span' ) {
 	// remove empty tags
 	return str_replace( sprintf('<%1$s></%1$s>', $replace), '', $string );
 }
+
