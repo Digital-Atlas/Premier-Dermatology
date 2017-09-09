@@ -77,7 +77,7 @@ get_template_part( 'template-parts/section', 'hero' );
 				
 				$details = sprintf( '<div class="details" data-equalizer-watch>%s%s</div>', $title, $description );
 					
-				$columns .= sprintf( '<div class="column"><a href="%s">%s%s<i class="icon icon-more"></i></a></div>', $url, $photo, $details );
+				$columns .= sprintf( '<div class="column small-12 medium-6 large-3"><a href="%s">%s%s<i class="icon icon-more"></i></a></div>', $url, $photo, $details );
  				
 			}
 	
@@ -85,7 +85,7 @@ get_template_part( 'template-parts/section', 'hero' );
 		}
 		
 		if( !empty( $columns ) ) {
-			$content = sprintf( '<div class="row small-up-1 large-up-4 grid" data-equalizer data-equalize-on="large">%s</div>', $columns );
+			$content = sprintf( '<div class="row  grid" data-equalizer data-equalize-on="large">%s</div>', $columns );
  		}
 		
 				

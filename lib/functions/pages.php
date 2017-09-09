@@ -20,7 +20,7 @@ function section_benefits() {
 									$copy = get_sub_field('benefit_text');
 								endif; 
 
-						        printf('<div class="column small-12 medium-12 large-4 block">%s<div class="inner"><h5>%s</h5>%s</div></div>', $image, $title, $copy);
+						        printf('<div class="column small-4 block">%s<div class="inner"><h5>%s</h5>%s</div></div>', $image, $title, $copy);
 						        //printf('<div class="column small-10 medium-10"><strong>%s</strong><br />%s</div>', get_sub_field('benefit_title'), get_sub_field('benefit_text'));						        
 						       
 						    endwhile;

@@ -52,7 +52,10 @@
 				
 				
 				img {
-					width: 100%;	
+					width: 100%;
+					@include breakpoint(large) {
+						max-height: 177px;
+					}
 				}
 				
 				.details {
@@ -204,12 +207,22 @@
 
  			.inner {
 				padding: 15px 10px 0 0;
-    			//background-color: #f4f4f4;
-    			//min-height: 220px;
 
+				@include breakpoint (small) {
+ 						font-size: 12px;
+ 					}
+ 					@include breakpoint (medium only) {
+ 						font-size: 20px;
+ 					} 	
  				h5 {
  					color: #acc37e;
  					margin-bottom:10px;
+ 					@include breakpoint (small) {
+ 						font-size: 12px;
+ 					}
+ 					@include breakpoint (medium only) {
+ 						font-size: 20px;
+ 					} 					
  				}
 
  				p {
@@ -248,6 +261,7 @@
 		border: 1px solid #ddd;
 		width: 100%;
 		float:left;
+		height: 120px;
 
 		.icon {
 			padding: 0;
@@ -260,6 +274,7 @@
 			}
 
 	}
+
 
 	.data  {
 		font-weight: bold;
@@ -296,6 +311,12 @@
 
 	//Foobox class
 	.video {
+
+		@include breakpoint (medium down) {
+			float:left !important;
+			margin-top: 15px;
+			padding-left:0;
+		}
 
 		img {
 			max-width: 400px; 
