@@ -217,7 +217,7 @@
  				h5 {
  					color: #acc37e;
  					margin-bottom:10px;
- 					@include breakpoint (small) {
+ 					@include breakpoint (small only) {
  						font-size: 12px;
  					}
  					@include breakpoint (medium only) {
