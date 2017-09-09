@@ -556,17 +556,24 @@
 
 			@include breakpoint(small) {
 				iframe {
-					max-height: 300px!important;	
+					max-height: 250px!important;	
 				}				
 			}
 
 			@include breakpoint(large) {
-				max-height: 350px!important;
-				
+
+				iframe {
+					max-height: 300px!important;	
+				}
+			}
+
+			@include breakpoint(large) {
+
 				iframe {
 					max-height: 350px!important;	
 				}
 			}
+
 
 		}
 		
