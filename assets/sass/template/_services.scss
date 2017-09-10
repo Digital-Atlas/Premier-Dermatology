@@ -28,6 +28,10 @@
 			.column {
 				margin-bottom: 50px;
 				
+				@include breakpoint(xlarge down) {
+					padding:10px;
+				}
+
 				> a {
 					border: 1px solid #b9b9b9;
 					display: block;
@@ -70,9 +74,9 @@
 						color: $blue;
 						text-transform: uppercase;
 						font-size:24px;
-						/*@media only screen and (min-width:980px) and (max-width:1199px) {
-							font-size: 24px;
-						}*/
+						@media only screen and (min-width:980px) and (max-width:1199px) {
+							font-size: 18px;
+						}
 					}
 					
 					p {
@@ -199,6 +203,10 @@
  			padding-left:10px;
  			padding-right: 10px;
 
+ 			@include breakpoint(small only) {
+ 				padding-right:0;
+ 			}
+
 			img {
 				@include breakpoint(medium down) {
 					width:100%;
@@ -210,6 +218,7 @@
 
 				@include breakpoint (small only) {
  						font-size: 12px;
+ 						text-align:center;
  					}
  					@include breakpoint (medium only) {
  						font-size: 20px;
@@ -244,6 +253,14 @@
 .introductory-summary {
 	margin-top: 15px;
 	padding-left: 10px;
+
+	p {
+		@include breakpoint(medium down) {
+			margin-bottom:0;
+			padding:0;
+		}
+	}
+
 }
 
 .infographic-stats {
@@ -289,6 +306,10 @@
 
 		h3 {
 			color: #ACC37E;
+
+			@include breakpoint(xlarge down) {
+				font-size: 20px;
+			}
 		}
 	}
 
@@ -319,8 +340,8 @@
 	//Foobox class
 	.video {
 
-		@include breakpoint(large) {
-			margin-top:50px;
+		@include breakpoint(xlarge down) {
+			margin-top:30px;
 		}
 
 		@include breakpoint (medium down) {

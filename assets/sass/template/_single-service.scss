@@ -88,8 +88,11 @@
 	.video-block {
 		//border: 1px solid $medium-gray;	
 
+		max-width:800px; // Limit size of FooBox thumbnail, IE
+
 		img {
-			max-width:800px // Limit size of FooBox thumbnail, IE
+			width:100%;
+			
 		}
 	}
 	

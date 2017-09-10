@@ -6,7 +6,12 @@
 	max-width: 100%!important;
 	
 	textarea, select, input,  {
-		border: 2px solid rgb(238,238,238);	
+		border: 1px solid #aaa;
+		padding: 10px !important;
+	}
+
+	input[type=submit] {
+		padding: 10px 40px !important;
 	}
 }
 
