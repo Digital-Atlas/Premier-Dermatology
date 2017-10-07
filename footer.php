@@ -145,7 +145,7 @@ function _s_footer_copyright() {
 
 <?php wp_footer(); ?>
 
-<?php if (is_singular()): ?>
+<?php if (is_singular('post')): ?>
 <script>
 jQuery(document).ready(function(){
     $ = jQuery; 
