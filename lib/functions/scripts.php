@@ -96,8 +96,19 @@ add_action( 'wp_footer', 'add_analytics');
 
 function add_analytics() {
 
-$script = sprintf('<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-20585528-1", {"cookieDomain":"auto"});ga("send", "pageview");</script>');
+$script_old = sprintf('<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,"script","//www.google-analytics.com/analytics.js","ga");ga("create", "UA-20585528-1", {"cookieDomain":"auto"});ga("send", "pageview");</script>');
 
+    $script = sprintf('<!-- Global Site Tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-44281803-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments)};
+    gtag(\'js\', new Date());
+
+    gtag(\'config\', \'UA-44281803-2\');
+    </script>
+');
+echo $script_old;
 echo $script;
 }
 
