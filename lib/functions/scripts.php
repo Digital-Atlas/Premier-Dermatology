@@ -108,7 +108,8 @@ $script_old = sprintf('<script>(function(i,s,o,g,r,a,m){i["GoogleAnalyticsObject
     gtag(\'config\', \'UA-44281803-2\');
     </script>
 ');
-echo $script_old;
+
+               echo $script_old;
 echo $script;
 }
 

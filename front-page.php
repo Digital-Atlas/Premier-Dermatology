@@ -102,7 +102,7 @@ get_header(); ?>
 			$args = array(
 				'html5'   => '<section %s>',
 				'context' => 'section',
-				'attr' => array( 'id' => 'hero', 'class' => 'section hero'), //, 'style' => $background ),
+				'attr' => array( 'id' => 'hero', 'class' => 'section hero', 'role' => 'region', 'aria-labelledby' => 'banner'), //, 'style' => $background ),
 				'echo' => false
 			);
 			

@@ -19,7 +19,7 @@ function section_hero() {
 		return false;	
 	}
 	
-	$attr = array( 'class' => 'section hero' );
+	$attr = array( 'class' => 'section hero', 'role' => 'region', 'aria-labelledby' => 'banner' );
 	_s_section_open( $attr );
 	printf( '<div class="column row"><div class="table"><div class="cell">%s</div></div></div>', $content );	
 	_s_section_close();		

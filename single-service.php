@@ -10,7 +10,7 @@ function section_hero() {
 	
 	$content = $heading;
 	
-	$attr = array( 'class' => 'section hero' );
+	$attr = array( 'class' => 'section hero', 'role' => 'region', 'aria-labelledby' => 'banner' );
 	_s_section_open( $attr );
 	printf( '<div class="column row"><div class="table"><div class="cell">%s</div></div></div>', $content );	
 	_s_section_close();		
@@ -30,7 +30,7 @@ if( !empty( $terms ) ) {
 }
 ?>
 
-<section class="section default">
+<section class="section default" id="services" role="region" aria-labelledby="services">
 
 	<div class="wrap">
 

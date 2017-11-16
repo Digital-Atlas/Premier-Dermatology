@@ -351,16 +351,15 @@ function get_media_type_service( $single ) {
 	$background = '';
 	$thumbnail = '';
 	$first_photo = $photos[0];
-	$attachment_id = $first_photo['ID'];
+        $attachment_id = $first_photo['ID'];
+        $caption = $first_photo['title'];
 	if( !empty( $attachment_id ) ) {
 		$photo = wp_get_attachment_image_src( $attachment_id, 'large' );
 		$background = sprintf( ' style="background-image: url(%s);"', $photo[0] );
 		$background = '';
 		$thumbnail = wp_get_attachment_image( $attachment_id, 'large' );
-		$resized_thumbnail = sprintf( '<img src="%s" />', aq_resize( $photo[0], 640, 360, true, true, true ) );
+		$resized_thumbnail = sprintf( '<img src="%s" alt="%s" />', aq_resize( $photo[0], 640, 360, true, true, true ), $caption );
 	}
-	
-	$caption = $first_photo['title'];
 	
 	$thumbnail = sprintf( '<div class="thumbnail"%s><a href="%s" class="foobox">%s</a></div>', $background, $photo[0], $resized_thumbnail );
  	$caption  = sprintf( '<div class="caption">%s</div>', $caption );

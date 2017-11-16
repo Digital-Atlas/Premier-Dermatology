@@ -14,7 +14,7 @@ function section_hero() {
 	
 	$content = $heading . $specialties;
 	
-	$attr = array( 'class' => 'section hero' );
+	$attr = array( 'id' => 'banner', 'class' => 'section hero', 'role' => 'region', 'aria-labelledby' => 'banner' );
 	_s_section_open( $attr );
 	printf( '<div class="column row"><div class="table"><div class="cell">%s</div></div></div>', $content );	
 	_s_section_close();		
@@ -32,7 +32,7 @@ function section_hero() {
 				
 		global $post;
 		
-		$attr = array( 'class' => 'section default' );
+		$attr = array( 'class' => 'section default', 'role' => 'region', 'aria-labelledby' => 'biography', 'id' => 'biography');
 		_s_section_open( $attr );		
   			
 				$photo = get_the_post_thumbnail( get_the_ID(), 'doctor-thumbnail' );
@@ -81,7 +81,7 @@ function section_hero() {
 			return false;
 		}
 		
-		$attr = array( 'class' => 'section video-testimonial' );
+		$attr = array( 'class' => 'section video-testimonial', 'role' => 'region', 'aria-labelledby' => 'testimonial', 'id' => 'testimonial' );
 		_s_section_open( $attr );
 		
  			print( '<div class="row" data-equalizer data-equalize-on="small">' );
@@ -141,7 +141,7 @@ function section_hero() {
 		}
 		*/
 		
-		$attr = array( 'class' => 'section media-carousel' );
+		$attr = array( 'class' => 'section media-carousel', 'role' => 'region', 'aria-labelledby' => 'carousel', 'id' => 'carousel');
 		_s_section_open( $attr );
 		
  			print( '<div class="column row" data-equalizer data-equalize-on="medium">' );
@@ -222,7 +222,7 @@ function section_hero() {
 		
 		
  		
-		$attr = array( 'class' => 'section testimonial-review' );
+		$attr = array( 'class' => 'section testimonial-review','role' => 'region', 'aria-labelledby' => 'reviews', 'id' => 'reviews' );
 		_s_section_open( $attr );
 		
  			print( '<div class="row" data-equalizer data-equalize-on="large">' );
@@ -330,7 +330,7 @@ function section_hero() {
 		}
 		
 		
-		$attr = array( 'class' => 'section services' );
+		$attr = array( 'class' => 'section services', 'role' => 'region', 'aria-labelledby' => 'services', 'id' => 'services' );
 		_s_section_open( $attr );
 		
  			print( '<div class="column row">' );

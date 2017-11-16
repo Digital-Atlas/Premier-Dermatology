@@ -10,7 +10,18 @@
  	
 	
 	// Resize function
-	$(window).on('load resize', function(e){
+$(window).on('load changed.zf.mediaquery', function(event, newSize, oldSize) {
+       
+        $( '.nav-primary li:has(ul)' ).doubleTapToGo();
+       
+        if( Foundation.MediaQuery.atLeast('xlarge') ) {
+          $( '.nav-primary li:has(ul)' ).doubleTapToGo( 'unbind' );
+        }
+       
+    });
+ 
+        
+        /*	$(window).on('load resize', function(e){
 	  	if( $(window).width() > 1024) {
 		  $( '.nav-primary li:has(ul)' ).doubleTapToGo();
 		}  
@@ -18,7 +29,7 @@
 			$( '.nav-primary li:has(ul)' ).doubleTapToGo( 'unbind' );
 		}
 	});
-	
+*/	
  	
 	var $all_oembed_videos = $("iframe[src*='youtube'], iframe[src*='vimeo']");
 	
