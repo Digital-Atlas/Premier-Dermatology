@@ -62,10 +62,9 @@ function _s_get_foobox_video( $args ) {
 		$attachment_id = get_post_thumbnail_id( $video_id );
 		if( !empty( $attachment_id ) ) {
 			$thumbnail = wp_get_attachment_image( $attachment_id, 'large' );
-			
 			if( function_exists( 'aq_resize' ) && ( $resize_width + $resize_height > 0 ) ) {
 				$photo = wp_get_attachment_image_src( $attachment_id, 'large' );
-				$thumbnail = sprintf( '<img src="%s" />', aq_resize( $photo[0], $resize_width, $resize_height, true, true, true ) );
+				$thumbnail = sprintf( '<img src="%s" alt="%s"/>', aq_resize( $photo[0], $resize_width, $resize_height, true, true, true ), get_the_title( $video_id ) );
 			}
 			
 		}
