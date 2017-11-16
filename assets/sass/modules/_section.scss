@@ -36,7 +36,7 @@
 				vertical-align: middle;	
 				padding: 25px 0;
 				@include breakpoint(large) {
-					min-height: 160px;
+					height: 160px;
 				}				
 			}
 		}
