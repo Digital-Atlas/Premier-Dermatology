@@ -35,6 +35,9 @@
 				display: table-cell;
 				vertical-align: middle;	
 				padding: 25px 0;
+				@include breakpoint(large) {
+					min-height: 160px;
+				}				
 			}
 		}
 		
