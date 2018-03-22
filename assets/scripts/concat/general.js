@@ -15,7 +15,7 @@ $(window).on('load changed.zf.mediaquery', function(event, newSize, oldSize) {
         $( '.nav-primary li:has(ul)' ).doubleTapToGo();
        
         if( Foundation.MediaQuery.atLeast('xlarge') ) {
-          $( '.nav-primary li:has(ul)' ).doubleTapToGo( 'unbind' );
+          $( '.nav-primary li:has(ul)' ).doubleTapToGo( 'destroy' );
         }
        
     });
