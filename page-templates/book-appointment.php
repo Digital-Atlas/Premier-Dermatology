@@ -60,12 +60,12 @@ get_template_part( 'template-parts/section', 'hero' );
 		_s_section_open( $attr );
 	
 				
-		$column_book_zocdoc_appointment = sprintf( '<li class="column medium-6 small-12"><div><a href="%s"><img src="%s" alt="Book Online Appointment" /></a><div class="booking-details" data-equalizer-watch><a href="%s" class="more"><div class="appointment-book">Book Online Appointment <i class="icon icon-arrow blue"></i></span></a></div>%s</div></li>', $book_zocdoc_url, $book_zocdoc_image, $book_zocdoc_url, $book_zocdoc_cta_text);
+		$column_book_zocdoc_appointment = sprintf( '<div class="column medium-6 small-12"><a href="%s"><img src="%s" alt="Book Online Appointment" /></a><div class="booking-details" data-equalizer-watch><a href="%s" class="more"><div class="appointment-book">Book Online Appointment <i class="icon icon-arrow blue"></i></span></a></div>%s</div></div>', $book_zocdoc_url, $book_zocdoc_image, $book_zocdoc_url, $book_zocdoc_cta_text);
 				
-		$column_request_appointment = sprintf( '<li class="column medium-6 small-12"><div><a href="%s"><img src="%s" alt="Request an Appointment" /></a><div class="booking-details" data-equalizer-watch><a href="%s" class="more"><div class="appointment-book">Request an Appointment <i class="icon icon-arrow blue"></i></span></a></div>%s</div></li>', $request_appointment_url,$request_appointment_image, $request_appointment_url, $request_appointment_cta_text);
+		$column_request_appointment = sprintf( '<div class="column medium-6 small-12"><a href="%s"><img src="%s" alt="Request an Appointment" /></a><div class="booking-details" data-equalizer-watch><a href="%s" class="more"><div class="appointment-book">Request an Appointment <i class="icon icon-arrow blue"></i></span></a></div>%s</div></li>', $request_appointment_url,$request_appointment_image, $request_appointment_url, $request_appointment_cta_text);
 			
 			
- 		printf( '<div class="expanding-grid"><ul class="row medium-10 small-12 items" data-equalizer data-equalize-on="medium">%s%s</ul></div>', $column_book_zocdoc_appointment,$column_request_appointment);
+ 		printf( '<div class="expanding-grid"><div class="row medium-10 small-12 items" data-equalizer data-equalize-on="medium">%s%s</div></div>', $column_book_zocdoc_appointment,$column_request_appointment);
 			
 		
 		_s_section_close();
