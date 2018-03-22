@@ -98,7 +98,7 @@ get_template_part( 'template-parts/section', 'hero' );
 				if( !empty( $title_background ) ) {
 					$title_background = sprintf( 'style="background-image: url(%s);"', $title_background[0] );
 				}
-				$title = sprintf( '<div class="location-title"%s><div class="inner"></div></div>', $title_background );
+				$title = sprintf( '<div class="location-title" %s><div class="inner"></div></div>', $title_background );
 				
   				
 				$address = sprintf( '<h4>%s</h4><div class="location-address">%s</div>', get_the_title(), apply_filters( 'pb_the_content', get_post_meta( get_the_ID(), 'address', true ) ) );
