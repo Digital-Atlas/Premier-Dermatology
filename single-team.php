@@ -60,7 +60,7 @@ function section_hero() {
 				// Awards
 				echo get_doctor_awards();
 		
-			echo '</div></div>';
+			echo '</div></div></div>';
 		_s_section_close();	
 	}
 	

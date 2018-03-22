@@ -256,7 +256,8 @@ get_header(); ?>
 						$url = $page;
 					}
 					
-					$button = sprintf('<a href="%s" class="btn white">Learn More</a>', $url);
+                                        $button ='';
+                                        //$button = sprintf('<a href="%s" class="btn white">Learn More</a>', $url);
 
 					$details = sprintf( '<div class="details" data-equalizer-watch>%s%s%s</div>', $title, $description, $button);
 						
