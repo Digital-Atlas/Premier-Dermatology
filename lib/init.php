@@ -54,7 +54,7 @@
 	
 	include_once( 'functions/addtoany.php' );
 	
-	//include_once( 'functions/gravity-forms.php' );
+	include_once( 'functions/gravity-forms.php' );
 	
 	//include_once( 'functions/widgets.php' );
 	

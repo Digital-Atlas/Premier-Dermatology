@@ -42,9 +42,23 @@ get_template_part( 'template-parts/section', 'hero' );
 	
 	</main>
 
+    <?php
+                        // Parse URL for data to pass along
+
+                        $url = $_SERVER['REQUEST_URI'];
+                        $parsed_array = parse_url(urldecode($url));
+
+                        $string_array = explode('&',$parsed_array['query']);
+
+                        $full_name = $string_array[0];
+                        $email = $string_array[1];
+                        $phone = $string_array[2];
+
+
+    ?>
+
     <script type="text/javascript">
-    var clientId = '308274';
-    YoTrack("forefrontderm", clientId, function(err, api) {
+    YoTrack("forefrontderm", "308274", function(err, api) {
         /** *****************************************************************
          *  Payload as an object
          *******************************************************************/
@@ -54,7 +68,7 @@ get_template_part( 'template-parts/section', 'hero' );
         });
 
     });
-    </script> 
+    </script>
 
 </div>
 

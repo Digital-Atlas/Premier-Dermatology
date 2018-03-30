@@ -7,7 +7,9 @@ function _s_register_scripts() {
 	wp_register_script( 'front-page', trailingslashit( THEME_JS ) . 'front-page.js', array('jquery'), '', true );
 	
  	wp_register_script( 'locations', trailingslashit( THEME_JS ) . 'locations.js', array('jquery'), '', true );
-	
+
+        wp_register_script( 'doubletap', trailingslashit( THEME_JS ) . 'concat/doubletaptogo.js', array('jquery'), '', true); 
+
 	$project_script_url = 'project.js';
 						
 	// Child Theme JS
@@ -19,7 +21,9 @@ function _s_register_scripts() {
 					), 
 				NULL, TRUE );
 				
-	
+
+        wp_register_script( 'yotrack', '//yotrack.cdn.ybn.io/yotrack.min.js', array('jquery'), '', false );
+
 	// Owl Carousel
 	wp_register_script( 'owl-carousel', 
 						trailingslashit( THEME_ASSETS ) . 'modules/owl.carousel/dist/owl.carousel.min.js', 
@@ -42,7 +46,10 @@ add_action( 'wp_enqueue_scripts', '_s_load_scripts' );
 function _s_load_scripts() {
  		
 		wp_enqueue_script( 'project' );
-		
+                wp_enqueue_script( 'yotrack' );
+
+                wp_enqueue_script( 'doubletap' );
+
 		if( is_front_page() ) {
 			wp_enqueue_style( 'owl-carousel' );
 			wp_enqueue_style( 'owl-carousel-theme' );
