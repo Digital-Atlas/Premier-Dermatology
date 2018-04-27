@@ -58,7 +58,11 @@ get_template_part( 'template-parts/section', 'hero' );
 	    $city = $string_array[5];
 	    $state = $string_array[6];
 	    $zip_code = $string_array[7];
-	    $preferred_time = $string_array[8];                        
+	    $patient_type= $string_array[8];
+	    $insurance_plan = $string_array[9];
+	    $hmo = $string_array[10];
+	    $preferred_time = $string_array[11];                  
+
     ?>
 
     <script type="text/javascript">
@@ -75,6 +79,9 @@ get_template_part( 'template-parts/section', 'hero' );
             city: "<?php echo $city; ?>",
             state: "<?php echo $state; ?>",
             zip_code: "<?php echo $zip_code; ?>",
+            patient_type: "<?php echo $patient_type; ?>",
+            insurance_plan: "<?php echo $insurance_plan; ?>",
+            hmo: "<?php echo $hmo; ?>",
             preferred_time: "<?php echo $preferred_time; ?>"
 
         }, function(err, data) {
