@@ -43,18 +43,22 @@ get_template_part( 'template-parts/section', 'hero' );
 	</main>
 
     <?php
-                        // Parse URL for data to pass along
+	    // Parse URL for data to pass along
 
-                        $url = $_SERVER['REQUEST_URI'];
-                        $parsed_array = parse_url(urldecode($url));
+	    $url = $_SERVER['REQUEST_URI'];
+	    $parsed_array = parse_url(urldecode($url));
 
-                        $string_array = explode('&',$parsed_array['query']);
+	    $string_array = explode('&',$parsed_array['query']);
 
-                        $full_name = $string_array[0];
-                        $email = $string_array[1];
-                        $phone = $string_array[2];
-
-
+	    $full_name = $string_array[0];
+	    $email = $string_array[1];
+	    $phone = $string_array[2];
+	   	$address = $string_array[3];
+	    $address2 = $string_array[4];
+	    $city = $string_array[5];
+	    $state = $string_array[6];
+	    $zip_code = $string_array[7];
+	    $preferred_time = $string_array[8];                        
     ?>
 
     <script type="text/javascript">
@@ -62,7 +66,18 @@ get_template_part( 'template-parts/section', 'hero' );
         /** *****************************************************************
          *  Payload as an object
          *******************************************************************/
-        api.trackData({ name: "<?php echo $full_name;?>", email:"<?php echo $email; ?>", phone: "<?php echo $phone; ?>" }, function(err, data) {
+        api.trackData({ 
+        	name: "<?php echo $full_name;?>", 
+        	email:"<?php echo $email; ?>", 
+        	phone: "<?php echo $phone; ?>",
+ 			address: "<?php echo $address; ?>",
+            address2: "<?php echo $address2; ?>",
+            city: "<?php echo $city; ?>",
+            state: "<?php echo $state; ?>",
+            zip_code: "<?php echo $zip_code; ?>",
+            preferred_time: "<?php echo $preferred_time; ?>"
+
+        }, function(err, data) {
             /* Payload submission complete */
             console.log("data", data); // Payload sent to dashboard as JSON Object
         });
