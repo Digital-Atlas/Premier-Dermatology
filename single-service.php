@@ -6,7 +6,7 @@ get_header(); ?>
 section_hero();
 function section_hero() {
 		
-	$heading = sprintf( '<h1>%s</h1>', get_the_title() );
+	$heading = sprintf( '<h1>%s Treatment Specialists</h1>', get_the_title() );
 	
 	$content = $heading;
 	
