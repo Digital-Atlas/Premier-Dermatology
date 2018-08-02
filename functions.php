@@ -155,4 +155,13 @@ if( ! function_exists( 'fix_no_editor_on_posts_page' ) ) {
         add_post_type_support( 'page', 'editor' );
     }
     add_action( 'edit_form_after_title', 'fix_no_editor_on_posts_page', 0 );
- }
+}
+
+
+function bybe_remove_yoast_json($data){
+        $data = array();
+            return $data;
+          }
+  add_filter('wpseo_json_ld_output', 'bybe_remove_yoast_json', 10, 1);
+
+

@@ -53,7 +53,7 @@ get_template_part( 'template-parts/section', 'hero' );
 	    $full_name = $string_array[0];
 	    $email = $string_array[1];
 	    $phone = $string_array[2];
-	   	$address = $string_array[3];
+	    $address = $string_array[3];
 	    $address2 = $string_array[4];
 	    $city = $string_array[5];
 	    $state = $string_array[6];
@@ -71,10 +71,10 @@ get_template_part( 'template-parts/section', 'hero' );
          *  Payload as an object
          *******************************************************************/
         api.trackData({ 
-        	name: "<?php echo $full_name;?>", 
-        	email:"<?php echo $email; ?>", 
-        	phone: "<?php echo $phone; ?>",
- 			address: "<?php echo $address; ?>",
+            name: "<?php echo $full_name;?>", 
+            email:"<?php echo $email; ?>", 
+            phone: "<?php echo $phone; ?>",
+ 	    address: "<?php echo $address; ?>",
             address2: "<?php echo $address2; ?>",
             city: "<?php echo $city; ?>",
             state: "<?php echo $state; ?>",
