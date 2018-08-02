@@ -2,6 +2,33 @@
 
 
 
+/* cURL Reputation Widget API - Outputs reviews schema-enabled HTML */
+function reputation_widget_reviews ( $reputation_link_id = null ) {
+	$reputation_widget_reviews = sprintf('https://widgets.reputation.com/widgets/5b439740b9d46c7c4e579351/run?tk=b07514e91ca&lk=%s&start=0', $reputation_link_id);
+
+	$output = get_data($reputation_widget_reviews);
+
+	if (isset($error_msg)) {
+    	return '<div class="error">No reviews available.</div>';
+	} else {
+		return $output;	
+	}
+	
+}
+
+
+/* cURL Reputation Widget API - Outputs ratings ONLY schema-enabled HTML */
+function reputation_widget_ratings ( $reputation_link_id = null ) {
+	$reputation_widget_ratings = sprintf('https://widgets.reputation.com/widgets/5b439cc5ff3b47757c7097ef/run?tk=b07514e91ca&lk=%s', $reputation_link_id);
+
+	$output = get_data($reputation_widget_ratings);
+	
+	if (isset($error_msg)) {
+    	return '<div class="error">No reviews available.</div>';
+	} else {
+		return $output;	
+	}	
+}	
 
 
 function get_doctors( $row ) {

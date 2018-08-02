@@ -1,4 +1,4 @@
-# Copyright (C) 2017 _s
+# Copyright (C) 2018 _s
 # This file is distributed under the same license as the _s package.
 msgid ""
 msgstr ""
@@ -88,6 +88,10 @@ msgstr ""
 #: searchform.php:16
 msgctxt "submit button"
 msgid "Search"
+msgstr ""
+
+#: page-templates/book-appointment-completed.php:2
+msgid "Book Appointment Completed"
 msgstr ""
 
 #: page-templates/book-appointment.php:2

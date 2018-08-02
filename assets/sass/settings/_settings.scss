@@ -13,7 +13,7 @@
 // 1. Global
 // ---------
 
-$global-font-size: 100%;
+$global-font-size: 100% !important;
 $global-width: 1440px;
 $global-lineheight: 1.4;
 
@@ -41,8 +41,7 @@ $light-blue: #9EC0D8;
  
 $body-background: #ccc;
 $body-font-color: #444;
-$body-font-family: 'Century Gothic', sans-serif;
-
+$body-font-family: 'Century Gothic', sans-serif !important;
 
 $dropdown-border: 1px solid $blue;
 

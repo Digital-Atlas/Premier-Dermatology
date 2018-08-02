@@ -37,6 +37,8 @@ function _s_register_scripts() {
 	wp_register_style( 'owl-carousel-theme', 
 					   trailingslashit( THEME_ASSETS ) . 'modules/owl.carousel/dist/assets/owl.theme.default.min.css' , 
 					   false );
+
+	wp_enqueue_style( 'reputation-widgets', 'https://widgets.reputation.com/lib/widgets.css', array(), 'screen' );
 	
 }
 

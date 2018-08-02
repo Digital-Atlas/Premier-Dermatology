@@ -26,6 +26,9 @@ function section_hero() {
 	<main id="main" class="site-main" role="main">
 	<?php
 		
+	// Add Reputation.com reviews aggregate schema
+	echo sprintf('<div class="hide">%s</div>',reputation_widget_ratings ($reputation_link_id ));
+
 	// Default
 	section_default();
 	function section_default() {
@@ -215,7 +218,7 @@ function section_hero() {
 		
 		// Review 		
 		if( !empty( $review_id ) ) {
- 			$review = sprintf( '<div class="doctor-review">%s</div>', get_doctor_review( $review_id ) );
+ 			$review = sprintf( '<div class="doctor-review">%s</div>', reputation_widget_reviews( $review_id ) );
 			
 			$content .= sprintf( '<div class="small-12 large-6 columns">%s</div>', $review );
 		}
