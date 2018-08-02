@@ -1,6 +1,17 @@
 <?php
 get_header(); ?>
 
+<style>
+
+.doctor-review {
+overflow:scroll;
+max-height: 350px;
+padding: 10px;
+border: 1px solid #ddd;
+}
+
+</style>
+
 <?php
 // Hero
 section_hero();
@@ -27,9 +38,10 @@ function section_hero() {
 	<?php
 		
 	// Add Reputation.com reviews aggregate schema
-	echo sprintf('<div class="hide">%s</div>',reputation_widget_ratings ($reputation_link_id ));
+        $review_id = $post->review_id;
+        echo sprintf('<div class="hide">%s</div>',reputation_widget_ratings ($review_id ));
 
-	// Default
+	// Defaulet 
 	section_default();
 	function section_default() {
 				
