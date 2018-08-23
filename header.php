@@ -18,6 +18,12 @@
 <link rel='dns-prefetch' href='//maps.googleapis.com' />
 
 <?php wp_head(); ?>
+
+<style>
+.icon-phone:before {
+    content: '';
+} 
+</style>
 </head>
 
 <body <?php body_class(); ?>>

@@ -37,9 +37,6 @@ function section_hero() {
 	<main id="main" class="site-main" role="main">
 	<?php
 		
-	// Add Reputation.com reviews aggregate schema
-        $review_id = $post->review_id;
-        echo sprintf('<div class="hide">%s</div>',reputation_widget_ratings ($review_id ));
 
 	// Defaulet 
 	section_default();
@@ -53,11 +50,16 @@ function section_hero() {
 				$photo = get_the_post_thumbnail( get_the_ID(), 'doctor-thumbnail' );
 													
 				$social_media = get_doctor_social_profiles();
-			
+
+                                $review_id = $post->review_id;
+                              
+                                $ratings =  sprintf('<div><br />%s</div>',reputation_widget_ratings ($review_id ));
+
 			print( '<div class="row">' );
 			
-			printf( '<div id="headshot" class="small-12 large-3 columns">%s%s</div>', $photo, $social_media );
-			
+			printf( '<div id="headshot" class="small-12 large-3 columns">%s%s%s</div>', $photo, $social_media,$ratings);
+
+
 			print( '<div class="small-12 large-9 columns"><div class="entry-content bio">' );
 		
 				while ( have_posts() ) :
