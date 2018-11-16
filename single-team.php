@@ -52,8 +52,12 @@ function section_hero() {
 				$social_media = get_doctor_social_profiles();
 
                                 $review_id = $post->review_id;
-                              
-                                $ratings =  sprintf('<div><br />%s</div>',reputation_widget_ratings ($review_id ));
+
+                                if ( $review_id ) {
+                                    $ratings =  sprintf('<div><br />%s</div>',reputation_widget_ratings ($review_id ));
+                                } else {
+                                    $ratings = '';
+                                };
 
 			print( '<div class="row">' );
 			
