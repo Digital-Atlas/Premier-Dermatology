@@ -20,7 +20,9 @@ function _s_location_office_hours() {
 		if( is_array( $hours ) && count( $hours ) == 2 ) {
 			
 			$day_name = 
-			$out .= sprintf( '<li><strong>%s</strong> %sam - %spm</li>', ucwords( $day_names[$day] ), $hours[0], $hours[1] );	
+                            $out .= sprintf( '<li><strong>%s</strong> %s - %s</li>', ucwords( $day_names[$day] ), $hours[0], $hours[1] );
+
+                            //var_dump(echo date("H:i", strtotime($hours[0] . ':' . $hours[1]));        
 		}
 		else {
 			$out .= sprintf( '<li><strong>%s</strong> %s</li>', ucwords( $day_names[$day] ), 'Closed' );
