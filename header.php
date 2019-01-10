@@ -20,6 +20,40 @@
 <?php wp_head(); ?>
 
 <style>
+
+.gform_wrapper .top_label input.medium, .gform_wrapper .top_label input.large {
+    background: #e5e5e5;
+    color: #444;
+    border: none;
+    min-height: 45px;
+    border-radius: 5px;
+}
+
+.gform_wrapper select.small, .gform_wrapper select.medium {
+    height: 40px;
+    background: #e5e5e5;
+    border: none;
+    border-radius: 0;
+    color: #444;
+}
+
+.gform_wrapper .top_label .gfield_label {
+text-transform: inherit;
+font-weight: normal;
+}
+
+.gform_wrapper .gfield_radio li label {
+    font-size: 16px;
+}
+
+.gform_wrapper ul.gfield_radio li {
+        margin-right: 0 !important;
+}
+
+.widget-area input.medium {
+    width: 100% !important;
+}
+
 .icon-phone:before {
     content: '';
 } 

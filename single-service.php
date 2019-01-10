@@ -1,7 +1,18 @@
 <?php
 get_header(); ?>
 
+<style>
+
+#secondary .menu li {
+border-bottom: 1px dotted #e8e8e8;
+    padding-bottom: 5px;
+}
+
+</style>
+
+
 <?php
+
 // Hero
 section_hero();
 function section_hero() {
@@ -9,7 +20,6 @@ function section_hero() {
 	$heading = sprintf( '<h1>%s Treatment Specialists</h1>', get_the_title() );
 	
 	$content = $heading;
-	
 	$attr = array( 'class' => 'section hero', 'role' => 'region', 'aria-labelledby' => 'banner' );
 	_s_section_open( $attr );
 	printf( '<div class="column row"><div class="table"><div class="cell">%s</div></div></div>', $content );	
@@ -28,6 +38,21 @@ if( !empty( $terms ) ) {
 	$post_term = $terms[0];
 	$service_cat = $post_term->term_id;
 }
+
+// Request a Consult
+
+function _consult_form($string) {
+
+    if (!isset($string)) {
+        $string = "Request a consultation";
+    }
+
+    $consult = do_shortcode('[gravityform id=3 title=false description=false ajax=true tabindex=1]');
+    $form = sprintf('<div class="entry-content" style="margin-top:30px;" id="consult-form"><h4>%s</h4>%s</div>', $string, $consult);
+
+    return $form; 
+}
+
 ?>
 
 <section class="section default" id="services" role="region" aria-labelledby="services">
@@ -52,14 +77,12 @@ if( !empty( $terms ) ) {
 						echo $services;
 						?>
 					</div>
-					
-					<div class="hide-for-large">
-						<button class="button services" type="button" data-toggle="service-dropdown">Select Service</button>
-						<div class="dropdown-pane services bottom" id="service-dropdown" data-dropdown>
-							<?php echo $services; ?>
-						</div>
-					</div>
-				
+
+                    
+                                        <div>
+                                            <?php echo _consult_form("Request a consultation"); ?>
+                                        </div>
+		
 				</div>
 			
 			</div>
@@ -73,9 +96,9 @@ if( !empty( $terms ) ) {
 					<?php
 						
 					// Default
-					section_default();
-					function section_default() {
-								
+					section_default($button);
+					function section_default($button) {
+
 						global $post;
  						print( '<div class="entry-content">' );
 					
@@ -88,7 +111,9 @@ if( !empty( $terms ) ) {
 							endwhile;
 					
 						echo '</div>';
-						
+
+                                                    echo $button;
+
 					}
 					
 					
@@ -198,12 +223,13 @@ if( !empty( $terms ) ) {
 						}
 						
 						
-						printf( '<div class="entry-content"><ul class="accordion" data-accordion data-allow-all-closed="true">%s</ul></div>', 	
+						printf( '<div class="entry-content"><ul class="accordion" data-accordion data-allow-all-closed="true">%s</ul></div><br />', 	
 								$accordion_content );
 							
 					}
 					
-					
+
+
 					
 					// Best Results
 					section_best_results();
@@ -231,32 +257,46 @@ if( !empty( $terms ) ) {
 						}
 					
 					}
-					
+
+
 					// Locations
 					section_locations();
 					function section_locations() {
 						
-						$locations =  get_doctor_locations();
+                                            $locations =  get_doctor_locations();
 						
 						if( !empty( $locations ) ) {
 							
 							printf( '<div class="entry-content"><h2>Offered at these locations</h2>%s</div>', $locations );
 							
-						}
-						
+                                                }
+
 					}
 					
 					?>
 					
 					</main>
 				
-				
+
+                                        <?php echo _consult_form("Request a consultation"); ?>
+
 				</div>
 			
 			</div>
 		
 		</div>
 		
+
+
+
+
+                                        <div class="hide-for-large">
+                                                <button class="button services" type="button" data-toggle="service-dropdown">Select Another Service</button>
+                                                <div class="dropdown-pane services bottom" id="service-dropdown" data-dropdown>
+                                                        <?php echo $services; ?>
+                                                </div>
+                                        </div>
+
 	
 	</div>
 
