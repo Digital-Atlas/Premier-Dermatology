@@ -21,6 +21,13 @@
 
 <style>
 
+@media screen and (min-width: 64em) {
+    .site-header .inner .nav-secondary li {
+        padding: 0 15px;
+    }
+}
+
+
 .gform_wrapper .top_label input.medium, .gform_wrapper .top_label input.large {
     background: #e5e5e5;
     color: #444;
