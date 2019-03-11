@@ -36,7 +36,7 @@ if ( ! function_exists( '_s_setup' ) ) :
     	//define( 'GOOGLE_API_KEY', 'AIzaSyD5hnJyQGTi4II2HmLYN2bp5ZY-vXtWfj0' );	
 
 		define( 'GOOGLE_API_KEY', 'AIzaSyAwdMPjSZ8fftF8OMTxdI-7e-ajAtECkiM' );	
-
+                define ( 'REPUTATION_KEY', 'b07514e91ca'); 
 		
  		/**
 		 * Make theme available for translation.

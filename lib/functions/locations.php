@@ -1,5 +1,56 @@
 <?php
 
+add_shortcode( 'reputation_location_ratings', 'reputation_widget_ratings_locations' );
+
+/**
+ * LOCATINS: Returns cURL Reputation Widget API for single or multiple locations, param values come from Reputation.com directory listing view Reference Link for more information.
+ * Reference: https://forefront.backlog.com/view/FF1-189
+ * @param $locations generated from function: _reputation_locations_pids ($post_id, $pids = null )
+ * @return HTML
+ */
+function _get_data($url)
+{
+  $ch = curl_init();
+  $timeout = 5;
+  curl_setopt($ch,CURLOPT_URL,$url);
+  curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+  curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  curl_setopt($ch, CURLOPT_USERAGENT, 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.0.3705; .NET CLR 1.1.4322)');
+
+
+    $data = curl_exec($ch);
+
+  // Error Handling
+  if (curl_error($ch)) {
+    $error_msg = curl_error($ch);
+   }
+  curl_close($ch);
+
+  return $data;
+}
+
+function reputation_widget_ratings_locations ( $locations = null) {
+
+    $locations = get_field('reputation_location_id');
+
+    $reputation_widget_ratings = sprintf('https://widgets.reputation.com/widgets/5b439cc5ff3b47757c7097ef/run?tk=%s&filterName=__primary_location__&filterValues=%s', REPUTATION_KEY, $locations);
+
+        //return $reputation_widget_ratings;
+
+    $output = _get_data($reputation_widget_ratings);
+
+    if (isset($error_msg)) {
+        return '<div class="error">No reviews available.</div>';
+    } else {
+        return $output; 
+    }
+
+}
+
+add_shortcode( 'location_hours', '_s_location_office_hours' );
+
 function _s_location_office_hours() {
 		
 	global $post;

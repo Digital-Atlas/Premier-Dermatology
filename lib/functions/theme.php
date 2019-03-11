@@ -1,5 +1,21 @@
 <?php
 
+// Showing multiple post types in Posts Widget
+
+add_action( 'elementor_pro/posts/query/providers_post_cards', function( $query ) {
+    // Here we set the query to fetch posts with
+    // post type of 'custom-post-type1' and 'custom-post-type2'
+        $query->set( 'post_type', [ 'team' ] );
+} );
+
+add_action( 'admin_init', 'posts_order_wpse_91866' );
+
+function posts_order_wpse_91866() 
+{
+    add_post_type_support( 'post', 'page-attributes' );
+}
+
+
 /**
  * Removes the width and height attributes of <img> tags for SVG
  */

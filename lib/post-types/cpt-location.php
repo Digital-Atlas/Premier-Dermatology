@@ -22,8 +22,8 @@ class CPT_Location extends CPT_Core {
 				$this->post_type // Registered name/slug
 			),
 			array( 
-				'public'             => false,
-				'publicly_queryable' => false,
+				'public'             => true,
+				'publicly_queryable' => true,
 				'show_ui'            => true,
 				'query_var'          => true,
 				'capability_type'    => 'post',
@@ -33,8 +33,8 @@ class CPT_Location extends CPT_Core {
 				'show_in_menu' 		 => true,
 				'show_in_nav_menus'  => false,
 				'exclude_from_search' => true,
-				'rewrite' => false,
-				'supports' => array( 'title', 'thumbnail', 'page-attributes', 'revisions' ),
+                                'rewrite' => array('slug'=> 'location' ),
+                                'supports' => array( 'title', 'thumbnail', 'page-attributes', 'revisions' ),
 				 )
 
         );
