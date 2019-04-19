@@ -67,3 +67,16 @@ function _s_wrap_text( $string, $search = '#', $replace = 'span' ) {
 	return str_replace( sprintf('<%1$s></%1$s>', $replace), '', $string );
 }
 
+add_action( 'wp_head', 'my_header_scripts' );
+function my_header_scripts(){
+      ?>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WQNNWTH');</script>
+<!-- End Google Tag Manager -->
+  <?php
+}
+
