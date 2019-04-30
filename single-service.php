@@ -17,7 +17,7 @@ border-bottom: 1px dotted #e8e8e8;
 section_hero();
 function section_hero() {
 		
-	$heading = sprintf( '<h1>%s Treatment Specialists</h1>', get_the_title() );
+	$heading = sprintf( '<h1 style="text-transform: inherit;max-width: 800px;">%s Treatment Experts in Crest Hill and Naperville, IL</h1>', get_the_title() );
 	
 	$content = $heading;
 	$attr = array( 'class' => 'section hero', 'role' => 'region', 'aria-labelledby' => 'banner' );

@@ -4,7 +4,7 @@
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 
 // Redirect location Book Appointment confirmation to an embedded static page, so that a YoTrack event can fire post-submission
-add_filter("gform_confirmation_1", "book_appointment_track_data", 3, 4 );
+//add_filter("gform_confirmation_1", "book_appointment_track_data", 3, 4 );
 
 function book_appointment_track_data($confirmation, $form, $lead, $ajax) {
 
@@ -34,7 +34,7 @@ function book_appointment_track_data($confirmation, $form, $lead, $ajax) {
 
 // Delete entries for ID gform_after_submission_x
 // Do not save payment entries
-add_action( 'gform_after_submission_1', 'tgm_io_remove_form_entry' ); // Delete request appt
+//add_action( 'gform_after_submission_1', 'tgm_io_remove_form_entry' ); // Delete request appt
 
 
 /**
