@@ -1,6 +1,5 @@
 <?php
 
-add_shortcode( 'reputation_location_ratings', 'reputation_widget_ratings_locations' );
 
 /**
  * LOCATINS: Returns cURL Reputation Widget API for single or multiple locations, param values come from Reputation.com directory listing view Reference Link for more information.
@@ -35,7 +34,7 @@ function reputation_widget_ratings_locations ( $locations = null) {
 
     $locations = get_field('reputation_location_id');
 
-    $reputation_widget_ratings = sprintf('https://widgets.reputation.com/widgets/5b439cc5ff3b47757c7097ef/run?tk=%s&filterName=__primary_location__&filterValues=%s', REPUTATION_KEY, $locations);
+    $reputation_widget_ratings = sprintf('https://widgets.reputation.com/widgets/5b439cc5ff3b47757c7097ef/run?tk=b07514e91ca&filterName=__primary_location__&filterValues=%s', $locations);
 
         //return $reputation_widget_ratings;
 
@@ -48,6 +47,16 @@ function reputation_widget_ratings_locations ( $locations = null) {
     }
 
 }
+
+function _reputation_widget() {
+
+    $url = get_field('reputation_location_id');
+    
+    return _get_data($url);
+}
+
+
+add_shortcode('reputation_widget', '_reputation_widget');
 
 add_shortcode( 'location_hours', '_s_location_office_hours' );
 
