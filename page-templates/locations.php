@@ -126,8 +126,10 @@ get_template_part( 'template-parts/section', 'hero' );
 					$link = sprintf( '<span>%s</span>', $link_text );	
 				}
 				
-				$book_appointment = sprintf( '<div class="location-book">%s</div>', 
-											   $link );
+				$book_appointment = sprintf( '<div class="location-book" style="margin-bottom:0;">%s</div>', 
+                                    $link );
+
+                                $goto_location = sprintf('<div class="location-book"><a href="%s">Goto Location</a></div>', get_the_permalink(get_the_ID())); 
 				
 				//$read_more = sprintf( '<div class="location-more"><a href="#section%s" class="more"><span>More about %s</span><i class="icon icon-arrow blue"></i></a></div>', get_the_ID(), get_the_title() );
 				
@@ -137,7 +139,8 @@ get_template_part( 'template-parts/section', 'hero' );
 				$details  = $address;	
 				$details .= $phone;	
 				$details .= $directions;				
-				$details .= $book_appointment;	
+                                $details .= $book_appointment;
+                                $details .= $goto_location;        
 				$details .= $read_more;	
 				
 				
