@@ -194,9 +194,6 @@ $schema = <<<SCHEMA
 			}]
 			}
 			</script>
-
-}
-
 SCHEMA;
 
 return $schema;
@@ -249,9 +246,6 @@ $schema = <<<SCHEMA
 			}]
 			}
 			</script>
-
-}
-
 SCHEMA;
 
 return $schema;
