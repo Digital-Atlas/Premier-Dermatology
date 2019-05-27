@@ -139,3 +139,120 @@ function fix_empty_office_hour_days(&$array) {
         }
     }
 }
+
+
+// Schema Shortcodes for Elementor
+
+add_shortcode( 'schema-crest-hill', '_schema_crest_hill' );
+add_shortcode( 'schema-naperville', '_schema_naperville' );
+
+
+function _schema_crest_hill() {
+
+$schema = <<<SCHEMA
+<script type="application/ld+json">
+			{
+			"@context": "http://schema.org",
+			"@type": ["MedicalClinic", "MedicalOrganization"],
+			"name": "Forefront Dermatology ",
+			"description": "Forefront Dermatology clinic in Crest Hill, IL offering treatment options in Medical Dermatology, Cosmetic Dermatology, Skin Cancer Surgery, Mohs Surgery.",
+			"logo": "https://pdskin.com/wp-content/themes/pdskin/assets/images/logo.png",
+			"image": "https://pdskin.com/wp-content/themes/pdskin/assets/images/logo.png",
+			"photo": "https://pdskin.com/wp-content/themes/pdskin/assets/images/logo.png",
+			"url": "https://pdskin.com/location/crest-hill/",
+			"telephone": "(815) 701-9209",
+			"faxNumber": "",
+			"founder": {
+			"@type": "Person",
+			"name": "Dr. Matthew Kelleher",
+			"jobTitle": ["Board-Certified Dermatologist" ]
+			},
+			"foundingDate": "2001",
+			"foundingLocation": {
+			"@type": "Place",
+			"address": {
+				"addressLocality": "Crest Hill"
+			}
+			},
+			"areaServed": "Crest Hill",
+			"location": {
+			"@type": "Place",
+			"address": {
+			"@type": "PostalAddress",
+			"addressCountry": "USA",
+			"addressLocality": "Crest Hill",
+			"addressRegion": "Illinois",
+			"postalCode": "60403",
+			"streetAddress": "2051 Plainfield Road"
+			}
+			},
+			"geo": "41.559345, -88.133326",
+			"hasMap": "https://maps.google.com/maps?saddr=&amp;daddr=Forefront Dermatology+2051+Plainfield+Road+Crest+Hill+Illinois+60403",
+			"memberOf": [{
+			"@type": "MedicalOrganization",
+			"name": "Premier Dermatology"
+			}]
+			}
+			</script>
+
+}
+
+SCHEMA;
+
+return $schema;
+}
+
+function _schema_naperville() {
+
+$schema = <<<SCHEMA
+<script type="application/ld+json">
+			{
+			"@context": "http://schema.org",
+			"@type": ["MedicalClinic", "MedicalOrganization"],
+			"name": "Forefront Dermatology ",
+			"description": "Forefront Dermatology clinic in Crest Hill, IL offering treatment options in Medical Dermatology, Cosmetic Dermatology, Skin Cancer Surgery, Mohs Surgery.",
+			"logo": "https://pdskin.com/wp-content/themes/pdskin/assets/images/logo.png",
+			"image": "https://pdskin.com/wp-content/themes/pdskin/assets/images/logo.png",
+			"photo": "https://pdskin.com/wp-content/themes/pdskin/assets/images/logo.png",
+			"url": "https://pdskin.com/location/naperville/",
+			"telephone": "(630) 357-7536",
+			"faxNumber": "(630) 904-0413",
+			"founder": {
+			"@type": "Person",
+			"name": "Dr. Matthew Kelleher",
+			"jobTitle": ["Board-Certified Dermatologist" ]
+			},
+			"foundingDate": "2001",
+			"foundingLocation": {
+			"@type": "Place",
+			"address": {
+				"addressLocality": "Crest Hill"
+			}
+			},
+			"areaServed": "Naperville",
+			"location": {
+			"@type": "Place",
+			"address": {
+			"@type": "PostalAddress",
+			"addressCountry": "USA",
+			"addressLocality": "Naperville",
+			"addressRegion": "Illinois",
+			"postalCode": "60563",
+			"streetAddress": "1520 Bond Street"
+			}
+			},
+			"geo": "41.795606, -88.201274",
+			"hasMap": "https://maps.google.com/maps?saddr=&amp;daddr=Forefront Dermatology+1520+Bond+Street+Naperville+Illinois+60563",
+			"memberOf": [{
+			"@type": "MedicalOrganization",
+			"name": "Premier Dermatology"
+			}]
+			}
+			</script>
+
+}
+
+SCHEMA;
+
+return $schema;
+}
