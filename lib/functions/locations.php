@@ -154,8 +154,8 @@ $schema = <<<SCHEMA
 			{
 			"@context": "http://schema.org",
 			"@type": ["MedicalClinic", "MedicalOrganization"],
-			"name": "Forefront Dermatology ",
-			"description": "Forefront Dermatology clinic in Crest Hill, IL offering treatment options in Medical Dermatology, Cosmetic Dermatology, Skin Cancer Surgery, Mohs Surgery.",
+			"name": "Premier Dermatology ",
+			"description": "Premier Dermatology clinic in Crest Hill, IL offering treatment options in Medical Dermatology, Cosmetic Dermatology, and Skin Cancer Treatments.",
 			"logo": "https://pdskin.com/wp-content/themes/pdskin/assets/images/logo.png",
 			"image": "https://pdskin.com/wp-content/themes/pdskin/assets/images/logo.png",
 			"photo": "https://pdskin.com/wp-content/themes/pdskin/assets/images/logo.png",
@@ -206,8 +206,8 @@ $schema = <<<SCHEMA
 			{
 			"@context": "http://schema.org",
 			"@type": ["MedicalClinic", "MedicalOrganization"],
-			"name": "Forefront Dermatology ",
-			"description": "Forefront Dermatology clinic in Crest Hill, IL offering treatment options in Medical Dermatology, Cosmetic Dermatology, Skin Cancer Surgery, Mohs Surgery.",
+			"name": "Premier Dermatology ",
+			"description": "Premier Dermatology clinic in Crest Hill, IL offering treatment options in Medical Dermatology, Cosmetic Dermatology, and Skin Cancer Treatments.",
 			"logo": "https://pdskin.com/wp-content/themes/pdskin/assets/images/logo.png",
 			"image": "https://pdskin.com/wp-content/themes/pdskin/assets/images/logo.png",
 			"photo": "https://pdskin.com/wp-content/themes/pdskin/assets/images/logo.png",
