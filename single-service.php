@@ -8,6 +8,11 @@ border-bottom: 1px dotted #e8e8e8;
     padding-bottom: 5px;
 }
 
+h1 {
+	max-width:800px;
+}
+
+
 </style>
 
 
