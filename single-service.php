@@ -20,7 +20,7 @@ function section_hero() {
 	$heading = sprintf( '<h1 style="text-transform: inherit;max-width: 800px;">%s Treatment Experts in Crest Hill and Naperville, IL</h1>', get_the_title() );
 	
 	$content = $heading;
-	$attr = array( 'class' => 'section hero', 'role' => 'region', 'aria-labelledby' => 'banner' );
+	$attr = array( 'class' => 'section hero', 'style' =>'padding:15px;', 'role' => 'region', 'aria-labelledby' => 'banner' );
 	_s_section_open( $attr );
 	printf( '<div class="column row"><div class="table"><div class="cell">%s</div></div></div>', $content );	
 	_s_section_close();		
@@ -79,9 +79,9 @@ function _consult_form($string) {
 					</div>
 
                     
-                                        <div>
-                                            <?php echo _consult_form("Request a consultation"); ?>
-                                        </div>
+                    <div>
+                        <?php echo _consult_form("Request a consultation"); ?>
+                    </div>
 		
 				</div>
 			
@@ -106,6 +106,10 @@ function _consult_form($string) {
 					
 								the_post();
 								
+								//$heading_copy = sprintf('<h2 style="line-height: 42px;">Learn More About %s in Naperville & Crest Hill, Illinois</h2>', get_the_title());	
+
+								//echo $heading_copy;
+
 								the_content();
 									
 							endwhile;
@@ -267,7 +271,7 @@ function _consult_form($string) {
 						
 						if( !empty( $locations ) ) {
 							
-							printf( '<div class="entry-content"><h2>Offered at these locations</h2>%s</div>', $locations );
+							printf( '<div class="entry-content"><h3>Offered at these locations</h3>%s</div>', $locations );
 							
                                                 }
 
@@ -280,6 +284,18 @@ function _consult_form($string) {
 
                                         <?php echo _consult_form("Request a consultation"); ?>
 
+
+					<div class="entry-content">
+						<?php
+						$medical_services = get_services_list( 7, $seo = true );
+						$cosmetic_services = get_services_list( 8, $seo = true );
+						echo '<h3>Quick Links</h3>';
+						echo sprintf('<div class="columns small-12" style="margin-bottom:30px;"><h4>Medical Services</h4>%s</div>', $medical_services);
+						echo sprintf('<div class="columns small-12" style="margin-bottom:30px;"><h4>Cosmetic Services</h4>%s</div>', $cosmetic_services);
+						echo '</div>';
+						?>
+					</div>
+
 				</div>
 			
 			</div>
@@ -290,12 +306,16 @@ function _consult_form($string) {
 
 
 
-                                        <div class="hide-for-large">
-                                                <button class="button services" type="button" data-toggle="service-dropdown">Select Another Service</button>
-                                                <div class="dropdown-pane services bottom" id="service-dropdown" data-dropdown>
-                                                        <?php echo $services; ?>
-                                                </div>
-                                        </div>
+
+
+
+
+        <div class="hide-for-large">
+                <button class="button services" type="button" data-toggle="service-dropdown">Select Another Service</button>
+                <div class="dropdown-pane services bottom" id="service-dropdown" data-dropdown>
+                        <?php echo $services; ?>
+                </div>
+        </div>
 
 	
 	</div>

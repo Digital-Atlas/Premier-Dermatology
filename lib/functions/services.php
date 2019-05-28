@@ -2,8 +2,14 @@
 
 // Get Services by category
 
-function get_services_list( $term_id ) {
+function get_services_list( $term_id, $seo = null ) {
 	
+	if (isset($seo) && $seo === true ) {
+		$seo_suffix = 'Treatment Clinic';
+	} else {
+		$seo_suffix = '';
+	}
+
 	// arguments, adjust as needed
 	$args = array(
 		'post_type'      => 'service',
@@ -31,7 +37,7 @@ function get_services_list( $term_id ) {
 	if ( $loop->have_posts() ) : 
  		while ( $loop->have_posts() ) : $loop->the_post(); 
 
-			$list .= sprintf( '<li><a href="%s">%s</a></li>', get_permalink(), get_the_title() );
+			$list .= sprintf( '<li><a href="%s">%s %s</a></li>', get_permalink(), get_the_title(), $seo_suffix );
 
 		endwhile;
 	else: 
