@@ -53,7 +53,7 @@ function _consult_form($string) {
     }
 
     $consult = do_shortcode('[gravityform id=3 title=false description=false ajax=true tabindex=1]');
-    $form = sprintf('<div class="entry-content" style="margin-top:30px; max-width:800px;" id="consult-form"><h4>%s</h4>%s</div>', $string, $consult);
+    $form = sprintf('<div class="entry-content" style="margin-top:30px; max-width:600px;" id="consult-form"><h4>%s</h4>%s</div>', $string, $consult);
 
     return $form; 
 }
