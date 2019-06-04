@@ -53,7 +53,7 @@ function _consult_form($string) {
     }
 
     $consult = do_shortcode('[gravityform id=3 title=false description=false ajax=true tabindex=1]');
-    $form = sprintf('<div class="entry-content" style="margin-top:30px; max-width:600px;" id="consult-form"><h4>%s</h4>%s</div>', $string, $consult);
+    $form = sprintf('<div class="entry-content" style="margin-top:30px; max-width:600px;" id="consult-form"><h3>%s</h3>%s</div>', $string, $consult);
 
     return $form; 
 }
@@ -276,7 +276,7 @@ function _consult_form($string) {
 						
 						if( !empty( $locations ) ) {
 							
-							printf( '<div class="entry-content"><h3>Offered at these locations</h3>%s</div>', $locations );
+							printf( '<div class="entry-content">%s</div>', $locations );
 							
                                                 }
 
@@ -294,7 +294,7 @@ function _consult_form($string) {
 						<?php
 						$medical_services = get_services_list( 7, $seo = true );
 						$cosmetic_services = get_services_list( 8, $seo = true );
-						echo '<h3>Quick Links</h3>';
+						echo '<h3>Service Links</h3>';
 						echo sprintf('<div class="columns small-12" style="margin-bottom:30px;"><h4>Medical Services</h4>%s</div>', $medical_services);
 						echo sprintf('<div class="columns small-12" style="margin-bottom:30px;"><h4>Cosmetic Services</h4>%s</div>', $cosmetic_services);
 						echo '</div>';

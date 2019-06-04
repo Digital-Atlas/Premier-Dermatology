@@ -230,7 +230,7 @@ function get_doctor_locations() {
 					
 		while ( $loop->have_posts() ) : $loop->the_post(); 
 						
-			$title = the_title( '<h4>', '</h4>', false );
+			$title = the_title( '<h2>', '</h2>', false );
 			
 			$address =  apply_filters( 'pb_the_content', get_post_meta( get_the_ID(), 'address', true ) );
 				
