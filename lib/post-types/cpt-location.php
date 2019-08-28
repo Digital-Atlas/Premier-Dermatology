@@ -31,7 +31,7 @@ class CPT_Location extends CPT_Core {
 				'hierarchical'       => false,
 				'show_ui' 			 => true,
 				'show_in_menu' 		 => true,
-				'show_in_nav_menus'  => false,
+				'show_in_nav_menus'  => true,
 				'exclude_from_search' => true,
                                 'rewrite' => array('slug'=> 'location' ),
                                 'supports' => array( 'title', 'thumbnail', 'page-attributes', 'revisions' ),

@@ -10,6 +10,10 @@ padding: 10px;
 border: 1px solid #ddd;
 }
 
+.doctor-review .pagination {
+    display: none;
+}
+
 </style>
 
 <?php

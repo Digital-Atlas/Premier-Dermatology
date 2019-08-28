@@ -84,9 +84,6 @@ function _consult_form($string) {
 					</div>
 
                     
-                    <div>
-                        <?php echo _consult_form("Request a consultation"); ?>
-                    </div>
 		
 				</div>
 			
