@@ -1,5 +1,92 @@
 <?php
 
+
+/**
+ * Route service lead form fills based on taxonomy term ID
+ * @param 
+ * @return
+ */
+
+add_filter( 'gform_field_value_service_type', 'gf_service_type', 10, 3 );
+
+function gf_service_type( $value ) {
+    //Populate Book Appointment Hidden Field 'group_type' with custom taxonomy ID
+    $term_list = wp_get_post_terms(get_the_ID(),'service_cat', array("fields" => "ids"));
+    
+    // 28 medical
+    // 29 cosmetic
+
+    // Return parent term
+    if ( $term_list[0] == 7 ) {
+      return 'Medical Service';
+    } elseif ( $term_list[0] == 8 ) {
+       return 'Cosmetic Service'; 
+    } elseif ( $term_list[0] == 9 ) {
+        return 'Spa Service';
+    } else {
+        return 'Surgical Service';
+    }
+}
+
+/**
+ * Pass in service object ID
+ * @param 
+ * @return
+ */
+
+add_filter( 'gform_field_value_service_id', 'gf_service_id', 10, 3 );
+
+function gf_service_id( $value ) {
+
+  return get_the_ID();
+
+}
+
+// Services lead forms
+
+add_filter( 'gform_confirmation_3', 'services_custom_confirmation', 10, 4 );
+function services_custom_confirmation( $confirmation, $form, $lead, $ajax ) {
+
+    // Get form object
+    $lead = $_POST;
+
+    // Grab service post ID
+    $service_id = $lead['input_34'];
+
+
+    $term_list = wp_get_post_terms(get_the_ID(),'service_cat', array("fields" => "ids"));
+
+    // 28 medical
+    // 29 cosmetic
+
+    // Return parent term
+    if ( $term_list[0] == 7 ) {
+      $url = "book-appointment-medical-service-completed";
+    } elseif ( $term_list[0] == 8 ) {
+       $url = "book-appointment-cosmetic-service-completed";
+    } elseif ( $term_list[0] == 9 ) {
+        $url = "book-appointment-spa-service-completed";
+    } else {
+        $url = "book-appointment-medical-service-completed";
+    }
+
+
+    // Define routing URL on location service form fills
+
+    $service_name = sprintf('service_name=%s', sanitize_title($lead['input_33']));
+
+    $query_string = sprintf('?%s',$service_name);
+
+    $confirmation_url = trailingslashit(site_url()) . $url . $query_string;
+
+    $confirmation = array( 'redirect' => $confirmation_url );
+
+
+
+    return $confirmation;
+}
+
+
 // hide labels
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
 
