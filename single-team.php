@@ -14,19 +14,52 @@ border: 1px solid #ddd;
     display: none;
 }
 
+.section.hero h1 {
+    font-size: 18px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.section.hero h2 {
+    color: #fff;
+    display: inline-block;
+    font-size: 46px;
+    margin-top: 5px;
+    padding-top: 10px;
+    border-top: 3px solid #fff;
+} 
+
+h2 {
+    font-size: 24px;
+text-align: center;
+}
+
+.locations h2 {
+    text-align: left;
+}
+
 </style>
 
 <?php
 // Hero
 section_hero();
 function section_hero() {
-		
-	$heading = sprintf( '<h1>%s</h1>', get_the_title() );
-	$specialties = get_field( 'specialties' );
-	if( !empty( $specialties ) ) {
-		$specialties = doctor_format_specialties( $specialties, 'h4' );
-	}
-	
+
+        // Override with SEO title
+        if ( get_field('h1_title')) {
+            $title = get_field('h1_title');
+        } else {
+            $title = '';
+        }
+
+	$heading = sprintf( '<h1>%s</h1>', $title );
+
+            $h2_title = get_the_title();
+            $specialties = sprintf('<h2>%s</h2>', $h2_title); 
+
+            //$specialties = get_field( 'specialties' );
+            //$specialties = doctor_format_specialties( $specialties, 'h2' );
+
 	$content = $heading . $specialties;
 	
 	$attr = array( 'id' => 'banner', 'class' => 'section hero', 'role' => 'region', 'aria-labelledby' => 'banner' );
@@ -173,7 +206,7 @@ function section_hero() {
 			
 			if( !empty( $gallery ) ) {
 				
-				echo sprintf( '<h3>Some of the procedures performed by %s</h3>', get_the_title() );
+				echo sprintf( '<h2>Some of the procedures performed by %s</h2>', get_the_title() );
  				echo '<div class="owl-carousel">';
 				echo $gallery;
 				echo '</div>';

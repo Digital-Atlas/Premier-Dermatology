@@ -303,7 +303,7 @@ function get_doctor_testimonial( $single  = '' ) {
 	// format and return
 	
 	if( !empty( $title ) ) {
-		$title = sprintf( '<h4>%s</h4>', $title );
+		$title = sprintf( '<h2>%s</h2>', $title );
 	}
 	
 	$text = apply_filters( 'pb_the_content', $text );
