@@ -74,7 +74,7 @@ get_template_part( 'template-parts/section', 'hero' );
 					section_summary();
 
 					// Infographics ACF Repeater
-					section_infographic_stats();
+					section_infographic_stats('Medical');
 				
 					// Testimonial and Video 
 					section_testimonial();

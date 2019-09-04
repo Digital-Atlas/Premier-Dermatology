@@ -69,7 +69,7 @@ get_template_part( 'template-parts/section', 'hero' );
 					section_benefits();
 
 					// Infographics ACF Repeater
-					section_infographic_stats();
+					section_infographic_stats('Cosmetic');
 
 					// Testimonial and Video 
 					section_testimonial();

@@ -1,3 +1,14 @@
+<style>
+.section.hero h2 {
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    margin-top: 5px;
+    padding-top: 10px;
+    border-top: 3px solid #fff;
+}
+</style>
+
 <?php
 
 /*
@@ -12,7 +23,7 @@ function section_hero() {
 	$heading = sprintf( '<h1>%s</h1>', get_post_meta( get_the_ID(), 'hero_heading', true ) );
 	$subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
 	if( !empty( $subheading ) ) {
-		$subheading = sprintf( '<h4>%s</h4>', get_post_meta( get_the_ID(), 'hero_subheading', true ) );
+		$subheading = sprintf( '<h2>%s</h2>', get_post_meta( get_the_ID(), 'hero_subheading', true ) );
 	}
 	
 	$content = $heading . $subheading;

@@ -1,3 +1,14 @@
+<style>
+
+.infographic-stats h2 {
+    
+    font-size: 24px;
+    padding: 15px 15px 0 10px;
+
+}
+
+</style>
+
 <?php
 
 
@@ -31,12 +42,18 @@ function section_benefits() {
 					}
 
 
-	function section_infographic_stats() {
+	function section_infographic_stats($string) {
+
+            if (!isset($string)) {
+                $string = '';
+            }
 
 						// check if the repeater field has rows of data
 						if( have_rows('infographic_stats') ):					
 
 							printf('<div class="infographic-stats row small-12 medium-12">');
+
+                                                        echo sprintf('<h2>%s Dermatology Expertise:</h2>', $string);
 
 						 	// loop through the rows of data
 						    while ( have_rows('infographic_stats') ) : the_row();
