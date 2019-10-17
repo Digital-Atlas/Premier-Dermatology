@@ -38,6 +38,14 @@ text-align: center;
     text-align: left;
 }
 
+.entry-content { 
+max-width: 800px !important;
+}
+
+.locations .icon-phone {
+top: -15px !important;
+}
+
 </style>
 
 <?php

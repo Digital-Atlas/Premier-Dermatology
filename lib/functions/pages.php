@@ -1,15 +1,42 @@
-<style>
-
-.infographic-stats h2 {
-    
-    font-size: 24px;
-    padding: 15px 15px 0 10px;
-
-}
-
-</style>
 
 <?php
+
+
+function _home_features_func( $atts ){
+    return _home_features();
+
+}
+add_shortcode( 'homebar', '_home_features_func' );
+
+function _home_features() {
+
+                if ( has_nav_menu( 'home-featured' ) ) {
+                        $args = array(
+                                'theme_location' => 'home-featured',
+                                'container' => 'div',
+                                'container_class' => 'home-featured',
+                                'container_id' => '',
+                                'menu_id'        => 'home-featured',
+                                'menu_class'     => 'menu',
+                                //'menu_class'     => 'menu row small-up-2 medium-up-4',
+                                'before' => '',
+                                'after' => '',
+                                'link_before' => '',
+                                'link_after' => '',
+                                'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+                                'depth' => 0,
+                                'echo' => false
+                        );
+
+                        $attr = array( 'id' => 'featured-menu', 'class' => 'section featured-menu' );
+
+                        _s_section_open( $attr );
+                                printf( '<div class="column row">%s</div>', wp_nav_menu($args) );
+                        _s_section_close();
+
+                }
+
+}
 
 
 function section_benefits() {

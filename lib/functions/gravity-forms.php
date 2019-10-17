@@ -16,16 +16,7 @@ function gf_service_type( $value ) {
     // 28 medical
     // 29 cosmetic
 
-    // Return parent term
-    if ( $term_list[0] == 7 ) {
-      return 'Medical Service';
-    } elseif ( $term_list[0] == 8 ) {
-       return 'Cosmetic Service'; 
-    } elseif ( $term_list[0] == 9 ) {
-        return 'Spa Service';
-    } else {
-        return 'Surgical Service';
-    }
+    return $term_list[0];
 }
 
 /**
