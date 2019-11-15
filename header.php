@@ -76,6 +76,8 @@ font-weight: normal;
 .ribbon a { 
 	color: #fff;
 	text-decoration: underline;
+    pointer-events: all;
+    cursor: pointer;	
 }
 
 </style>
