@@ -73,6 +73,11 @@ font-weight: normal;
     text-align: center;
 }
 
+.ribbon { 
+	color: #fff;
+	text-decoration: underline;
+}
+
 </style>
 </head>
 
@@ -88,7 +93,7 @@ font-weight: normal;
 			<?php
 
 			if ( get_the_ID() == 169 || get_the_ID() == 174 ) {
-				$phone = get_field('phoneText', get_the_ID());
+				$phone = get_field('phone', get_the_ID());
 				echo sprintf('<div class="ribbon">Same Day Appointments Available. <a href="tel:%s">Call To Schedule.</a></div>', $phone );
 			}
 
