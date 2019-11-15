@@ -6,37 +6,49 @@
  *
  * @package _s
  */
-
-	$id = $post->id;
-	$title = $post->title;
-	$date = $post->date;
-	$content = nl2br($post->content);
-	$excerpt = $post->excerpt;
-	$image = $post->featured_image->web;
-
-
 ?>
 
-
-<article id="post-<?php echo $id; ?>" <?php post_class( 'column small-12' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'column row' ); ?>>
+	
+	<?php
+	if( !is_single() && has_post_thumbnail() ) {
+  		$thumb = get_post_thumbnail_id();
+  		$attachment_url = wp_get_attachment_url($thumb, 'large');
+ 		$image_url = aq_resize( $attachment_url, 400, 227, true, true, true ); //resize & crop the image
+		$image = '<img src="' . $image_url . '" alt="Featured Image" />';			
+		printf( '<a href="%s">%s', get_permalink(),$image );
 	
 
+		//the_post_thumbnail( 'post-thumbnail' );	
+		echo '</a>';
+	}
+	?>
+	
 	<div class="entry-content">
 	
 		<header class="entry-header">
-		<?php 
-			echo sprintf('<h2 class="entry-title">%s</h2>', $title);
-			echo sprintf('<div class="featured-image clear"><img src="%s" /></a></div><br />', $image );
-		?>
-
-		
-
+			<?php
+			if( is_single() ) {
+				the_title( '<h2 class="entry-title">', '</h2>' );
+			}
+			else {
+				printf( '<h3><a href="%s">%s</a></h3>', get_permalink(), get_the_title() );
+			}
+			?>
  		</header><!-- .entry-header -->
 		<?php 
-		
-		echo $content;
-
+		if( is_single() ) {
+			
+			the_content(); 
+			
+			echo _s_get_addtoany_share_icons();
+			
+		} else {
 	
+			_s_the_excerpt( '', '' );
+			
+			printf( '<p class="read-more"><a href="%s" class="more">Continue Reading ></a></p>', get_permalink() ) ;
+		}
 		?>
 		
 	</div><!-- .entry-content -->
