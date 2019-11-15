@@ -73,7 +73,7 @@ font-weight: normal;
     text-align: center;
 }
 
-.ribbon { 
+.ribbon a { 
 	color: #fff;
 	text-decoration: underline;
 }
