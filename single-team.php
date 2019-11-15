@@ -42,10 +42,6 @@ text-align: center;
 max-width: 800px !important;
 }
 
-.locations .icon-phone {
-top: -15px !important;
-}
-
 </style>
 
 <?php

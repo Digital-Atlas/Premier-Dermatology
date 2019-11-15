@@ -11,87 +11,152 @@
  * @package _s
  */
 
-get_header(); ?>
-
-<?php
-// Hero
-$args = array(
-	'post_type'      => 'page',
-	'p'				 => get_option( 'page_for_posts' ),
-	'posts_per_page' => 1,
-	'post_status'    => 'publish'
-);
-
-// Use $loop, a custom variable we made up, so it doesn't overwrite anything
-$loop = new WP_Query( $args );
-
-// have_posts() is a wrapper function for $wp_query->have_posts(). Since we
-// don't want to use $wp_query, use our custom variable instead.
-if ( $loop->have_posts() ) : 
-	while ( $loop->have_posts() ) : $loop->the_post(); 
-	
-		get_template_part( 'template-parts/section', 'hero' );
- 
-	endwhile;
-endif;
-
-// We only need to reset the $post variable. If we overwrote $wp_query,
-// we'd need to use wp_reset_query() which does both.
-wp_reset_postdata();
-
+get_header(); 
 
  ?>
+
+<style>
+
+
+.section.hero h2 {
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    margin-top: 5px;
+    padding-top: 10px;
+    border-top: 3px solid #fff;
+}
+
+
+	#main { 
+		background-color: #dadfe6; 
+	}
+
+	.column { 
+		padding: 0 !important; 
+	}
+
+	#ajax-content { 
+		max-width: 980px; 
+		margin: 0 auto; 
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	}
+
+	#ajax-content .featured-image { 
+		float:left; 
+		width: 100%; 
+		max-width: 450px; 
+		margin: 0 15px 15px 0; 
+		text-align:center; 
+	}
+
+	.entry-content { 
+		padding:45px; 
+		background-color: #fff;  
+	}
+
+</style>
+
+
+<section class="section hero" id="banner" role="region" aria-labelledby="banner">
+	<div class="wrap">
+		<div class="column row">
+			<div class="table">
+				<div class="cell"><h1>Blog</h1><h2>Keep up-to-date on skincare tips and health news.</h2></div>
+			</div>
+		</div>
+	</div>
+</section>
 
 <div id="primary" class="content-area">
 
 	<main id="main" class="site-main" role="main">
 		
-		<?php
-		// Default
-		section_default();
-		function section_default() {
-			
-			$content = get_post_field( 'post_content', get_option( 'page_for_posts' ) );
-			
-			if( empty( $content ) ) {
-				return false;
-			}
-					
-			$attr = array( 'class' => 'section default text-center' );
-			_s_section_open( $attr );		
-				print( '<div class="column row"><div class="entry-content">' );
-			
-					echo $content;
-			
-				echo '</div></div>';
-			_s_section_close();	
-		}
-		?>
 		
 		<div class="wrap">
-		<?php
+
+
+			<div id="ajax-content"><div id="loader" style="text-align:center;"><img src="<?php echo THEME_IMG . '/loading.svg'; ?>" alt="Loading..." /></div></div>
+
+			<script>
+
+			// Reference: https://css-tricks.com/using-the-wp-api-to-fetch-posts/
+
+
+			function nl2br (str, is_xhtml) {   
+			    var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';    
+			    return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1'+ breakTag +'$2');
+			}
+
+
+			jQuery( function( $ ) {
+			  //$( '#button' ).on( 'click', function ( e ) {
+			   // e.preventDefault();
+			    $.ajax( {
+			      type: 'GET',
+			      dataType: 'JSON',
+			      url: 'http://prototype.forefrontdermatology.com:8888/wp-json/ep/v1/blog_posts/10',
+
+					beforeSend: function() {
+					     $('#loader').show();
+					  },
+
+					complete: function(){
+					     $('#loader').hide();
+					  },  	
+					  		      
+					success: function ( data ) {
+						//console.log(data);
+
+					$.each(data, function(i, item) {
+
+					    var post = data[i];
+
+						const post_object = {
+						    title: post.title,
+						    content: nl2br(post.content),
+						    image: post.featured_image.web
+						}
+
+						const markup = `
+							<article class="row column small-12">
+								<div class="entry-content">
+									<header class="entry-header">
+										<h2 class="entry-title">${post_object.title}</h2>
+										<div class="featured-image"><img src="${post_object.image}" alt="" /></div>
+									</header>
+									
+									<div class="body-content">
+										${post_object.content}
+									</div>
+								</div>
+							</article>
+						`;		
+
+
+						$('#ajax-content').append(markup);	    
+				});
+
+			      },
+			      cache: true
+			    } );
+			  } );
+			//} );
+
+			</script>
 		
-		if ( have_posts() ) : ?>
 
-			<?php
-			while ( have_posts() ) :
+		<?php
 
-				the_post();
 
-				get_template_part( 'template-parts/content', 'post' );
 
-			endwhile;
-			
-			$pagination = get_the_posts_pagination( 
-				array( 'mid_size' => 2,
-				'prev_text' => __( '<', '_s' ),
-				'next_text' => __( '>', '_s' ),
-				) 
-			);
-			
-			printf( '<div class="column row">%s</div>', $pagination );
 
-		endif; ?>
+		//foreach ($posts as $post) {
+
+	//		get_template_part( 'template-parts/content', 'post' );
+	//	}
+
+	?>
 		</div>
 
 	</main>

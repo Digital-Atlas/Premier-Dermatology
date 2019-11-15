@@ -64,6 +64,15 @@ font-weight: normal;
 .icon-phone:before {
     content: '';
 } 
+
+.ribbon { 
+ 	padding: 5px;
+    background-color: #97BF40;
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+}
+
 </style>
 </head>
 
@@ -75,6 +84,17 @@ font-weight: normal;
 	
 	<div class="sticky-header">
 		<div class="fixed">
+
+			<?php
+
+			if ( get_the_ID() == 169 || get_the_ID() == 174 ) {
+				$phone = get_field('phoneText', get_the_ID());
+				echo sprintf('<div class="ribbon" style="">Same Day Appointment. <a href="tel:%s">Call Now</a></div>', $phone )
+			}
+
+
+			?>
+
 			<header id="masthead" class="site-header" role="banner">
 				<div class="wrap">
 					<div class="column row">

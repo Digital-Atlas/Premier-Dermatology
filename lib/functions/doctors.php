@@ -1,24 +1,5 @@
 <?php
 
-// Curl function - replace file_get_contents();
-function get_data($url)
-{
-  $ch = curl_init();
-  $timeout = 5;
-  curl_setopt($ch,CURLOPT_URL,$url);
-  curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
-  curl_setopt($ch,CURLOPT_CONNECTTIMEOUT,$timeout);
-  $data = curl_exec($ch);
-
-  // Error Handling
-  if (curl_error($ch)) {
-    $error_msg = curl_error($ch);
-   }
-  curl_close($ch);
-
-  return $data;
-}
-
 /* cURL Reputation Widget API - Outputs reviews schema-enabled HTML */
 function reputation_widget_reviews ( $reputation_link_id = null ) {
 	$reputation_widget_reviews = sprintf('https://widgets.reputation.com/widgets/5b439740b9d46c7c4e579351/run?tk=b07514e91ca&lk=%s&start=0', $reputation_link_id);
