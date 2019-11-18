@@ -15,7 +15,7 @@ border: 1px solid #ddd;
 }
 
 .section.hero h1 {
-    font-size: 18px;
+    font-size: 32px;
     padding-bottom: 10px;
     padding-top: 10px;
 }
@@ -23,7 +23,7 @@ border: 1px solid #ddd;
 .section.hero h2 {
     color: #fff;
     display: inline-block;
-    font-size: 46px;
+    font-size: 24px;
     margin-top: 5px;
     padding-top: 10px;
     border-top: 3px solid #fff;
@@ -44,22 +44,103 @@ max-width: 800px !important;
 
 </style>
 
+
+
+			<script>
+
+			jQuery( function( $ ) {
+			  //$( '#button' ).on( 'click', function ( e ) {
+			   // e.preventDefault();
+			    $.ajax( {
+			      type: 'GET',
+			      dataType: 'JSON',
+			      url: 'https://forefrontdermatology.com/wp-json/ep/v1/provider/<?php echo get_field('rest_api_id');?>',
+
+					beforeSend: function() {
+					     $('.loader').show();
+					  },
+
+					complete: function(){
+					     $('.loader').hide();
+					  },  	
+					  		      
+					success: function ( data ) {
+
+
+					    var post = data;
+
+						//$('#ajax-title').html(post.title);
+						$('#ajax-photo img').attr("src", post.featured_image.web);
+						$('#ajax-biography').html(post.biography);
+						$('#ajax-education').html(post.education);
+						$('#ajax-specialties').html(post.specialties);
+
+
+						console.log(post.patient_testimonial);
+
+						if ( post.patient_testimonial.length > 1 ) {
+							$('#ajax-testimonial').html(post.patient_testimonial);
+						} else {
+							$('#ajax-testimonial').parent().hide();
+						}
+
+						if ( post.memberships.length > 1 ) {
+							$('#ajax-memberships').html(post.memberships);
+						} else {
+							$('#ajax-memberships').parent().hide();
+						}
+
+
+						if ( post.certificates.length > 1 ) {
+							$('#ajax-certificates').html(post.certificates);
+						} else {
+							$('#ajax-certificates').parent().hide();
+						}
+
+
+						if ( post.hospital.length > 1 ) {
+							$('#ajax-hospital').html(post.hospital);
+						} else {
+							$('#ajax-hospital').parent().hide();
+						}
+
+
+						if ( post.achievements.length > 1 ) {
+							$('#ajax-achievements').html(post.achievements);
+						} else {
+							$('#ajax-achievements').parent().hide();
+						}
+
+
+			      },
+			      cache: true
+			    } );
+			  } );
+			//} );
+
+			</script>
+
+
+
 <?php
+
+$loader = sprintf('<div class="loader" style="width: 75px; text-align:center;"><img src="%s/loading.svg" alt="Loading..." /></div>', THEME_IMG );
+
 // Hero
-section_hero();
-function section_hero() {
+section_hero($loader);
+function section_hero($loader) {
 
         // Override with SEO title
         if ( get_field('h1_title')) {
             $title = get_field('h1_title');
         } else {
-            $title = '';
+            $title = get_the_title();
         }
 
-	$heading = sprintf( '<h1>%s</h1>', $title );
+	$heading = sprintf( '<h1>%s</h1>', $title);
 
             $h2_title = get_the_title();
-            $specialties = sprintf('<h2>%s</h2>', $h2_title); 
+            $specialties = sprintf('<h2 id="ajax-specialties">%s</h2>', $loader ); 
 
             //$specialties = get_field( 'specialties' );
             //$specialties = doctor_format_specialties( $specialties, 'h2' );
@@ -79,16 +160,18 @@ function section_hero() {
 	<?php
 		
 
+	
+
 	// Defaulet 
-	section_default();
-	function section_default() {
+	section_default($loader);
+	function section_default($loader) {
 				
 		global $post;
 		
 		$attr = array( 'class' => 'section default', 'role' => 'region', 'aria-labelledby' => 'biography', 'id' => 'biography');
 		_s_section_open( $attr );		
   			
-				$photo = get_the_post_thumbnail( get_the_ID(), 'doctor-thumbnail' );
+				//$photo = get_the_post_thumbnail( get_the_ID(), 'doctor-thumbnail' );
 													
 				$social_media = get_doctor_social_profiles();
 
@@ -102,7 +185,7 @@ function section_hero() {
 
 			print( '<div class="row">' );
 			
-			printf( '<div id="headshot" class="small-12 large-3 columns">%s%s%s</div>', $photo, $social_media,$ratings);
+			printf( '<div id="headshot" class="small-12 large-3 columns"><div id="ajax-photo"><img src="" alt="" /></div>%s%s</div>', $photo, $social_media,$ratings);
 
 
 			print( '<div class="small-12 large-9 columns"><div class="entry-content bio">' );
@@ -111,12 +194,12 @@ function section_hero() {
 		
 					the_post();
 					
-					the_content();
+					echo sprintf('<div id="ajax-biography">%s</div>', $loader);
+					//the_content();
 						
 				endwhile;
 				
 				// Locations
-				
 				echo get_doctor_locations();
 				
 				// Awards
@@ -129,7 +212,6 @@ function section_hero() {
 	
 	section_video_testimonial();
 	function section_video_testimonial() {
-				
 		global $post;
 		
 		$video = get_doctor_video();	
@@ -139,9 +221,9 @@ function section_hero() {
 			
 		$testimonial = get_doctor_testimonial();	
 		
-		if( empty( $video ) && empty( $testimonial ) ) {
-			return false;
-		}
+		//if( empty( $video ) && empty( $testimonial ) ) {
+		//	return false;
+		//}
 		
 		$attr = array( 'class' => 'section video-testimonial', 'role' => 'region', 'aria-labelledby' => 'testimonial', 'id' => 'testimonial' );
 		_s_section_open( $attr );
@@ -150,8 +232,10 @@ function section_hero() {
 			
 			if( empty( $video ) ) {
  				
-				$testimonial = get_doctor_testimonial( 'single' );	
+				//$testimonial = get_doctor_testimonial( 'single' );	
 				
+				//$testimonial = '<div class="doctor-testimonial panel" data-equalizer-watch><div class="table"><div class="cell" id="ajax-testimonial"></div></div></div>';
+
 				printf( '<div class="small-12 columns">%s</div>', $testimonial );
 			}
 			else if( empty( $testimonial ) ) {
@@ -326,10 +410,10 @@ function section_hero() {
 		$services 			   = get_doctor_services();
 		
 		
-		$education    = get_doctor_education();
-		$certificates = _s_get_textarea( $post->certificates );
-		$affiliations = _s_get_textarea( $post->hospital_affiliations );
-		$memberships  = _s_get_textarea( $post->professional_memberships );
+		//$education    = get_doctor_education();
+		//$certificates = _s_get_textarea( $post->certificates );
+		//$affiliations = _s_get_textarea( $post->hospital_affiliations );
+		//$memberships  = _s_get_textarea( $post->professional_memberships );
 		$achievements = _s_get_textarea( $post->achievements );
 		
 		// Create accordion
@@ -351,40 +435,40 @@ function section_hero() {
 	  </li>
 		*/
 		
-		if( !empty( $education ) ) {
+		//if( !empty( $education ) ) {
 			$accordion_title = '<a href="#" class="accordion-title"><h4>Education</h4></a>';
 			$is_active = empty( $accordion_content ) ? $is_active : '';
 			$accordion_content .= sprintf( '<li class="accordion-item%s" data-accordion-item>%s
-			<div class="accordion-content" data-tab-content>%s</div></li>', $is_active, $accordion_title, $education );
-		}
+			<div class="accordion-content" data-tab-content id="ajax-education"></div></li>', $is_active, $accordion_title );
+		//
 		
-		if( !empty( $certificates ) ) {
+		//if( !empty( $certificates ) ) {
 			$accordion_title = '<a href="#" class="accordion-title"><h4>Certificates</h4></a>';
 			$is_active = empty( $accordion_content ) ? $is_active : '';
 			$accordion_content .= sprintf( '<li class="accordion-item%s" data-accordion-item>%s
-			<div class="accordion-content" data-tab-content>%s</div></li>', $is_active, $accordion_title, $certificates );
-		}
+			<div class="accordion-content" data-tab-content id="ajax-certificates"></div></li>', $is_active, $accordion_title );
+		//}
 		
-		if( !empty( $affiliations ) ) {
+		//if( !empty( $affiliations ) ) {
 			$accordion_title = '<a href="#" class="accordion-title"><h4>Hospital Affiliations</h4></a>';
 			$is_active = empty( $accordion_content ) ? $is_active : '';
 			$accordion_content .= sprintf( '<li class="accordion-item%s" data-accordion-item>%s
-			<div class="accordion-content" data-tab-content>%s</div></li>', $is_active, $accordion_title, $affiliations );
-		}
+			<div class="accordion-content" data-tab-content id="ajax-hospital"></div></li>', $is_active, $accordion_title, $affiliations );
+		//}
 		
-		if( !empty( $memberships ) ) {
+		//if( !empty( $memberships ) ) {
 			$accordion_title = '<a href="#" class="accordion-title"><h4>Professional Memberships</h4></a>';
 			$is_active = empty( $accordion_content ) ? $is_active : '';
 			$accordion_content .= sprintf( '<li class="accordion-item%s" data-accordion-item>%s
-			<div class="accordion-content" data-tab-content>%s</div></li>', $is_active, $accordion_title, $memberships );
-		}
+			<div class="accordion-content" data-tab-content id="ajax-memberships">/div></li>', $is_active, $accordion_title, $memberships );
+		//}
 		
-		if( !empty( $achievements ) ) {
+		//if( !empty( $achievements ) ) {
 			$accordion_title = '<a href="#" class="accordion-title"><h4>Achievements</h4></a>';
 			$is_active = empty( $accordion_content ) ? $is_active : '';
 			$accordion_content .= sprintf( '<li class="accordion-item%s" data-accordion-item>%s
-			<div class="accordion-content" data-tab-content>%s</div></li>', $is_active, $accordion_title, $achievements );
-		}
+			<div class="accordion-content" data-tab-content id="ajax-achievements"></div></li>', $is_active, $accordion_title, $achievements );
+		//}
 		
 		
 		if( !empty( $accordion_content ) ) {

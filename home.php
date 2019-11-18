@@ -95,7 +95,7 @@ get_header();
 			    $.ajax( {
 			      type: 'GET',
 			      dataType: 'JSON',
-			      url: 'http://prototype.forefrontdermatology.com:8888/wp-json/ep/v1/blog_posts/10',
+			      url: 'https://forefrontdermatology.com:8888/wp-json/ep/v1/blog_posts/10',
 
 					beforeSend: function() {
 					     $('#loader').show();
@@ -146,17 +146,6 @@ get_header();
 			</script>
 		
 
-		<?php
-
-
-
-
-		//foreach ($posts as $post) {
-
-	//		get_template_part( 'template-parts/content', 'post' );
-	//	}
-
-	?>
 		</div>
 
 	</main>

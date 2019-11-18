@@ -289,7 +289,7 @@ function get_doctor_testimonial( $single  = '' ) {
 	
 	$text = apply_filters( 'pb_the_content', $text );
 	
-	return sprintf( '<div class="doctor-testimonial panel %s" data-equalizer-watch><div class="table"><div class="cell">%s%s</div></div></div>', $single, $title, $text );
+	return sprintf( '<div class="doctor-testimonial panel %s" data-equalizer-watch><div class="table"><div class="cell">%s<div id="ajax-testimonial"></div></div></div></div>', $single, $title );
 }
 
 
