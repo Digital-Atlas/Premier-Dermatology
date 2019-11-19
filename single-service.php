@@ -22,7 +22,7 @@ h1 {
 section_hero();
 function section_hero() {
 		
-	$heading = sprintf( '<h1 style="text-transform: inherit;max-width: 800px;">%s Treatment Experts in Crest Hill and Naperville, IL</h1>', get_the_title() );
+	$heading = sprintf( '<h1 style="text-transform: inherit;max-width: 800px;">%s Dermatologists in Crest Hill and Naperville, IL</h1>', get_the_title() );
 	
 	$content = $heading;
 	$attr = array( 'class' => 'section hero', 'style' =>'padding:15px;', 'role' => 'region', 'aria-labelledby' => 'banner' );
