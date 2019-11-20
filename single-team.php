@@ -73,39 +73,38 @@ max-width: 800px !important;
 						$('#ajax-photo img').attr("src", post.featured_image.web);
 						$('#ajax-biography').html(post.biography);
 						$('#ajax-education').html(post.education);
-						$('#ajax-specialties').html(post.specialties);
+						$('#ajax-specialties').html(post.specialties + " <br />in Crest Hill & Naperville, IL");
 
 
-						console.log(post.patient_testimonial);
-
-						if ( post.patient_testimonial.length > 1 ) {
+						if (post.patient_testimonial ) {
 							$('#ajax-testimonial').html(post.patient_testimonial);
 						} else {
-							$('#ajax-testimonial').parent().hide();
+                                                    $('#ajax-testimonial').parent().hide();
+                                                    $('#testimonial').hide();
 						}
 
-						if ( post.memberships.length > 1 ) {
+						if ( post.memberships.length ) {
 							$('#ajax-memberships').html(post.memberships);
 						} else {
 							$('#ajax-memberships').parent().hide();
 						}
 
 
-						if ( post.certificates.length > 1 ) {
+						if ( post.certificates.length ) {
 							$('#ajax-certificates').html(post.certificates);
 						} else {
 							$('#ajax-certificates').parent().hide();
 						}
 
 
-						if ( post.hospital.length > 1 ) {
+						if ( post.hospital.length ) {
 							$('#ajax-hospital').html(post.hospital);
 						} else {
 							$('#ajax-hospital').parent().hide();
 						}
 
 
-						if ( post.achievements.length > 1 ) {
+						if ( post.achievements.length ) {
 							$('#ajax-achievements').html(post.achievements);
 						} else {
 							$('#ajax-achievements').parent().hide();
@@ -137,13 +136,10 @@ function section_hero($loader) {
             $title = get_the_title();
         }
 
-	$heading = sprintf( '<h1>%s</h1>', $title);
+	$heading = sprintf( '<h1>%s</h1>', get_the_title());
 
-            $h2_title = get_the_title();
             $specialties = sprintf('<h2 id="ajax-specialties">%s</h2>', $loader ); 
 
-            //$specialties = get_field( 'specialties' );
-            //$specialties = doctor_format_specialties( $specialties, 'h2' );
 
 	$content = $heading . $specialties;
 	

@@ -75,9 +75,12 @@ font-weight: normal;
 
 .ribbon a { 
 	color: #fff;
-	text-decoration: underline;
-    pointer-events: all;
-    cursor: pointer;	
+        text-decoration: underline;
+font-weight: bold;
+        pointer-events: all;
+        cursor: pointer;	
+position:relative;
+    z-index: 999;
 }
 
 </style>
@@ -96,7 +99,7 @@ font-weight: normal;
 
 			if ( get_the_ID() == 169 || get_the_ID() == 174 ) {
 				$phone = get_field('phone', get_the_ID());
-				echo sprintf('<div class="ribbon">Same Day Appointments Available. <a href="tel:%s">Call To Schedule.</a></div>', $phone );
+				echo sprintf('<div class="ribbon">Same Day Appointments Available. <a href="tel:%s">Call %s To Schedule.</a></div>', $phone, $phone );
 			}
 
 
