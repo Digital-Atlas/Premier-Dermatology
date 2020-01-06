@@ -21,8 +21,15 @@ h1 {
 // Hero
 section_hero();
 function section_hero() {
-		
-	$heading = sprintf( '<h1 style="text-transform: inherit;max-width: 800px;">%s Dermatologists in Crest Hill and Naperville, IL</h1>', get_the_title() );
+
+        if (get_field('seo_h1_title')) {
+            $title = get_field('seo_h1_title');
+        } else {
+            $title = get_the_title();
+        }
+
+
+	$heading = sprintf( '<h1 style="text-transform: inherit;max-width: 800px;">%s</h1>', $title );
 	
 	$content = $heading;
 	$attr = array( 'class' => 'section hero', 'style' =>'padding:15px;', 'role' => 'region', 'aria-labelledby' => 'banner' );

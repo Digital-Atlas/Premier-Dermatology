@@ -99,7 +99,7 @@ position:relative;
 
 			if ( get_the_ID() == 169 || get_the_ID() == 174 ) {
 				$phone = get_field('phone', get_the_ID());
-				echo sprintf('<div class="ribbon">Same Day Appointments Available. <a href="tel:%s">Call %s To Schedule.</a></div>', $phone, $phone );
+				echo sprintf('<div class="ribbon">Same Day Appointments <span class="show-for-large">Available</span><a href="tel:%s">Call %s<span class="show-for-large">To Schedule.</span></a></div>', $phone, $phone );
 			}
 
 

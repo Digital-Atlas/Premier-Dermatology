@@ -14,7 +14,6 @@
 
 get_header(); ?>
 
-
 <div id="primary" class="content-area">
 
 	<main id="main" class="site-main" role="main">
@@ -273,7 +272,7 @@ get_header(); ?>
 				$heading = '';
 								
 				if( !empty( $post->featured_heading ) ) {
-					$heading = sprintf( '<div class="column row"><h2>%s</h2></div>', $post->featured_heading );
+					$heading = sprintf( '<div class="column row"><h3 style="text-align:center;">%s</h3></div>', $post->featured_heading );
 				}
 								
 				$content = sprintf( '%s<div class="row small-up-1 large-up-3 grid" data-equalizer data-equalize-on="large">%s</div>',

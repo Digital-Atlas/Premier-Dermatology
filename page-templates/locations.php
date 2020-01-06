@@ -5,6 +5,18 @@ Template Name: Locations
 
 get_header(); ?>
 
+<style>
+
+h1 { 
+    font-size: 32px;
+}
+
+.icon-directions:before {
+    content: '';
+}
+
+</style>
+
 <?php
 // Hero
 get_template_part( 'template-parts/section', 'hero' );

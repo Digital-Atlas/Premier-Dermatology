@@ -74,17 +74,11 @@ get_template_part( 'template-parts/section', 'hero' );
 				
 					// Testimonial and Video 
 					//section_testimonial();
-				
+
+                                        echo sprintf('<section class="section melanoma"><div class="melanoma-summary row small-12 medium-8 medium-centered">%s</div></section>', get_field('melanoma_summary'));                                
 
 					?>
 
-					</div>
-
-					<?
-					printf('<section class="section melanoma"><div class="melanoma-summary row small-12 medium-8 medium-centered">%s</div>', get_field('melanoma_summary'));
-					?>
-
-					</section>
 
 					</main>
 				

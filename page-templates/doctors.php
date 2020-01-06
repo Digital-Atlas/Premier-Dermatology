@@ -5,6 +5,13 @@ Template Name: Doctors
 
 get_header(); ?>
 
+<style>
+.template-doctors .grid .column>a {
+    min-height: 480px;
+}
+
+</style>
+
 <?php
 // Hero
 get_template_part( 'template-parts/section', 'hero' );
