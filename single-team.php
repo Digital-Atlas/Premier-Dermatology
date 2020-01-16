@@ -14,25 +14,49 @@ border: 1px solid #ddd;
     display: none;
 }
 
+.bio h2 {
+    font-size: 20px;
+}
+
 .section.hero h1 {
     font-size: 32px;
     padding-bottom: 10px;
     padding-top: 10px;
+    font-weight: normal;
+    border-top: 1px solid #fff;
+    display: block;
+    margin: 0 auto;
+    max-width:500px;
 }
 
 .section.hero h2 {
     color: #fff;
     display: inline-block;
-    font-size: 24px;
+    font-size: 20px;
     margin-top: 5px;
     padding-top: 10px;
-    border-top: 3px solid #fff;
+    text-align:center;
+}
+
+.provider-name {
+    font-size: 28px;
+    padding-bottom: 5px;
 } 
 
-h2 {
-    font-size: 24px;
-text-align: center;
+.provider-specialties {
+    font-weight: normal;
+display: block;
 }
+
+h2 {
+    font-size:24px;
+}
+
+.section.hero h1 {
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
 
 .locations h2 {
     text-align: left;
@@ -73,7 +97,7 @@ max-width: 800px !important;
 						$('#ajax-photo img').attr("src", post.featured_image.web);
 						$('#ajax-biography').html(post.biography);
 						$('#ajax-education').html(post.education);
-						$('#ajax-specialties').html(post.specialties + " <br />in Crest Hill & Naperville, IL");
+						$('#ajax-specialties').html("<span class='provider-name'>" + post.title + "</span><span class='provider-specialties'>" + post.specialties + "</span>");
 
 
 						if (post.patient_testimonial ) {
@@ -125,9 +149,27 @@ max-width: 800px !important;
 
 $loader = sprintf('<div class="loader" style="width: 75px; text-align:center;"><img src="%s/loading.svg" alt="Loading..." /></div>', THEME_IMG );
 
+        $locations = get_field('locations');
+
+        $i=1;
+        $len = count($locations);
+
+
+        if( $locations ):
+            foreach( $locations as $lid ):
+   
+                if ($i < $len) {
+                    $location_names .= sprintf('%s &#8226;', get_the_title($lid));
+                } else if ($i == $len) {
+                    $location_names .= sprintf('%s, IL', get_the_title($lid));
+                }
+                $i++;
+            endforeach;
+        endif;
+
 // Hero
-section_hero($loader);
-function section_hero($loader) {
+section_hero($loader, $location_names);
+function section_hero($loader, $location_names) {
 
         // Override with SEO title
         if ( get_field('h1_title')) {
@@ -136,12 +178,13 @@ function section_hero($loader) {
             $title = get_the_title();
         }
 
-	$heading = sprintf( '<h1>%s</h1>', get_the_title());
 
-            $specialties = sprintf('<h2 id="ajax-specialties">%s</h2>', $loader ); 
+	$heading = sprintf( '<h1>%s %s</h1>', 'Dermatologist', $location_names );
+
+        $specialties = sprintf('<h2 id="ajax-specialties">%s</h2>', $loader ); 
 
 
-	$content = $heading . $specialties;
+	$content =  $specialties .$heading;
 	
 	$attr = array( 'id' => 'banner', 'class' => 'section hero', 'role' => 'region', 'aria-labelledby' => 'banner' );
 	_s_section_open( $attr );
@@ -159,8 +202,8 @@ function section_hero($loader) {
 	
 
 	// Defaulet 
-	section_default($loader);
-	function section_default($loader) {
+	section_default($loader, $location_names);
+	function section_default($loader, $location_names) {
 				
 		global $post;
 		
@@ -189,7 +232,7 @@ function section_hero($loader) {
 				while ( have_posts() ) :
 		
 					the_post();
-					
+                                        echo sprintf('<h2>%s: Dermatologist in %s</h2>', get_the_title(), $location_names);					
 					echo sprintf('<div id="ajax-biography">%s</div>', $loader);
 					//the_content();
 						
