@@ -161,7 +161,9 @@ jQuery(document).ready(function(){
 
 </div> <!-- Close .site-container opened in header -->
 
-
+<style>
+.gfield_label { display: none !important; }
+</style>
 
 </body>
 </html>

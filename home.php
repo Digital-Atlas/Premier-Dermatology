@@ -138,7 +138,7 @@ get_header();
 				});
 
 			      },
-			      cache: true
+			      cache: false
 			    } );
 			  } );
 			//} );

@@ -136,7 +136,7 @@ max-width: 800px !important;
 
 
 			      },
-			      cache: true
+			      cache: false
 			    } );
 			  } );
 			//} );
