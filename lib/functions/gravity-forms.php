@@ -1,5 +1,130 @@
 <?php
 
+function forefrontderm_api_push( $entry, $form ) {
+ 
+
+
+  // Exit if not correct form
+  if ( $form['id'] != 4) return $form;
+
+
+  if (rgar( $entry, '25' ) == 7) {
+      $service_type == 'Cosmetic Dermatology';
+    } else {
+      $service_type == 'Medical Dermatology';
+  }
+
+if (is_singular('location')) { 
+    $location_name = get_the_title();
+}
+
+
+    $endpoint_url = 'https://api.forefrontderm.com/api/appointment';
+    
+    $body = array(
+        'entry_id' => rgar( $entry, 'id' ), 
+        'date_created' => rgar( $entry, 'date_created' ), 
+        'first_name' => sanitize_text_field(rgar( $entry, '21' )),
+        'last_name' => sanitize_text_field(rgar( $entry, '22' )),
+        'email' => sanitize_email(rgar( $entry, '5' )),
+        'phone' => rgar( $entry, '23' ),
+        'preferred_location' => rgar( $entry, '24' ),
+        'service_type' => $service_type,
+        'service_name' => rgar( $entry, '36' ),
+        'location_name' => $location_name,
+        'post_id' => get_the_ID(),
+        'referer_url' =>  rgar( $entry, 'source_url' ),
+        );
+
+    $json_encode = json_encode($body);
+
+    $payload = $json_encode;
+
+    var_dump($payload);
+     
+    $options = [
+      'body'        => $payload,
+      'headers'     => [
+          'Content-Type' => 'application/json',
+      ],
+      'timeout'     => 60,
+      //'redirection' => 5,
+      //'blocking'    => true,
+      //'httpversion' => '1.0',
+      'sslverify'   => true,
+      //'data_format' => 'body',
+     ];
+
+
+    // POST JSON data to Remote API
+    $response = wp_remote_post( $endpoint_url, $options );
+    $response_code = wp_remote_retrieve_response_code($response);
+
+    // Logging data vars
+    $entry_id = $body['entry_id'];
+    $date_created = $body['date_created'];
+    $location_name = $body['location_name'];
+    $referrer_url = $body['referer_url'];
+
+
+    $retry = 1;
+    $max_retries = 3;
+
+    // Log successful responses or errors
+    if ($response && $response_code == 201 ) {
+      _log_appt_entry($date_created, $entry_id, $location_name, $referrer_url, 'entries');
+   } elseif ( $response_code == 400) {
+      _log_appt_entry($date_created, $entry_id, $location_name, $referrer_url, 'missing_fields');
+      wp_mail( 'ldao@digital-atlas.com', 'Book Appointment Missing Fields Error', 'Book Appointment Missing Fields Occurred :' . $response_code ); 
+   } else {
+
+      // Retry two more times
+      while ($retry <= $max_retries) {
+          $response = wp_remote_post( $endpoint_url, $options );
+
+          $retry++;
+      }
+
+      if ($retry == $max_retries) {
+        _log_appt_entry($date_created, $entry_id, $location_name, $referrer_url, 'server_error');
+        wp_mail( 'ldao@digital-atlas.com', 'Book Appointment API Service Error', 'Book Appointment API Service Error:' . $response_code );         
+      }
+
+
+
+   }
+
+   // Return response code
+    return $response_code;
+
+}
+
+
+function _log_appt_entry( $date_created, $entry_id, $location_name, $referrer_url, $type ) {                  
+  
+      $date = date("m-y");
+
+      if ($type == 'entries') {
+        $filename = sprintf('/logs/book-appt-201-%s.log', $date);
+      } elseif ($type = 'missing_fields') {
+        $filename = '/logs/book-appt-400.log';
+      } elseif ($type = 'server_errors') {
+        $filename = '/logs/book-appt-404_503.log';
+      }
+
+      if (!isset($location_name)) {
+        $location_name = NULL;
+      }
+
+      $data = sprintf("%s,%s,'%s',%s",$date_created, $entry_id, $location_name, $referrer_url );
+
+
+      $file=fopen( HOME_PATH . $filename,'a');
+      fwrite($file, $data . PHP_EOL);
+      fclose($file);  
+}
+
+
 
 /**
  * Route service lead form fills based on taxonomy term ID
@@ -38,6 +163,10 @@ function gf_service_id( $value ) {
 add_filter( 'gform_confirmation_3', 'services_custom_confirmation', 10, 4 );
 function services_custom_confirmation( $confirmation, $form, $lead, $ajax ) {
 
+    $response_code = forefrontderm_api_push($lead, $form);
+
+    if ($response_code == 201) {
+
     // Get form object
     $lead = $_POST;
 
@@ -72,7 +201,7 @@ function services_custom_confirmation( $confirmation, $form, $lead, $ajax ) {
 
     $confirmation = array( 'redirect' => $confirmation_url );
 
-
+    }
 
     return $confirmation;
 }

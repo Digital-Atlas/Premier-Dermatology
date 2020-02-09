@@ -13,6 +13,12 @@ h1 {
 }
 
 
+@media only screen and (min-width: 600px) {
+
+.form-request-appointment input, .form-request-appointment select {
+width: 500px !important;
+}
+}
 </style>
 
 
@@ -59,7 +65,7 @@ function _consult_form($string) {
         $string = "Request a consultation";
     }
 
-    $consult = do_shortcode('[gravityform id=3 title=false description=false ajax=true tabindex=1]');
+    $consult = do_shortcode('[gravityform id=4 title=false description=false ajax=true tabindex=1]');
     $form = sprintf('<div class="entry-content" style="margin-top:30px; max-width:600px;" id="consult-form"><h3>%s</h3>%s</div>', $string, $consult);
 
     return $form; 
