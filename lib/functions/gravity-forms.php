@@ -21,6 +21,11 @@ if (is_singular('location')) {
 
     $endpoint_url = 'https://api.forefrontderm.com/api/appointment';
     
+    if (is_singular('service')) {
+      $service_name = get_the_title();
+    }
+
+
     $body = array(
         'entry_id' => rgar( $entry, 'id' ), 
         'date_created' => rgar( $entry, 'date_created' ), 
@@ -30,7 +35,7 @@ if (is_singular('location')) {
         'phone' => rgar( $entry, '23' ),
         'preferred_location' => rgar( $entry, '24' ),
         'service_type' => $service_type,
-        'service_name' => rgar( $entry, '36' ),
+        'service_name' => $service_name,
         'location_name' => $location_name,
         'post_id' => get_the_ID(),
         'referer_url' =>  rgar( $entry, 'source_url' ),
@@ -39,8 +44,6 @@ if (is_singular('location')) {
     $json_encode = json_encode($body);
 
     $payload = $json_encode;
-
-    var_dump($payload);
      
     $options = [
       'body'        => $payload,
@@ -160,8 +163,8 @@ function gf_service_id( $value ) {
 
 // Services lead forms
 
-add_filter( 'gform_confirmation_3', 'services_custom_confirmation', 10, 4 );
-function services_custom_confirmation( $confirmation, $form, $lead, $ajax ) {
+add_filter( 'gform_confirmation_4', 'book_appointment_confirmation', 10, 4 );
+function book_appointment_confirmation( $confirmation, $form, $lead, $ajax ) {
 
     $response_code = forefrontderm_api_push($lead, $form);
 
@@ -187,15 +190,19 @@ function services_custom_confirmation( $confirmation, $form, $lead, $ajax ) {
     } elseif ( $term_list[0] == 9 ) {
         $url = "book-appointment-spa-service-completed";
     } else {
-        $url = "book-appointment-medical-service-completed";
+        $url = "request-an-appointment-completed";
     }
 
 
     // Define routing URL on location service form fills
 
-    $service_name = sprintf('service_name=%s', sanitize_title($lead['input_33']));
+    if (is_singular('service')) {
+      $service_name = sprintf('service_name=%s', sanitize_title(get_the_title()));
+      $query_string = sprintf('?%s',$service_name);      
+    } else {
+      $query_string = sprintf('?%s', esc_html(get_the_title()));
+    }
 
-    $query_string = sprintf('?%s',$service_name);
 
     $confirmation_url = trailingslashit(site_url()) . $url . $query_string;
 

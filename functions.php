@@ -20,6 +20,7 @@ if ( ! function_exists( '_s_setup' ) ) :
 		/****************************************
 		Define Child Theme Definitions
 		*****************************************/
+		define( 'HOME_PATH', ABSPATH );
 		define( 'THEME_DIR', get_template_directory() );
 		define( 'THEME_URL', get_template_directory_uri() );
 		define( 'THEME_LANG', THEME_URL . '/languages' );
