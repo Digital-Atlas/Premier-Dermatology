@@ -17,7 +17,7 @@ function forefrontderm_api_push( $entry, $form ) {
 if (is_singular('location')) { 
     $location_name = get_the_title();
 } else {
-    $location_name = 'General Site';
+    $location_name = 'Global Site';
 };
 
 
