@@ -16,7 +16,9 @@ function forefrontderm_api_push( $entry, $form ) {
 
 if (is_singular('location')) { 
     $location_name = get_the_title();
-}
+} else {
+    $location_name = 'General Site';
+};
 
 
     $endpoint_url = 'https://api.forefrontderm.com/api/appointment';
@@ -105,7 +107,7 @@ if (is_singular('location')) {
 
 function _log_appt_entry( $date_created, $entry_id, $location_name, $referrer_url, $type ) {                  
   
-      $date = date("m-y");
+      $date = date("m-Y");
 
       if ($type == 'entries') {
         $filename = sprintf('/logs/book-appt-201-%s.log', $date);
