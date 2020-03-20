@@ -221,7 +221,7 @@ get_header(); ?>
 		
 
                 function section_announcement() {
-                    echo sprintf('<section class="row small-12 default-padding text-center" style="margin-top: 0px; background-color:#fcee4d; padding: 15px;"><h4 style="margin-bottom:0;"><img src="http://forefrontdermatology.com/images/problem.svg" alt="" style="height: 40px; margin-right: 15px;" />You can find the latest rmation about COVID-19 (coronavirus) <a href="https://pdskin.com/message-corona-virus/" target="_blank">here.</a></h4></section>');             
+                    echo sprintf('<section class="row small-12 default-padding text-center" style="margin-top: 0px; background-color:#fcee4d; padding: 15px;"><h4 style="margin-bottom:0;">You can find the latest rmation about COVID-19 (coronavirus) <a href="https://pdskin.com/message-corona-virus/" target="_blank">here.</a></h4></section>');             
                 }
 
 
