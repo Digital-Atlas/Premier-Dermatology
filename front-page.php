@@ -13,7 +13,25 @@
  */
 
 get_header(); ?>
+<style>
+.teledermatology { max-width: 63%; text-align: left; padding: 20px 50px; }
+@media screen and (max-width: 800px) { 
+	.teledermatology {padding: 20px 0 !important; } 
+	.teledermatology .btn { padding: 10px ; padding-right:30px; } 
+	.teledermatology .btn:after{ height: 18px; right: -10px; }
+}
+.no-touchevents a[href^="tel:"] {
+    pointer-events: all;
+    cursor: pointer;
+}
 
+a.btn:hover {
+    background: #bf2c52b3;
+    color: #fff;;
+    text-decoration: none;
+}
+
+</style>
 <div id="primary" class="content-area">
 
 	<main id="main" class="site-main" role="main">
@@ -24,101 +42,123 @@ get_header(); ?>
 
 		// Hero
 		section_hero();
-		function section_hero() {
-			
-			$heading = sprintf( '<h1>%s</h1>', get_post_meta( get_the_ID(), 'hero_heading', true ) );
-			$subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
-			if( !empty( $subheading ) ) {
-				$heading .= sprintf( '<h5>%s</h5>', get_post_meta( get_the_ID(), 'hero_subheading', true ) );
-			}
-			
-			$content = sprintf( '<div class="panel">%s</div>', $heading );
-			
-			$photos = get_field( 'photos' );
-			$background = '';
-			
-			if( !empty( $photos ) ) {
-				$photo_ids = wp_list_pluck( $photos, 'ID' );
-				//shuffle( $photo_ids );
-				
-				$photo = wp_get_attachment_image_src( $photo_ids[0], 'hero' );
-				
-				// Create an array to hold Hero images
-				$hero_images = array();
-				$max_hero_images = count($photo_ids);
-				
-				// Loop through array and add image src to array
-				$i = 0;
-				while ( $i <= ($max_hero_images -1) ) {
-					$hero_images[] =wp_get_attachment_image_src( $photo_ids[$i], 'hero' );
-					$i++;
+		function section_hero() { 
+			//if(isset($_GET['dev'])) {
+				 ?>
+					<section class="section hero" id="hero" role="region" aria-labelledby="banner" style="background: url('https://pdskin.com/wp-content/uploads/2020/03/premier-dermatology-cosmetic-young-woman.jpg') 70% 0px / cover no-repeat;">
+					<div class="flex">
+					   <div class="wrap">
+						  <div class="row">
+							 <div class="small-12 columns">
+								<div class="panel teledermatology">
+								   <h1 style="white-space: nowrap;">Introducing<br> Teledermatology</h1>
+								   <h5>Personalized skincare appointments from the comfort of your own home.</h5>
+								   <p>
+								   	<a class="btn" href="tel:+18555357175"><span>CALL NOW TO SCHEDULE</span></a>
+								   </p>
+								   <a href="/teledermatology/" style="display: block; color: #fff; text-decoration: underline; font-size: 19px; margin: 20px; white-space: nowrap">See how it works &gt;</a>
+								</div>
+							 </div>
+						  </div>
+					   </div>
+					</div>
+					</section>
+				<?php 
+			/* } else {
+				$heading = sprintf( '<h1>%s</h1>', get_post_meta( get_the_ID(), 'hero_heading', true ) );
+				$subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
+				if( !empty( $subheading ) ) {
+					$heading .= sprintf( '<h5>%s</h5>', get_post_meta( get_the_ID(), 'hero_subheading', true ) );
 				}
-
-				?>
-
-
-				<style type="text/css">
-				/** Default background as fallback **/
-				#hero { 					
-  					background: url("<?php echo $photo[0]; ?>") no-repeat 70% 0;
-  				}
-				</style>
-
-				<script type="text/javascript">
-					/* Source: https://codepen.io/dudleystorey/pen/qEoKzZ */
-
-					// Create our JS image array
-					var bgImageArray = [
+				
+				$content = sprintf( '<div class="panel">%s</div>', $heading );
+				
+				$photos = get_field( 'photos' );
+				$background = '';
+				
+				if( !empty( $photos ) ) {
+					$photo_ids = wp_list_pluck( $photos, 'ID' );
+					//shuffle( $photo_ids );
 					
-					<?php
-					foreach ($hero_images as $image) {
-						echo sprintf('"%s",',$image[0]);
+					$photo = wp_get_attachment_image_src( $photo_ids[0], 'hero' );
+					
+					// Create an array to hold Hero images
+					$hero_images = array();
+					$max_hero_images = count($photo_ids);
+					
+					// Loop through array and add image src to array
+					$i = 0;
+					while ( $i <= ($max_hero_images -1) ) {
+						$hero_images[] =wp_get_attachment_image_src( $photo_ids[$i], 'hero' );
+						$i++;
 					}
+
 					?>
-					],
 
-					secs = 4;
-					bgImageArray.forEach(function(img){
-					    new Image().src = img; 
-					    // caches images, avoiding white flash between background replacements
-					});
 
-					function backgroundSequence() {
-						window.clearTimeout();
-						var k = 0;
-						for (i = 0; i < bgImageArray.length; i++) {
-							setTimeout(function(){ 
-								document.getElementById("hero").style.background = "url(" + bgImageArray[k] + ") 70% 0 no-repeat";
-								document.getElementById("hero").style.backgroundSize ="cover";
-							if ((k + 1) === bgImageArray.length) { setTimeout(function() { backgroundSequence() }, (secs * 1000))} else { k++; }			
-							}, (secs * 1000) * i)	
-						}
+					<style type="text/css">
+					
+					#hero { 					
+						background: url("<?php echo $photo[0]; ?>") no-repeat 70% 0;
 					}
-					backgroundSequence();					
-				</script>
+					</style>
 
-				<?php
-			}
-								
-			$args = array(
-				'html5'   => '<section %s>',
-				'context' => 'section',
-				'attr' => array( 'id' => 'hero', 'class' => 'section hero', 'role' => 'region', 'aria-labelledby' => 'banner'), //, 'style' => $background ),
-				'echo' => false
-			);
+					<script type="text/javascript">
+						
+
+						// Create our JS image array
+						var bgImageArray = [
+						
+						<?php
+						foreach ($hero_images as $image) {
+							echo sprintf('"%s",',$image[0]);
+						}
+						?>
+						],
+
+						secs = 4;
+						bgImageArray.forEach(function(img){
+							new Image().src = img; 
+							// caches images, avoiding white flash between background replacements
+						});
+
+						function backgroundSequence() {
+							window.clearTimeout();
+							var k = 0;
+							for (i = 0; i < bgImageArray.length; i++) {
+								setTimeout(function(){ 
+									document.getElementById("hero").style.background = "url(" + bgImageArray[k] + ") 70% 0 no-repeat";
+									document.getElementById("hero").style.backgroundSize ="cover";
+								if ((k + 1) === bgImageArray.length) { setTimeout(function() { backgroundSequence() }, (secs * 1000))} else { k++; }			
+								}, (secs * 1000) * i)	
+							}
+						}
+						backgroundSequence();					
+					</script>
+
+					<?php
+				}
+									
+				$args = array(
+					'html5'   => '<section %s>',
+					'context' => 'section',
+					'attr' => array( 'id' => 'hero', 'class' => 'section hero', 'role' => 'region', 'aria-labelledby' => 'banner'), //, 'style' => $background ),
+					'echo' => false
+				);
+				
+				$out = _s_markup( $args );
+				$out .= '<div class="flex">';
+				$out .= _s_structural_wrap( 'open', false );
+				
+				
+				$out .= sprintf( '<div class="row"><div class="small-12 columns">%s</div></div>', $content );
+				
+				$out .= _s_structural_wrap( 'close', false );
+				$out .= '</div>';
+				$out .= '</section>';
 			
-			$out = _s_markup( $args );
-			$out .= '<div class="flex">';
-			$out .= _s_structural_wrap( 'open', false );
-			
-			
-			$out .= sprintf( '<div class="row"><div class="small-12 columns">%s</div></div>', $content );
-			
-			$out .= _s_structural_wrap( 'close', false );
-			$out .= '</div>';
-			$out .= '</section>';
-			
-			echo $out;
+				echo $out;
+			}*/
 				
 		}
 		?>
@@ -221,7 +261,7 @@ get_header(); ?>
 		
 
                 function section_announcement() {
-                    echo sprintf('<section class="row small-12 default-padding text-center" style="margin-top: 0px; background-color:#fcee4d; padding: 15px;"><h4 style="margin-bottom:0;">You can find the latest rmation about COVID-19 (coronavirus) <a href="https://pdskin.com/message-corona-virus/" target="_blank">here.</a></h4></section>');             
+                    echo sprintf('<section class="row small-12 default-padding text-center" style="margin-top: 0px; background-color:#fcee4d; padding: 15px;"><h4 style="margin-bottom:0;">You can find the latest information about COVID-19 (coronavirus) <a href="https://pdskin.com/message-corona-virus/" target="_blank">here.</a></h4></section>');             
                 }
 
 

@@ -23,10 +23,14 @@ border: 1px solid #ddd;
     padding-bottom: 10px;
     padding-top: 10px;
     font-weight: normal;
-    border-top: 1px solid #fff;
+    /*border-top: 1px solid #fff;*/
     display: block;
     margin: 0 auto;
     max-width:500px;
+}
+.section.hero h1 strong{
+    font-size: 30px;
+    line-height: 1.4;
 }
 
 .section.hero h2 {
@@ -178,10 +182,10 @@ function section_hero($loader, $location_names) {
             $title = get_the_title();
         }
 
-
-	$heading = sprintf( '<h1>%s %s</h1>', 'Dermatologist', $location_names );
-
-        $specialties = sprintf('<h2 id="ajax-specialties">%s</h2>', $loader ); 
+    $heading = sprintf( '<h1>%s</h1>', get_field('h1_title') );
+    $specialties = ''; 
+	// $heading = sprintf( '<h1>%s %s</h1>', 'Dermatologist', $location_names );
+    // $specialties = sprintf('<h2 id="ajax-specialties">%s</h2>', $loader ); 
 
 
 	$content =  $specialties .$heading;
