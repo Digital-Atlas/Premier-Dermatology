@@ -12,7 +12,9 @@
  * @package _s
  */
 
-get_header(); ?>
+get_header(); 
+$status = get_option('hero_status');
+?>
 <style>
 .teledermatology { max-width: 63%; text-align: left; padding: 20px 50px; }
 @media screen and (max-width: 800px) { 
@@ -28,8 +30,9 @@ get_header(); ?>
 a.btn:hover {
     background: #bf2c52b3;
     color: #fff;;
-    text-decoration: none;
+    text-decoration: none; 
 }
+.hidden { display: none; }
 
 </style>
 <div id="primary" class="content-area">
@@ -41,9 +44,9 @@ a.btn:hover {
                 section_announcement();
 
 		// Hero
-		section_hero();
-		function section_hero() { 
-			//if(isset($_GET['dev'])) {
+		section_hero($status);
+		function section_hero($status) { 
+			if($status == 'TELEDERMATOLOGY') {
 				 ?>
 					<section class="section hero" id="hero" role="region" aria-labelledby="banner" style="background: url('https://pdskin.com/wp-content/uploads/2020/03/premier-dermatology-cosmetic-young-woman.jpg') 70% 0px / cover no-repeat;">
 					<div class="flex">
@@ -51,6 +54,9 @@ a.btn:hover {
 						  <div class="row">
 							 <div class="small-12 columns">
 								<div class="panel teledermatology">
+								   <?php $heading = sprintf( '<h1 class="hidden">%s</h1>', get_post_meta( get_the_ID(), 'hero_heading', true ) );
+									echo $heading;
+								   ?>
 								   <h1 style="white-space: nowrap;">Introducing<br> Teledermatology</h1>
 								   <h5>Personalized skincare appointments from the comfort of your own home.</h5>
 								   <p>
@@ -64,7 +70,7 @@ a.btn:hover {
 					</div>
 					</section>
 				<?php 
-			/* } else {
+			 } else {
 				$heading = sprintf( '<h1>%s</h1>', get_post_meta( get_the_ID(), 'hero_heading', true ) );
 				$subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
 				if( !empty( $subheading ) ) {
@@ -158,7 +164,7 @@ a.btn:hover {
 				$out .= '</section>';
 			
 				echo $out;
-			}*/
+			}
 				
 		}
 		?>
