@@ -6,6 +6,7 @@ if(is_singular('location')){
 } else {
 	$status = get_option('covid_status');
 }
+
 $hours = [];
 
 if( have_rows('opening_hours') ):
@@ -28,6 +29,11 @@ $interstitial = [
 	"BRAND_OPTION_B" => "We are sorry for the inconvenience, but unfortunately some of our offices are closed at this time. Please check your local clinic to see hours of&nbsp;operation.",
 	"OPEN_TELEDERM_ORDINANCE" => "During the COVID-19 pandemic, our office is OPEN and seeing patients. We are also offering teledermatology for many skin concerns. In complying with WI Emergency Order #12, if in the past two weeks you have traveled outside your local community in WI, or have a fever/cough or known/suspected COVID-19 exposure, you will need to reschedule your appointment.",
 	"EMERGENCIES_ONLY" => "During the <div class='nowrap'>COVID-19</div> pandemic, our office is OPEN for urgent care only. We can be reached at&nbsp;<a href='tel:+1".$phone."' rel='nofollow' class='nowrap'>".$phone."</a>.",
+	"BRAND_TELEDERM" => "We are proud to announce that our locations are now offering teledermatology at this time to help assist you from the comfort of your own home. If you are experiencing a fever, shortness of breath or have come into contact with a COVID-19 patient who has tested positive we request that you schedule a teledermatology visit or reschedule your appointment. Please visit your local clinic to confirm hours of operation. ",
+	"GRAND_RAPIDS_EAST_PARIS" => "We apologize for the inconvenience but our Grand Rapids location has been closed. Please visit our neighboring location on Cascade Road which is less than a mile away. Or call us at (616) 678-2070 to schedule an appointment today.",
+	"EAST_LANSING" => "Our clinic is currently open but we do have reduced hours. We are currently open Monday (for Mohs) from 8am to 3pm. Call <a href='tel:+1".$phone."' rel='nofollow' class='nowrap'>".$phone."</a> to book an appointment today! We are also proud to announce that we are offering teledermatology at this time that is available even on the weekends to help assist you from the comfort of your own home! If you are experiencing a fever, shortness of breath or have come into contact with a COVID-19 we request that you schedule a teledermatology visit or reschedule your appointment.",
+	"CRANBERRY_TOWNSHIP" => "Our clinic is currently open but we do have reduced hours. We are currently open on Wednesday and Thursday from 7am to 5pm. Call <a href='tel:+1".$phone."' rel='nofollow' class='nowrap'>".$phone."</a> to book an appointment today! We are also proud to announce that we are offering teledermatology at this time that is available even on the weekends to help assist you from the comfort of your own home! If you are experiencing a fever, shortness of breath or have come into contact with a COVID-19 we request that you schedule a teledermatology visit or reschedule your appointment.",
+	"CORP_DRIVE" => "Our clinic is currently open but we do have reduced hours. We are currently open on Monday and Tuesday from 7am to 5pm. Call <a href='tel:+1".$phone."' rel='nofollow' class='nowrap'>".$phone."</a> to book an appointment today! We are also proud to announce that we are offering teledermatology at this time that is available even on the weekends to help assist you from the comfort of your own home! If you are experiencing a fever, shortness of breath or have come into contact with a COVID-19 we request that you schedule a teledermatology visit or reschedule your appointment.",
 ];
 
 if($status != 'NONE' && !empty($status)) {
