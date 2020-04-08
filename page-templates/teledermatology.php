@@ -200,10 +200,10 @@ $subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
     <div class="large-6 columns left">
         <h2>How To Use FaceTime For Your Appointment?</h2>
 		<p>Here are directions for using the Apple FaceTime app to start a visit with your doctor.</p>
-		<a href="https://forefrontdermatology.com/wp-content/uploads/2020/04/FaceTime_User-Guide_Forefront_Dermatology-04-04-20-1.pdf" target="_blank" class="button big">VIEW FACETIME USER GUIDE</a>
+		<a href="https://pdskin.com/wp-content/uploads/2020/04/FaceTime_User-Guide_Forefront_Dermatology-04-04-20-1.pdf" target="_blank" class="button big">VIEW FACETIME USER GUIDE</a>
     </div>
     <div class="large-6 columns right">
-        <img class="facetime-cta" src="https://forefrontdermatology.com/wp-content/uploads/2020/04/bitmap@3x.png">
+        <img class="facetime-cta" src="https://pdskin.com/wp-content/uploads/2020/04/bitmap@3x-1.png">
     </div>
 </section>
 <?php /*
