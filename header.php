@@ -83,6 +83,8 @@ position:relative;
     z-index: 999;
 }
 
+html:not(.note) .site-container .site-content{ padding-top:0 !important; }
+
 #interstitial { 
 			display: none;
 			padding: 30px;

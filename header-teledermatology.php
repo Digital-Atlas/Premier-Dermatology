@@ -82,6 +82,7 @@ font-weight: bold;
 position:relative;
     z-index: 999;
 }
+html:not(.note) .site-container .site-content{ padding-top:0 !important; }
 
 </style>
 </head>

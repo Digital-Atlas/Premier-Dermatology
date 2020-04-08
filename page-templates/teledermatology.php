@@ -54,11 +54,72 @@ $subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
 	/*.main.form-button-wrapper{  }*/
 
 
+	.main.facetime{ padding-bottom:50px !important; padding-top:20px !important; display: flex; }
+	.main.facetime .columns{ padding:0; padding: 0 140px !important; text-align: left;}
+	.main.facetime .columns.right{ text-align:right; }
+	.main.facetime .columns.left{ padding-right:30px !important; padding-top:30px !important; }
+	.main.facetime .button{
+		color: #fff;
+	    display: inline-block; 
+	    font-family: Century Gothic,sans-serif;
+	    text-decoration: none;
+	    text-transform: uppercase;
+	    background: #86a641;
+	    letter-spacing: 2px;
+	    line-height: 24px;
+	    font-size:14px;
+	    border: none;
+	    outline: none;
+	    padding: 10px 40px;
+	    border-radius: 100px;
+	    text-align: center;
+	    position: relative;
+	}
+	.page-template-page-teledermatology .hero-unit{ margin-top: 50px !important; padding: 50px 0 180px 0 !important; }
+	.page-template-page-teledermatology .hero-intro #mdg_link_how_it_works{ display:none !important; }
+	.site-content{ top: 0 !important; padding-top: 0 !important; }
+
+
 	@media screen and (max-width: 800px) {
 		.site-footer { padding: 0; }
 		.site-footer .widget { margin: 0; }
 		.bg-green { padding: 30px; }
 	    .bg-white { padding: 30px; }
+	}
+
+
+	@media screen and (max-width: 63.9375rem) {
+		.info-item { padding: 20px; }
+		.warning img { display: block; margin: 0 auto !important; } 
+		#footer-connect p { font-size: 10px !important; }
+	}
+	@media screen and (max-width: 1023px) {
+		.main.facetime .columns{
+			padding:30px !important;
+		}
+		
+	}
+	@media screen and (min-width: 801px) and  (max-width: 1123px) {
+		.main.facetime .columns.right{ padding: 0 60px !important; }
+	}
+	@media screen and (min-width: 640px) and  (max-width: 800px) {
+		.gform_wrapper .top_label input.medium, .gform_wrapper .top_label select.medium{ width:100%; }
+	}
+	@media screen and (min-width: 640px) and  (max-width: 1123px) {
+		.page-template-page-teledermatology .hero-unit{ padding:30px 0 180px 0 !important; }
+	}
+	@media only screen and (max-width: 641px) {
+		.main.facetime{ flex-direction:column-reverse; padding: 30px !important; }
+		.main.facetime .columns .button{ width:auto !important; }
+		.main.facetime .columns.right{ text-align: center !important; padding-top: 0 !important; }
+		.main.facetime .columns.left{padding-right: 0 !important; padding-top: 0 !important; padding: 20px 0 !important;}
+		.main.facetime .columns{ padding: 0 !important; }
+		.page-template-page-teledermatology .h1{ font-size:2.5rem !important; line-height:3rem !important; }
+		.page-template-page-teledermatology .hero-unit{ margin-top:0 !important; padding:0 !important; }
+		.page-template-page-teledermatology .hero-unit .hero-summary{ margin-bottom:425px; }
+		.hero-unit { background-image: url(https://forefrontdermatology.com/images/teledermatology-hero_mobile.png) !important; height: 115vw; min-height: 500px; background-position: center bottom;}
+		.hero-unit { background-position: -410px 0; }
+		h2 { font-size: 24px;}
 	}
 </style>
 <div class="home">
@@ -135,6 +196,16 @@ $subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
 	<div>
 </main>
 </div>
+<section class="row small-12 no-padding text-center main white-bg facetime" role="main" aria-label="Patient Forms">
+    <div class="large-6 columns left">
+        <h2>How To Use FaceTime For Your Appointment?</h2>
+		<p>Here are directions for using the Apple FaceTime app to start a visit with your doctor.</p>
+		<a href="https://forefrontdermatology.com/wp-content/uploads/2020/04/FaceTime_User-Guide_Forefront_Dermatology-04-04-20-1.pdf" target="_blank" class="button big">VIEW FACETIME USER GUIDE</a>
+    </div>
+    <div class="large-6 columns right">
+        <img class="facetime-cta" src="https://forefrontdermatology.com/wp-content/uploads/2020/04/bitmap@3x.png">
+    </div>
+</section>
 <?php /*
 <div class="content-area">
 	<main class="patient-forms" role="main">
