@@ -56,8 +56,16 @@ $subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
 
 	.main.facetime{ padding-bottom:50px !important; padding-top:20px !important; display: flex; }
 	.main.facetime .columns{ padding:0; padding: 0 140px !important; text-align: left;}
-	.main.facetime .columns.right{ text-align:right; }
-	.main.facetime .columns.left{ padding-right:30px !important; padding-top:30px !important; }
+	/*.main.facetime .columns.right{ text-align:right; }*/
+	/*.main.facetime .columns.left{ padding-right:30px !important; padding-top:30px !important; }*/
+	.main.facetime:not(.zoom) .columns.left{ padding-right:30px !important; padding-top:30px !important; }
+
+	.main.facetime .columns{ text-align: left !important; }
+	.main.facetime.zoom .columns p{ margin: 10px 0 10px; }
+	/*.main.facetime .columns.right{ text-align:right; }*/
+	/*.main.facetime:not(.zoom) .columns.left{ padding-right:30px !important; padding-top:30px !important; }*/
+
+
 	.main.facetime .button{
 		color: #fff;
 	    display: inline-block; 
@@ -111,8 +119,9 @@ $subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
 	@media only screen and (max-width: 641px) {
 		.main.facetime{ flex-direction:column-reverse; padding: 30px !important; }
 		.main.facetime .columns .button{ width:auto !important; }
-		.main.facetime .columns.right{ text-align: center !important; padding-top: 0 !important; }
+		.main.facetime .columns.right{ padding-top: 0 !important; }
 		.main.facetime .columns.left{padding-right: 0 !important; padding-top: 0 !important; padding: 20px 0 !important;}
+		.main.facetime.zoom .columns{ padding-right: 0 !important; padding-top: 30px !important; padding-bottom: 30px !important; }
 		.main.facetime .columns{ padding: 0 !important; }
 		.page-template-page-teledermatology .h1{ font-size:2.5rem !important; line-height:3rem !important; }
 		.page-template-page-teledermatology .hero-unit{ margin-top:0 !important; padding:0 !important; }
@@ -196,16 +205,21 @@ $subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
 	<div>
 </main>
 </div>
-<section class="row small-12 no-padding text-center main white-bg facetime" role="main" aria-label="Patient Forms">
+<section class="row small-12 no-padding text-center main white-bg facetime zoom" role="main" aria-label="Patient Forms">
     <div class="large-6 columns left">
-        <h2>How To Use FaceTime For Your Appointment?</h2>
-		<p>Here are directions for using the Apple FaceTime app to start a visit with your doctor.</p>
-		<a href="https://pdskin.com/wp-content/uploads/2020/04/FaceTime_User-Guide_Forefront_Dermatology-04-04-20-1.pdf" target="_blank" class="button big">VIEW FACETIME USER GUIDE</a>
+        <h2>How To Use Zoom For Your Appointment?</h2>
+        <img class="facetime-cta" src="https://pdskin.com/wp-content/uploads/2020/04/zoom-phone.png">
+		<p>Here are directions for using the Zoom app to start a visit with your doctor.</p>
+		<a href="https://pdskin.com/PDF/Zoom-Mobile-User-Guidelines-Forefront-Dermatology.pdf" target="_blank" class="button big">VIEW ZOOM USER GUIDE</a>
     </div>
     <div class="large-6 columns right">
+        <h2>How To Use FaceTime For Your Appointment?</h2>
         <img class="facetime-cta" src="https://pdskin.com/wp-content/uploads/2020/04/bitmap@3x-1.png">
+		<p>Here are directions for using the Apple FaceTime app to start a visit with your doctor.</p>
+		<a href="https://pdskin.com/PDF/FaceTime-User-Guide-Forefront-Dermatology.pdf" target="_blank" class="button big">VIEW FACETIME USER GUIDE</a>
     </div>
 </section>
+
 <?php /*
 <div class="content-area">
 	<main class="patient-forms" role="main">
