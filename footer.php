@@ -150,14 +150,58 @@ function _s_footer_copyright() {
 jQuery(document).ready(function(){
     $ = jQuery; 
     $('p').each(function() {
-    var $this = $(this);
-    if($this.html().replace(/\s|&nbsp;/g, '').length == 0)
-        $this.remove();
-}); 
+		var $this = $(this);
+		if($this.html().replace(/\s|&nbsp;/g, '').length == 0)
+			$this.remove();
+	}); 
 
-});</script>
+});
+
+</script>
 <?php endif; ?>
+<?php 
+if(is_singular('location')){
+	$status = get_post_meta(get_the_ID(), 'covid_status')[0];
+} else {
+	$status = get_option('covid_status'); 
+}
 
+if($status != 'NONE' && !empty($status)) { ?>
+<script>
+jQuery(document).ready(function(){ 
+$ = jQuery; 
+var interstitial_height = $('#interstitial').height();
+
+$("#fixed").css("top", interstitial_height + 60);
+if($(window).width() > 1024) {
+	$(".elementor-background-overlay").css("padding-top", interstitial_height + 270);
+}
+
+$("html").addClass("note");
+
+$(".close-interstitial" ).on( "click", function() {
+  $("html").removeClass("note");
+  $("#fixed").css("top", 0);
+  $("#content").css("padding-top", 0);
+  $("#content").css("top", 0);
+});
+ $(window).on('scroll resize', function() {
+	 var interstitial_height = $('#interstitial').height();
+	$("#fixed").css("top", interstitial_height + 60);
+	console
+	if($(window).width() > 1024) {
+		$("#content").css("padding-top", interstitial_height + 60);
+	} else {
+		$("#content").css("top", interstitial_height + 60);
+	}
+	
+	$('html').toggleClass('sticky-header', $(window).scrollTop() > interstitial_height);
+ });
+
+});
+
+</script>
+<?php } ?>
 
 </div> <!-- Close .site-container opened in header -->
 
