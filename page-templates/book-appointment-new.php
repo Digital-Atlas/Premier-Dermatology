@@ -141,7 +141,7 @@ section.commitment:before{
     position: absolute;
     bottom: 0;
     left: -115px;
-    background: url(https://staging.pdskin.com/wp-content/themes/pdskin/assets/images/home/green-circles.png);
+    background: url('https://pdskin.com/wp-content/uploads/2020/05/green-circles-1.png');
     background-position: 100%;
     background-repeat: no-repeat;
     background-size: contain;
@@ -173,7 +173,7 @@ section.commitment:before{
 	padding: 60px 60px 60px 100px;
 	display: flex;
 	background-color: #a1c05f;
-	background-image: url(https://staging.pdskin.com/wp-content/themes/pdskin/assets/images/footer-cta.png);
+	background-image: url('https://pdskin.com/wp-content/uploads/2020/05/footer-cta-1.png');
 }
 .page-template-book-appointment-new .zocdoc .columns{}
 .page-template-book-appointment-new .zocdoc .columns h2{color:#ffffff;font-size: 30px;}
@@ -475,7 +475,7 @@ section.commitment:before{
 
 
 
-	<section class="section hero" id="hero" role="region" aria-labelledby="banner" style="background: url('https://staging.pdskin.com/wp-content/uploads/2020/04/hero-book-appointment@3x-scaled.jpg') 70% 0px / cover no-repeat;">
+	<section class="section hero" id="hero" role="region" aria-labelledby="banner" style="background: url('https://pdskin.com/wp-content/uploads/2020/05/hero-book-appointment@3x-scaled-1.jpg') 70% 0px / cover no-repeat;">
 		<div class="flex">
 		   <div class="wrap">
 			  <div class="row">
@@ -494,7 +494,7 @@ section.commitment:before{
 	</section>
 	<section class="row small-12 default-padding text-center booking-apt">
 		<div class="columns">
-			<img src="https://staging.pdskin.com/wp-content/uploads/2020/04/bitmap@3x.jpg"/>
+			<img src="https://pdskin.com/wp-content/uploads/2020/05/bitmap@3x-1.jpg"/>
 		</div>
 		<div class="columns">
 			<h2>Healthier skin starts with smoother scheduling</h2>
@@ -523,40 +523,17 @@ section.commitment:before{
 			<h2>No Contact Experience</h2>
 			<p>We’ve made the entire check-in process a no-contact experience. Simply complete the online pre-visit process and utilize our two-way texting service once you arrive. That way, you can go directly from the safety of your car, straight into a disinected exam room. You’ll bypass the paperwork, other patients, and any touching of pens, paper, or clipboards.</p>
 		</div>
-		<!-- <?php if(isset($_GET['dev'])) { ?> -->
-		<!-- <div class="large-6 columns bg-white carousel-section">
-			<div class="carousel-arrows nav">
-				<i class="arrow right">></i>
-				<i class="arrow left"><</i>
-			</div>
-			<div class="carousel-book-apt">
-			   <div class="item"><img src="https://staging.pdskin.com/wp-content/uploads/2020/04/slide-2.jpg" alt="The Last of us"></div>
-			   <div class="item"><img src="https://staging.pdskin.com/wp-content/uploads/2020/04/slide-3.jpg" alt="The Last of us" alt="GTA V"></div>
-			   <div class="item"><img src="https://staging.pdskin.com/wp-content/uploads/2020/04/slide-4.jpg" alt="The Last of us" alt="GTA V"></div>
-			   <div class="item"><img src="https://staging.pdskin.com/wp-content/uploads/2020/04/slide-5.jpg" alt="The Last of us" alt="Mirror Edge"></div>
-			</div>
-			<div class="nav-dots nav">
-				<i class="dot">&bull;</i>
-				<i class="dot">&bull;</i>
-				<i class="dot">&bull;</i>
-				<i class="dot">&bull;</i>
-				<i class="dot">&bull;</i>
-			</div>
-		</div> -->
-	<!-- <?php }else{ ?> -->
 		<div class="large-6 columns bg-white">
 			<div id="owl-carousel-book-apt" class="owl-carousel owl-theme">
-			    <!-- <div class="item"><img src="https://staging.pdskin.com/wp-content/uploads/2020/04/slide-2-2.jpg" alt="The Last of us"></div> -->
-			   <div class="item"><img src="https://staging.pdskin.com/wp-content/uploads/2020/04/slide-3-1.jpg" alt="Iphone Demo"></div>
-			   <div class="item"><img src="https://staging.pdskin.com/wp-content/uploads/2020/04/slide-4-1.jpg" alt="Iphone Demo"></div>
-			   <div class="item"><img src="https://staging.pdskin.com/wp-content/uploads/2020/04/slide-5-1.jpg" alt="Iphone Demo"></div>
+			   <div class="item"><img src="https://pdskin.com/wp-content/uploads/2020/05/slide-3-1.jpg" alt="Iphone Demo"></div>
+			   <div class="item"><img src="https://pdskin.com/wp-content/uploads/2020/05/slide-4-1.jpg" alt="Iphone Demo"></div>
+			   <div class="item"><img src="https://pdskin.com/wp-content/uploads/2020/05/slide-5-1.jpg" alt="Iphone Demo"></div>
 			</div>
 		</div>
-	<!-- <?php } ?> -->
 	</section>
 	<section class="row small-12 default-padding text-center commitment">
 		<div class="columns">
-			<img src="https://staging.pdskin.com/wp-content/uploads/2020/05/circle-icon-img.png"/>
+			<img src="https://pdskin.com/wp-content/uploads/2020/05/circle-icon-img-1.png"/>
 		</div>
 		<div class="columns">
 			<h2>We’ve made your safety our top priority</h2>
@@ -601,23 +578,6 @@ section.commitment:before{
 			}
 		 
 		  });
-
-  		// $('.nav i').on('click', function(){
-  		// 	debugger
-  		// 	let navContainer = $(this).closest('.nav');
-  		// 	isArrow = navContainer.hasClass('carousel-arrows');
-  		// 	isDot = navContainer.hasClass('nav-dots');
-  		// 	if(isArrow){
-  		// 		navContainer
-
-  		// 		console.log('arrow')
-
-  		// 	} else if(isDot){
-  		// 		console.log('dot')
-
-  		// 	}
-  		// })
-	// });
 	})(jQuery);
 
 
