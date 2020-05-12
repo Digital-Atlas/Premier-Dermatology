@@ -521,7 +521,7 @@ section.commitment:before{
 			<h2>Check-in prior to your visit</h2>
 			<p>Even better, you can check-in prior to your visit and then skip the waiting room altogether. Just use our pre-visit option to complete patient forms, note any demographic changes, fill in your health history, and even take care of your co-pay. You’ll save time and avoid unnecessary exposure to others on the day of your visit.</p>
 			<h2>No Contact Experience</h2>
-			<p>We’ve made the entire check-in process a no-contact experience. Simply complete the online pre-visit process and utilize our two-way texting service once you arrive. That way, you can go directly from the safety of your car, straight into a disinected exam room. You’ll bypass the paperwork, other patients, and any touching of pens, paper, or clipboards.</p>
+			<p>We’ve made the entire check-in process a no-contact experience. Simply complete the online pre-visit process and utilize our two-way texting service once you arrive. That way, you can go directly from the safety of your car, straight into a disinfected exam room. You’ll bypass the paperwork, other patients, and any touching of pens, paper, or clipboards.</p>
 		</div>
 		<div class="large-6 columns bg-white">
 			<div id="owl-carousel-book-apt" class="owl-carousel owl-theme">
