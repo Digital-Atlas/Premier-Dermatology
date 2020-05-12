@@ -60,7 +60,7 @@ if($status != 'NONE' && !empty($status)) {
 	<div class="content">
 		<div class="title">Our Response To <div class="nowrap">COVID-19</div></div>
 		<?php echo $interstitial[$status]; ?><br>
-		<?php if(strpos($status, "TELEDERM") !== false) { ?> <a href="tel:+1<?php echo $phone; ?>" class="button">CALL NOW TO SCHEDULE</a> <?php } ?>
+		<?php if(strpos($status, "TELEDERM") !== false) { ?> <a href="https://z3-rpw.phreesia.net/selfscheduling.app/#/f92db4b6-741c-4b4f-8407-ea605ddafe57" class="button">BOOK ONLINE NOW</a> <?php } ?>
 		<a class="close close-interstitial" href="#"><img src="<?php echo get_template_directory_uri()."/assets/images/icons/x.svg" ?>" width="26" height="26" alt="close" /></a>
 	</div>
 </div>
