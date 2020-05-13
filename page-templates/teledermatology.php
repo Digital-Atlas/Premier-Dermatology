@@ -354,7 +354,7 @@ $subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
         <div class="faq-wrapper">
         	<h3>What should I wear formy visit?</h3>
         	<div class="more-content">
-        		<p>Wear appropriate, comfortable clothing that allows you to present the area ofconcern.</p>
+        		<p>Wear appropriate, comfortable clothing that allows you to present the area of concern.</p>
         	</div>	
         	<button>></button>
         </div>
