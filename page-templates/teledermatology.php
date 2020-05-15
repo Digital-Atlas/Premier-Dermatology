@@ -10,14 +10,14 @@ $subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
 ?>
 <style>
 	.page-template-teledermatology .center { text-align: center; }
-	.page-template-teledermatology .main-info h2 { margin-bottom: 30px; }
+	.page-template-teledermatology .main-info h2 { margin-bottom: 40px; }
 	
 	.page-template-teledermatology .home { position: relative; z-index: 1; }
 	.page-template-teledermatology .section.hero h1 { white-space: nowrap; }
 	@media screen and (min-width: 801px) {
-		.page-template-teledermatology .main-info { margin-top: 80px; margin-bottom: 30px; }
+		.page-template-teledermatology .main-info { margin-bottom: 30px; }
 		.page-template-teledermatology .form-container { 
-			margin: -130px 100px 60px 100px;
+			/*margin: -130px 100px 60px 100px;*/
 			background: white;
 			z-index: 8;
 			position: relative; 
@@ -97,6 +97,9 @@ $subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
 	.page-template-teledermatology .faq .faq-wrapper button{position: absolute; top: 0; right: 0; transform: rotate(90deg); color: #53b1c1; font-size: 30px; background-color:transparent;outline: 0 !important;box-shadow: 0 0 0 0 rgba(0, 0, 0, 0) !important;}
 	.page-template-teledermatology .faq .faq-wrapper.active button{transform: rotate(-90deg);}
 	.page-template-teledermatology .faq .faq-wrapper.active .more-content{max-height:1000px;}
+    .hero-content {  margin-top: 80px; max-width: 63%; }
+    .home .hero .hero-content>* { color: #fff; text-align: left;}
+    .home .hero .hero-content h5 { margin: 20px 0; font-weight: normal; }
 
 
 	@media screen and (max-width: 800px) {
@@ -153,9 +156,10 @@ $subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
    <div class="wrap">
 	  <div class="row">
 		 <div class="small-12 columns">
-			<div class="panel" style="max-width: 63%">
+			<div class="hero-content">
 			   <h1 style="white-space: nowrap;"><?php echo $heading;  ?></h1>
-			   <h5><?php echo $subheading;  ?></h5>
+			    <h5><?php echo $subheading;  ?></h5>
+                <p><a class="btn" href="https://phreesia.me/premierderm-selfschedule-telederm" target="_blank"><span>BOOK APPOINTMENT</span></a></p>
 			</div>
 		 </div>
 	  </div>
@@ -194,13 +198,13 @@ $subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
 	
 	?>
 	<div class="wrap center main-info" >
-		<h2 class="title">Get Skincare Advice And Answers Faster. Call&nbsp;<a href="tel:+18157414343" rel="nofollow" class="nowrap">(815) 741-4343</a></h2>
+		<h2 class="title">Get Skincare Advice And Answers Faster.</h2>
 		<div class="row">
 			<div class="large-4 medium-4 columns">
 				<div class="info-item">
 					<img src="https://pdskin.com/wp-content/uploads/2020/03/schedule.svg" alt="Schedule"  height="35" width="32" /><br>
 					<h2>Schedule</h2>
-					<p>Fill out the form above or call <a href="tel:+18157414343" rel="nofollow" class="nowrap">(815) 741-4343</a>  and a team member will call you back to schedule your appointment. </p>
+                    <p><a href="https://phreesia.me/premierderm-selfschedule-telederm"  target="_blank">Book appointment</a> or call <a href="tel:+18157414343" rel="nofollow" class="nowrap">(815) 741-4343</a> and a team member will call you back to schedule your appointment. </p>
 				</div>
 			</div>
 			<div class="large-4 medium-4 columns">
@@ -218,9 +222,28 @@ $subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
 				</div>
 			</div>
 		</div>
-	<div>
+    </div>
 </main>
 </div>
+<section class="section footer-cta" id="cta">
+    <div class="wrap">
+        <div class="row" data-equalizer data-equalize-on="large">
+            <div class="small-12 large-8 columns">
+                <div class="table" data-equalizer-watch>
+                    <div class="cell"><h3 style="text-align: left;">Healthier Skin Starts With Smoother Scheduling. Our New Online Pre-Visit Experience.</h3></div>
+                </div>
+            </div>		
+            <div class="small-12 large-4 columns">
+                <div class="table" data-equalizer-watch>
+                    <div class="cell">
+                        <p><a class="btn" href="https://phreesia.me/premierderm-selfschedule-telederm" target="_blank"><span>BOOK NOW WITH EASE</span></a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br><br>
 <section class="row small-12 no-padding text-center main white-bg facetime zoom" role="main" aria-label="Patient Forms">
     <div class="large-6 columns left">
         <h2>How To Use Zoom For Your Appointment?</h2>
@@ -322,7 +345,7 @@ $subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
 
         	<h3>Can I receive care for more than one area of concern during the visit?</h3>
         	<div class="more-content">
-	        	<p>In general, if there is a major concern, it is best to give this the full attentionit deserves. If there are minor concerns that you would like to discuss with your dermatologist afterward, you can do so, provided there’s enough time.</p>
+	        	<p>In general, if there is a major concern, it is best to give this the full attention it deserves. If there are minor concerns that you would like to discuss with your dermatologist afterward, you can do so, provided there’s enough time.</p>
 	        	<p>For example, if you would like to discuss a bothersome rash, but also have some warts, it would be best to direct the doctor’s attention to the rash first, and then, time permitting, discuss the warts.</p>
 	        	<p>If you have several, more minor concerns, it may be possible to address all ofthem in the same visit. For example, if you have hand dermatitis from hand-washing, plus a small area of eczema, and a cold sore, these might all be addressed together, time permitting.</p>
 	        	<p>Ultimately, concerns need to be prioritized by both the patient and the doctor to optimize the visit in the safest and most effective manner.</p>
@@ -337,7 +360,7 @@ $subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
         	<button>></button>
         </div>
         <div class="faq-wrapper">
-        	<h3>Can prescriptions be prescribedduring a teledermatology appointment?</h3>
+        	<h3>Can prescriptions be prescribed during a teledermatology appointment?</h3>
         	<div class="more-content">
 	        	<p>Prescriptions can be sent to your pharmacy following a dermatology diagnosis online. For example, if your doctor discusses your acne and a treatment plan is developed, prescriptions for the appropriate topical medications and/or oral pills will then be sent to the pharmacy, usually electronically.</p>
 	        	<p>However, there are some conditions and/or medications that require an in-person visit prior to issuing a prescription.</p>
@@ -352,7 +375,7 @@ $subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
         	<button>></button>
         </div>
         <div class="faq-wrapper">
-        	<h3>What should I wear formy visit?</h3>
+        	<h3>What should I wear for my visit?</h3>
         	<div class="more-content">
         		<p>Wear appropriate, comfortable clothing that allows you to present the area of concern.</p>
         	</div>	
@@ -361,7 +384,7 @@ $subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
         <div class="faq-wrapper">
         	<h3>How long will the visit take?</h3>
         	<div class="more-content">
-        		<p>Althoughthe time required for your visit will vary depending on your dermatologistand the skin concern, teledermatology visits generally take from 10 to 20 minutes.</p>
+        		<p>Althoughthe time required for your visit will vary depending on your dermatologist and the skin concern, teledermatology visits generally take from 10 to 20 minutes.</p>
         	</div>	
         	<button>></button>
         </div>

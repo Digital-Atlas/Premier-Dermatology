@@ -246,9 +246,12 @@ function _consult_form($string) {
 								$accordion_content );
 							
 					}
-					
-
-
+                        
+                    if($service_cat == 7) { //medical services
+                        ?>
+                        <p><a class="btn" href="https://z3-rpw.phreesia.net/selfscheduling.app/#/f92db4b6-741c-4b4f-8407-ea605ddafe57"  target="_blank"><span>BOOK ONLINE NOW</span></a></p><br>
+                        <?php
+                    }    
 					
 					// Best Results
 					section_best_results();
@@ -297,7 +300,9 @@ function _consult_form($string) {
 					</main>
 				
 
-                                        <?php echo _consult_form("Request a consultation"); ?>
+                   <?php if($service_cat != 7) { //medical services
+                        echo _consult_form("Request a consultation");
+                    }?>
 
 
 					<div class="entry-content">
