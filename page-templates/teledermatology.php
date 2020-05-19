@@ -230,7 +230,7 @@ $subheading = get_post_meta( get_the_ID(), 'hero_subheading', true );
         <div class="row" data-equalizer data-equalize-on="large">
             <div class="small-12 large-8 columns">
                 <div class="table" data-equalizer-watch>
-                    <div class="cell"><h3 style="text-align: left;">Healthier Skin Starts With Smoother Scheduling. Our New Online Pre-Visit Experience.</h3></div>
+                    <div class="cell"><h3 style="text-align: left;">Access The Care You Need From The Comfort Of Your Home.</h3></div>
                 </div>
             </div>		
             <div class="small-12 large-4 columns">
