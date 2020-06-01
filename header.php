@@ -122,11 +122,19 @@ html:not(.note) .site-container .site-content{ padding-top:0 !important; }
 		}
 		
 		.teledermatology { text-align: left; padding: 20px 50px; }
+        .single-location .hero .panel.safety .h1 { padding-bottom: 20px; text-transform: none; font-size: 44px; }
+        .single-location .hero .panel.safety p {  font-size: 21px; line-height: 1; margin-bottom: 20px;}
+        .single-location .hero .panel.safety .btn  { margin: 0 20px;}
+        .single-location .hero .panel.safety>* { color: #444444; text-align: center; }
+        .hero-safety .wrap { padding: 200px 0; }
 		@media screen and (max-width: 800px) { 
 			.teledermatology {padding: 20px 0 !important; } 
 			.teledermatology .btn { padding: 10px ; padding-right:30px; } 
 			.teledermatology .btn:after{ height: 18px; right: -10px; }
+            .hero-safety .wrap { padding: 40px 0 200px 0; }
+            .single-location .hero .panel.safety .btn { margin: 10px;}
 		}
+    
 		.no-touchevents a[href^="tel:"] {
 			pointer-events: all;
 			cursor: pointer;
@@ -144,7 +152,8 @@ html:not(.note) .site-container .site-content{ padding-top:0 !important; }
 <body <?php body_class(); ?>>
 	<?php 
 	/* Interstitial */
-	echo get_template_part('template-parts/content','interstitial'); 
+    if(is_front_page() || is_singular('location')) echo get_template_part('template-parts/content','interstitial'); 
+    
 	?>
 <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', '_s' ); ?></a>
 
@@ -238,8 +247,48 @@ html:not(.note) .site-container .site-content{ padding-top:0 !important; }
 	<div id="content" class="site-content">
 	<?php  if(is_singular("location")):
 		$status = get_post_meta(get_the_ID(), 'hero_status')[0];
-		
-		if($status == 'TELEDERMATOLOGY') {
+		if(strpos($status, 'SAFETY') !== false) {
+			switch (get_the_ID()) {
+				case 169:
+					echo "<style>.elementor-element-a3a59f1 { display: none; } </style>";
+					break;
+				case 174:
+					echo "<style>.elementor-element-421e234a { display: none; } </style>";
+					break;
+				case 176:
+					echo "<style>.elementor-element-5ab22582 { display: none; } </style>";
+					break;
+				case 178:
+					echo "<style>.elementor-element-335ed00a { display: none; } </style>";
+					break;
+				case 180:
+					echo "<style>.elementor-element-54f80f88 { display: none; } </style>";
+					break;
+			}
+				 ?>
+					<section class="section hero hero-safety" id="hero" role="region" aria-labelledby="banner" style="background: url('<?php echo get_template_directory_uri(); ?>/assets/images/premier-dermatology-cosmetic-young-woman@2x.jpg') 50% 0px / cover no-repeat;">
+					<div class="flex">
+					   <div class="wrap">
+						  <div class="row">
+							 <div class="large-12 columns">
+								<div class="panel safety">
+								   <?php $heading = sprintf( '<h1 class="hidden">%s</h1>', get_post_meta( get_the_ID(), 'hero_heading', true ) );
+									echo $heading;
+								   ?>
+								   <h2 class="h2">Access the care you need, safely. </h2>
+								   <p>View the steps we’re taking to make your visit healthy and safe.</p>
+								   <p>
+								   	<a class="btn" href="/safety/?l=<?php echo get_the_ID(); ?>"><span>IT’S SAFE TO COME IN</span></a>
+								   	<a class="btn" href="https://z3-rpw.phreesia.net/selfscheduling.app/#/f92db4b6-741c-4b4f-8407-ea605ddafe57" target="_blank"><span>BOOK APPOINTMENT</span></a>
+								   </p>
+								</div>
+							 </div>
+						  </div>
+					   </div>
+					</div>
+					</section>
+				<?php 
+			 } elseif($status == 'TELEDERMATOLOGY') {
 			switch (get_the_ID()) {
 				case 169:
 					echo "<style>.elementor-element-a3a59f1 { display: none; } </style>";
