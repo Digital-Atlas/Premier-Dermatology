@@ -525,8 +525,9 @@ section.commitment:before{
 		</div>
 		<div class="large-6 columns bg-white">
 			<div id="owl-carousel-book-apt" class="owl-carousel owl-theme">
-			   <div class="item"><img src="https://pdskin.com/wp-content/uploads/2020/05/slide-3-1.jpg" alt="Iphone Demo"></div>
+                
 			   <div class="item"><img src="https://pdskin.com/wp-content/uploads/2020/05/slide-4-1.jpg" alt="Iphone Demo"></div>
+			   <div class="item"><img src="https://pdskin.com/wp-content/uploads/2020/05/slide-3-1.jpg" alt="Iphone Demo"></div>
 			   <div class="item"><img src="https://pdskin.com/wp-content/uploads/2020/05/slide-5-1.jpg" alt="Iphone Demo"></div>
 			</div>
 		</div>

@@ -166,7 +166,7 @@ if(is_singular('location')){
 	$status = get_option('covid_status'); 
 }
 
-if($status != 'NONE' && !empty($status)) { ?>
+if($status != 'NONE' && !empty($status) && (is_front_page() || is_singular('location'))) { ?>
 <script>
 jQuery(document).ready(function(){ 
 $ = jQuery; 
@@ -185,7 +185,7 @@ $(".close-interstitial" ).on( "click", function() {
   $("#content").css("padding-top", 0);
   $("#content").css("top", 0);
 });
- $(window).on('scroll resize', function() {
+ $(window).on('load scroll resize', function() {
 	 var interstitial_height = $('#interstitial').height();
 	$("#fixed").css("top", interstitial_height + 60);
 	console
