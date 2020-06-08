@@ -92,7 +92,7 @@ if (is_singular('location')) {
 
       if ($retry == $max_retries) {
         _log_appt_entry($date_created, $entry_id, $location_name, $referrer_url, 'server_error');
-        wp_mail( 'ldao@digital-atlas.com', 'Book Appointment API Service Error', 'Book Appointment API Service Error:' . $response_code );         
+        wp_mail( 'ldao@digital-atlas.com', 'PDskin.com - Book Appointment API Service Error', 'Pdskin.com - Book Appointment API Service Error:' . $response_code );         
       }
 
 

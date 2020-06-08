@@ -16,11 +16,20 @@ get_header();
 $status = get_option('hero_status');
 ?>
 <style>
-.teledermatology { max-width: 63%; text-align: left; padding: 20px 50px; }
+.teledermatology { max-width: 715px; text-align: left; padding: 20px 50px; }
 @media screen and (max-width: 800px) { 
 	.teledermatology {padding: 20px 0 !important; } 
 	.teledermatology .btn { padding: 10px ; padding-right:30px; } 
 	.teledermatology .btn:after{ height: 18px; right: -10px; }
+}
+.home .hero .panel.safety { max-width: 63%; display: block; margin: 0 auto !important; text-transform: none; }
+.home .hero .panel.safety .h1 { padding-bottom: 20px; text-transform: none; font-size: 44px; line-height: 1; }
+.home .hero .panel.safety p {  font-size: 21px; line-height: 1; }
+.home .hero .panel.safety>* { color: #444444; text-align: center; }
+@media screen and (max-width: 800px) { 
+    .home .hero .panel.safety { max-width: 100%; }
+    .home .hero .wrap-safety { padding-bottom: 200px; }
+    .home .hero.hero-safety { background-position: 50% 0 !important; }
 }
 .no-touchevents a[href^="tel:"] {
     pointer-events: all;
@@ -46,7 +55,30 @@ a.btn:hover {
 		// Hero
 		section_hero($status);
 		function section_hero($status) { 
-			if($status == 'TELEDERMATOLOGY') {
+            if((strpos($status, 'SAFETY') !== false)) {
+                ?>
+					<section class="section hero hero-safety" id="hero" role="region" aria-labelledby="banner" style="background: url('<?php echo get_template_directory_uri(); ?>/assets/images/premier-dermatology-cosmetic-young-woman@2x.jpg') 70% 0px / cover no-repeat;">
+					<div class="flex">
+					   <div class="wrap wrap-safety">
+						  <div class="row">
+							 <div class="small-12 columns">
+								<div class="panel safety">
+								   <?php $heading = sprintf( '<h1 class="hidden">%s</h1>', get_post_meta( get_the_ID(), 'hero_heading', true ) );
+									echo $heading;
+								   ?>
+								   <h2 class="h2">Access the care you need, safely. </h2>
+								   <p>View the steps we’re taking to make your visit healthy and safe.</p>
+								   <p>
+								   	<a class="btn" href="/safety/"><span>IT’S SAFE TO COME IN</span></a>
+								   </p>
+								</div>
+							 </div>
+						  </div>
+					   </div>
+					</div>
+					</section>
+				<?php 
+                    } elseif($status == 'TELEDERMATOLOGY') {
 				 ?>
 					<section class="section hero" id="hero" role="region" aria-labelledby="banner" style="background: url('https://pdskin.com/wp-content/uploads/2020/03/premier-dermatology-cosmetic-young-woman.jpg') 70% 0px / cover no-repeat;">
 					<div class="flex">
