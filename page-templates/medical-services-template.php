@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Medical Services - Service Post Type* Template Post Type: service
+Template Name: Medical Services Landing
 */
 
 get_header(); ?>

@@ -229,10 +229,10 @@ function _consult_form($string) {
 						foreach( $rows as $row ) {
 							
 							if( !empty( $row['question'] ) && !empty( $row['answer'] ) ) {
-								$accordion_title = sprintf( '<a href="#" class="accordion-title"><h4>%s</h4></a>', $row['question'] );
+								$accordion_title = sprintf( '<a href="#%s" class="accordion-title"><h4>%s</h4></a>', sanitize_title($row['question']), $row['question'] );
 								$is_active = empty( $accordion_content ) ? $is_active : '';
 								$accordion_content .= sprintf( '<li class="accordion-item%s" data-accordion-item>%s
-								<div class="accordion-content" data-tab-content>%s</div></li>', $is_active, $accordion_title, $row['answer'] );
+								<div class="accordion-content" data-tab-content id=%s>%s</div></li>', $is_active, $accordion_title, sanitize_title($row['question']), $row['answer'] );
 							}
 							
 						}
@@ -242,7 +242,7 @@ function _consult_form($string) {
 						}
 						
 						
-						printf( '<div class="entry-content"><ul class="accordion" data-accordion data-allow-all-closed="true">%s</ul></div><br />', 	
+						printf( '<div class="entry-content"><ul class="accordion" data-accordion data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-allow-all-closed="true">%s</ul></div><br />', 	
 								$accordion_content );
 							
 					}
@@ -305,16 +305,16 @@ function _consult_form($string) {
                     }?>
 
 
-					<div class="entry-content">
+					<!-- <div class="entry-content"> -->
 						<?php
-						$medical_services = get_services_list( 7, $seo = true );
-						$cosmetic_services = get_services_list( 8, $seo = true );
-						echo '<h3>Service Links</h3>';
-						echo sprintf('<div class="columns small-12" style="margin-bottom:30px;"><h4>Medical Services</h4>%s</div>', $medical_services);
-						echo sprintf('<div class="columns small-12" style="margin-bottom:30px;"><h4>Cosmetic Services</h4>%s</div>', $cosmetic_services);
-						echo '</div>';
+						// $medical_services = get_services_list( 7, $seo = true );
+						// $cosmetic_services = get_services_list( 8, $seo = true );
+						// echo '<h3>Service Links</h3>';
+						// echo sprintf('<div class="columns small-12" style="margin-bottom:30px;"><h4>Medical Services</h4>%s</div>', $medical_services);
+						// echo sprintf('<div class="columns small-12" style="margin-bottom:30px;"><h4>Cosmetic Services</h4>%s</div>', $cosmetic_services);
+						// echo '</div>';
 						?>
-					</div>
+					<!-- </div> -->
 
 				</div>
 			

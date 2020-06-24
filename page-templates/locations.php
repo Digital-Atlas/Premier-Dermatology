@@ -14,6 +14,21 @@ h1 {
 .icon-directions:before {
     content: '';
 }
+.location-title a{
+	display:block;
+	height:100%;
+	width:100%;
+	
+}
+.details a{
+	text-decoration:underline;
+}
+.details a:hover{
+	text-decoration:none;
+}
+.section.default a:hover{
+	text-decoration:none !important;
+}
 
 </style>
 
@@ -110,10 +125,10 @@ get_template_part( 'template-parts/section', 'hero' );
 				if( !empty( $title_background ) ) {
 					$title_background = sprintf( 'style="background-image: url(%s);"', $title_background[0] );
 				}
-				$title = sprintf( '<div class="location-title" %s><div class="inner"></div></div>', $title_background );
+				$title = sprintf( '<div class="location-title" %s><a href="%s"><div class="inner"></div></a></div>', $title_background, get_permalink().'#map' );
 				
   				
-				$address = sprintf( '<h4>%s</h4><div class="location-address">%s</div>', get_the_title(), apply_filters( 'pb_the_content', get_post_meta( get_the_ID(), 'address', true ) ) );
+				$address = sprintf( '<h4><a href="%s">%s</a></h4><div class="location-address">%s</div>', get_permalink(), get_the_title(), apply_filters( 'pb_the_content', get_post_meta( get_the_ID(), 'address', true ) ) );
 				
  				$phone = get_post_meta( get_the_ID(), 'phone', true );
 				if( !empty( $phone ) ) {

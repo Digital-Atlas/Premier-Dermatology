@@ -27,13 +27,13 @@ class CPT_Team extends CPT_Core {
 				'show_ui'            => true,
 				'query_var'          => true,
 				'capability_type'    => 'post',
-				'has_archive'        => true,
+				'has_archive'        => false,
 				'hierarchical'       => false,
 				'show_ui' 			 => true,
 				'show_in_menu' 		 => true,
 				'show_in_nav_menus'  => false,
 				'exclude_from_search' => false,
-				'rewrite' => array('slug'=> 'team' ), 
+				'rewrite' => array('slug'=> 'providers','with_front' => false), 
 				'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'revisions' ),
 				 )
 

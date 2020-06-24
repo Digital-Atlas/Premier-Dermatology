@@ -368,3 +368,7 @@ remove_action('wp_print_styles', 'print_emoji_styles');
 
 remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
 remove_action( 'admin_print_styles', 'print_emoji_styles' );
+
+// Disable author queries/pages for security
+add_action('template_redirect', function() { if(is_author()) { global $wp_query; $wp_query->set_404(); status_header( 404 ); } });
+add_filter('author_link', function($content) { return get_option('home'); });

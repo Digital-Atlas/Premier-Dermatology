@@ -27,13 +27,13 @@ class CPT_Service extends CPT_Core {
 				'show_ui'            => true,
 				'query_var'          => true,
 				'capability_type'    => 'post',
-				'has_archive'        => true,
-				'hierarchical'       => false,
+				'has_archive'        => false,
+				'hierarchical'       => true,
 				'show_ui' 			 => true,
 				'show_in_menu' 		 => true,
 				'show_in_nav_menus'  => false,
 				'exclude_from_search' => false,
-				'rewrite' => array('slug'=> 'service' ), 
+				'rewrite' => array('slug'=> 'services', 'with_front' => false ), 
 				'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'revisions' ),
 				 )
 
@@ -54,8 +54,8 @@ $service_categories = array(
 
 register_via_taxonomy_core( $service_categories, 
 	array(
-		'public' => true,
-        'rewrite' => array('slug'=> 'service-categories' ), 
+		'public' => false,
+        'rewrite' => array('slug'=> 'services' ), 
 	), 
 	array( 'service' ) 
 );

@@ -19,8 +19,9 @@ get_template_part( 'template-parts/section', 'footer-cta' );
 
 <?php
 function _s_footer_copyright() {
-	$privacy_policy = sprintf( '| <a href="%s" style="text-decoration:underline">Privacy Policy</a>', get_permalink( 5 ) );
-	printf('<div class="copyright"><p>&copy; %s Premier Dermatology. <span>All rights reserved. %s</span></p></div>', date( 'Y' ), $privacy_policy );
+	$privacy_policy = sprintf( '<a href="%s" style="text-decoration:underline">Privacy Policy</a>', get_permalink( 5 ) );
+	$sitemap = sprintf( '| <a href="%s" style="text-decoration:underline">Site map</a>', get_permalink( 6528 ) );
+	printf('<div class="copyright"><p>&copy; %s Premier Dermatology. <span>All rights reserved.<br> %s %s</span></p></div>', date( 'Y' ), $privacy_policy, $sitemap );
 }
 ?>
 
@@ -185,7 +186,7 @@ $(".close-interstitial" ).on( "click", function() {
   $("#content").css("padding-top", 0);
   $("#content").css("top", 0);
 });
- $(window).on('load scroll resize', function() {
+$(window).on('load scroll resize', function() {
 	 var interstitial_height = $('#interstitial').height();
 	$("#fixed").css("top", interstitial_height + 60);
 	console
@@ -196,9 +197,17 @@ $(".close-interstitial" ).on( "click", function() {
 	}
 	
 	$('html').toggleClass('sticky-header', $(window).scrollTop() > interstitial_height);
- });
+});
+
+
+$('.accordion-content').setAttribute("aria-hidden", "false");
 
 });
+
+
+
+
+
 
 </script>
 <?php } ?>

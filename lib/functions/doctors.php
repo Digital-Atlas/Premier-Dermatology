@@ -211,7 +211,8 @@ function get_doctor_locations() {
 					
 		while ( $loop->have_posts() ) : $loop->the_post(); 
 						
-			$title = the_title( '<h2>', '</h2>', false );
+			// $title = the_title( '<h2><a href="">', '</a></h2>', false );
+			$title = sprintf( '<h2><a class="location-link" href="%s">%s</a></h2>', get_permalink(), get_the_title());
 			
 			$address =  apply_filters( 'pb_the_content', get_post_meta( get_the_ID(), 'address', true ) );
 				
@@ -220,8 +221,11 @@ function get_doctor_locations() {
 				$phone_link = preg_replace('/\D+/', '', $phone);
 				$phone = sprintf( '<p class="location-phone"><i class="icon icon-phone"></i><a href="tel:%s">%s</a></p>', $phone_link, $phone );
 			}
+
+
+			$learn_more_cta = sprintf( '<a class="location-cta" href="%s">Learn more about our %s location</a>', get_permalink(), get_the_title());
 			
-			$columns .= sprintf( '<div class="column">%s%s%s</div>', $title, $address, $phone );
+			$columns .= sprintf( '<div class="column">%s%s%s%s</div>', $title, $address, $phone, $learn_more_cta );
 		
 		endwhile;
    		

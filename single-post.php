@@ -63,8 +63,8 @@ wp_reset_postdata();
 				endwhile;
 				
 				the_post_navigation( array(
-					'prev_text'  => __( '< previous post' ),
-            		'next_text'  => __( 'next post >' ),
+					'prev_text'  => __( '< previous' ),
+            		'next_text'  => __( 'next>' ),
 				));
 	
 			endif; ?>
