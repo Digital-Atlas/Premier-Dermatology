@@ -33,7 +33,7 @@ class CPT_Location extends CPT_Core {
 				'show_in_menu' 		 => true,
 				'show_in_nav_menus'  => true,
 				'exclude_from_search' => true,
-                                'rewrite' => array('slug'=> 'location' ),
+                                'rewrite' => array('slug'=> 'location','with_front' => false),
                                 'supports' => array( 'title', 'thumbnail', 'page-attributes', 'revisions' ),
 				 )
 

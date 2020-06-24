@@ -7,7 +7,7 @@
 add_action( 'wp_enqueue_scripts', 'kr_enqueue_stylesheet', 15 );
 function kr_enqueue_stylesheet() {
 
-	$version = defined( 'THEME_VERSION' ) && THEME_VERSION ? THEME_VERSION : '1.7.114';
+	$version = defined( 'THEME_VERSION' ) && THEME_VERSION ? THEME_VERSION : '1.7.115';
 	$handle  = defined( 'THEME_NAME' ) && THEME_NAME ? sanitize_title_with_dashes( THEME_NAME ) : 'theme';
 	
 	//$stylesheet = SCRIPT_DEBUG === true ? 'style.css' : 'style.min.css';

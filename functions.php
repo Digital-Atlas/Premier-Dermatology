@@ -139,6 +139,13 @@ function _s_widgets_init() {
 }
 add_action( 'widgets_init', '_s_widgets_init' );
 
+
+function tn_custom_excerpt_length( $length ) { return 60; }
+add_filter( 'excerpt_length', 'tn_custom_excerpt_length', 999 );
+
+
+
+
 if( ! function_exists( 'fix_no_editor_on_posts_page' ) ) {
 
     /**

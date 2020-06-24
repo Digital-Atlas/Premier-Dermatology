@@ -17,6 +17,12 @@ border: 1px solid #ddd;
 .bio h2 {
     font-size: 20px;
 }
+.location-link{
+	text-decoration:underline;
+}
+.location-link:hover{
+	text-decoration:none;
+}
 
 .section.hero h1 {
     font-size: 32px;
@@ -182,10 +188,14 @@ function section_hero($loader, $location_names) {
             $title = get_the_title();
         }
 
-    $heading = sprintf( '<h1>%s</h1>', get_field('h1_title') );
+    // $heading = sprintf( '<h1>%s %s</h1>', 'Dermatologist', get_field('h1_title') );
     $specialties = ''; 
+
+    $heading = sprintf( '<h1><strong>%s</strong> <br>%s</h1>', get_the_title(), get_field('h1_title') );
+
+        // $heading = sprintf( '<h1><strong>%s</strong> <br>%s %s</h1>', get_the_title(), 'Dermatologist ', $location_names );
 	// $heading = sprintf( '<h1>%s %s</h1>', 'Dermatologist', $location_names );
-    // $specialties = sprintf('<h2 id="ajax-specialties">%s</h2>', $loader ); 
+ //    $specialties = sprintf('<h2 id="ajax-specialties">%s</h2>', $loader ); 
 
 
 	$content =  $specialties .$heading;
@@ -349,7 +359,8 @@ function section_hero($loader, $location_names) {
 			// If ZocDoc link exists 
 			if( !empty( $cta_link ) ) {
 				
-				$cta_inlinestyle = 'style="float:right;"';
+				// $cta_inlinestyle = 'style="float:right;"';
+				$cta_inlinestyle = '';
 				$button_text = '';
 
 				if( !empty( $cta_link_text ) ) {
@@ -357,12 +368,12 @@ function section_hero($loader, $location_names) {
 					$button_text = sprintf( 'Book Online Appointment');
 				}
 				
-				printf( '<div class="cta columns medium-6"><a %s href="%s" class="btn white">%s</a></div>', $cta_inlinestyle, $cta_link, $button_text );
+				printf( '<div class="cta columns medium-12"><a %s href="%s" class="btn white">%s</a></div>', $cta_inlinestyle, $cta_link, $button_text );
 			} else {
 				$cta_inlinestyle = '';
 			}
 
-				printf( '<div class="cta columns medium-6"><a style="float:left;" href="%s" class="btn white">%s</a></div>', $request_consult_link , $cta_link_text );
+				// printf( '<div class="cta columns medium-6"><a style="float:left;" href="%s" class="btn white">%s</a></div>', $request_consult_link , $cta_link_text );
 			
 			print( '</div>' );
 			
@@ -479,35 +490,35 @@ function section_hero($loader, $location_names) {
 		*/
 		
 		//if( !empty( $education ) ) {
-			$accordion_title = '<a href="#" class="accordion-title"><h4>Education</h4></a>';
+			$accordion_title = '<a href="#ajax-education" class="accordion-title"><h4>Education</h4></a>';
 			$is_active = empty( $accordion_content ) ? $is_active : '';
 			$accordion_content .= sprintf( '<li class="accordion-item%s" data-accordion-item>%s
 			<div class="accordion-content" data-tab-content id="ajax-education"></div></li>', $is_active, $accordion_title );
 		//
 		
 		//if( !empty( $certificates ) ) {
-			$accordion_title = '<a href="#" class="accordion-title"><h4>Certificates</h4></a>';
+			$accordion_title = '<a href="#ajax-certificates" class="accordion-title"><h4>Certificates</h4></a>';
 			$is_active = empty( $accordion_content ) ? $is_active : '';
 			$accordion_content .= sprintf( '<li class="accordion-item%s" data-accordion-item>%s
 			<div class="accordion-content" data-tab-content id="ajax-certificates"></div></li>', $is_active, $accordion_title );
 		//}
 		
 		//if( !empty( $affiliations ) ) {
-			$accordion_title = '<a href="#" class="accordion-title"><h4>Hospital Affiliations</h4></a>';
+			$accordion_title = '<a href="#ajax-hospital" class="accordion-title"><h4>Hospital Affiliations</h4></a>';
 			$is_active = empty( $accordion_content ) ? $is_active : '';
 			$accordion_content .= sprintf( '<li class="accordion-item%s" data-accordion-item>%s
 			<div class="accordion-content" data-tab-content id="ajax-hospital"></div></li>', $is_active, $accordion_title, $affiliations );
 		//}
 		
 		//if( !empty( $memberships ) ) {
-			$accordion_title = '<a href="#" class="accordion-title"><h4>Professional Memberships</h4></a>';
+			$accordion_title = '<a href="#ajax-memberships" class="accordion-title"><h4>Professional Memberships</h4></a>';
 			$is_active = empty( $accordion_content ) ? $is_active : '';
 			$accordion_content .= sprintf( '<li class="accordion-item%s" data-accordion-item>%s
 			<div class="accordion-content" data-tab-content id="ajax-memberships">/div></li>', $is_active, $accordion_title, $memberships );
 		//}
 		
 		//if( !empty( $achievements ) ) {
-			$accordion_title = '<a href="#" class="accordion-title"><h4>Achievements</h4></a>';
+			$accordion_title = '<a href="#ajax-achievements" class="accordion-title"><h4>Achievements</h4></a>';
 			$is_active = empty( $accordion_content ) ? $is_active : '';
 			$accordion_content .= sprintf( '<li class="accordion-item%s" data-accordion-item>%s
 			<div class="accordion-content" data-tab-content id="ajax-achievements"></div></li>', $is_active, $accordion_title, $achievements );
@@ -515,7 +526,7 @@ function section_hero($loader, $location_names) {
 		
 		
 		if( !empty( $accordion_content ) ) {
-			$accordion = sprintf( '<ul class="accordion" data-accordion data-allow-all-closed="true">%s</ul>', $accordion_content );
+			$accordion = sprintf( '<ul class="accordion" data-accordion data-deep-link="true" data-update-history="true" data-deep-link-smudge="true" data-allow-all-closed="true">%s</ul>', $accordion_content );
 		}
 		
 		

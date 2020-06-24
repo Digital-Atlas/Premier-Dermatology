@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Medical Services - Service Post Type* Template Post Type: service
+Template Name: Cosmetic Services - Service Post Type* Template Post Type: service
 */
 
 get_header(); ?>
@@ -17,19 +17,19 @@ get_template_part( 'template-parts/section', 'hero' );
 
 		<div class="row">
 		
-			<div class="large-4 columns" id="menu-choose-service">
+			<div class="medium-4 columns" id="menu-choose-service">
 				<div id="secondary" class="widget-area" role="complementary">
 					
 					
-					<div class="show-for-large">
+					<div class="show-for-medium">
 					<h4>Choose a Service:</h4>
-					<?php echo get_services_list( 7 ); ?>
+					<?php echo get_services_list( 8 ); ?>
 					</div>
 					
-					<div class="hide-for-large">
+					<div class="hide-for-medium">
 						<button class="button services" type="button" data-toggle="service-dropdown">Choose a Service</button>
 						<div class="dropdown-pane services bottom" id="service-dropdown" data-dropdown>
-							<?php echo get_services_list( 7 ); ?>
+							<?php echo get_services_list( 8 ); ?>
 						</div>
 					</div>
 				
@@ -38,7 +38,7 @@ get_template_part( 'template-parts/section', 'hero' );
 			</div>
 		
 		
-			<div class="large-8 columns">
+			<div class="medium-8 columns">
 				
 				<div id="primary" class="content-area">
 				
@@ -56,7 +56,7 @@ get_template_part( 'template-parts/section', 'hero' );
 					
 								the_post();
 								
-								the_content();
+								//the_content();
 									
 							endwhile;
 					
@@ -65,21 +65,15 @@ get_template_part( 'template-parts/section', 'hero' );
 					}
 				
 					
-
 					// Benefits ACF Repeater
 					section_benefits();
-					
-
-					// Introductory Summary ACF
-					section_summary();
 
 					// Infographics ACF Repeater
-					section_infographic_stats('Medical');
-				
+					section_infographic_stats('Cosmetic');
+
 					// Testimonial and Video 
 					section_testimonial();
-				
-
+			
 					?>
 					</main>
 				
