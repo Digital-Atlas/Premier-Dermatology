@@ -249,7 +249,7 @@ function _consult_form($string) {
                         
                     if($service_cat == 7) { //medical services
                         ?>
-                        <p><a class="btn" href="https://z3-rpw.phreesia.net/selfscheduling.app/#/f92db4b6-741c-4b4f-8407-ea605ddafe57"  target="_blank"><span>BOOK ONLINE NOW</span></a></p><br>
+                        <p><a class="btn" href="https://phreesia.me/premierderm-selfschedule-default"  target="_blank"><span>BOOK ONLINE NOW</span></a></p><br>
                         <?php
                     }    
 					

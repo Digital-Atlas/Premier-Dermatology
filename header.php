@@ -279,7 +279,7 @@ html:not(.note) .site-container .site-content{ padding-top:0 !important; }
 								   <p>View the steps we’re taking to make your visit healthy and safe.</p>
 								   <p>
 								   	<a class="btn" href="/safety/?l=<?php echo get_the_ID(); ?>"><span>IT’S SAFE TO COME IN</span></a>
-								   	<a class="btn" href="https://z3-rpw.phreesia.net/selfscheduling.app/#/f92db4b6-741c-4b4f-8407-ea605ddafe57" target="_blank"><span>BOOK APPOINTMENT</span></a>
+								   	<a class="btn" href="https://phreesia.me/premierderm-selfschedule-default" target="_blank"><span>BOOK APPOINTMENT</span></a>
 								   </p>
 								</div>
 							 </div>
