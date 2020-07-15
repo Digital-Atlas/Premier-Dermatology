@@ -20,7 +20,7 @@ get_template_part( 'template-parts/section', 'footer-cta' );
 <?php
 function _s_footer_copyright() {
 	$privacy_policy = sprintf( '<a href="%s" style="text-decoration:underline">Privacy Policy</a>', get_permalink( 5 ) );
-	$sitemap = sprintf( '| <a href="%s" style="text-decoration:underline">Site map</a>', get_permalink( 6528 ) );
+	$sitemap = sprintf( '| <a href="%s" style="text-decoration:underline">Site map</a>', get_permalink( 6635 ) );
 	printf('<div class="copyright"><p>&copy; %s Premier Dermatology. <span>All rights reserved.<br> %s %s</span></p></div>', date( 'Y' ), $privacy_policy, $sitemap );
 }
 ?>
