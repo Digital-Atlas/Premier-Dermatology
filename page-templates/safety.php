@@ -53,6 +53,15 @@ $location = isset($_GET['l'])?$_GET['l']:'';
                     <p>Our staff are donning personal protective equipment including mask, eye protection and gloves. </p>
                 </div>
             </div>
+           <?php if(strpos($status, 'WITH_MASK') !== false): ?>
+           <div class="item">
+                <div class="info-item">
+                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/pd-skin-patient-masking.svg" alt="Patient Masking" width="135" />
+                    <h2>Patient Masking</h2>
+                    <p>For the safety of our patients and staff, we are requiring all patients to wear masks in our clinic<?php if(empty($location)) echo 's'; ?>. Patients with specific health issues that could be impacted by wearing a mask should notify reception upon entry.</p>
+                </div>
+            </div>
+           <?php endif; ?>
             <div class="item">
                 <div class="info-item">
                      <img src="<?php echo get_template_directory_uri(); ?>/assets/images/icons/pd-skin-cleaning.svg" alt="Cleaning" />
@@ -98,7 +107,7 @@ $location = isset($_GET['l'])?$_GET['l']:'';
                     <h2>Health Protocols and Safeguards </h2>
                     <p>Following guidelines from trusted sources, including the World Health Organization (WHO) and the Centers for Disease Control (CDC), we're taking comprehensive measures to ensure that our clinic<?php if(empty($location)) echo 's'; ?> remains safe and ready to serve you. Patients should feel safer knowing our staff is practicing frequent and thorough hand-washing.  </p>
                 </div>
-            </div>
+           </div>
            <div class="item">
                 <div class="info-item with-cta">
                      <?php if(!empty($location)): ?>
@@ -106,7 +115,7 @@ $location = isset($_GET['l'])?$_GET['l']:'';
                     <?php else: ?>
                     <h2 class="h1">It’s safe to come in.</h2>
                     <?php endif; ?>
-                    <p><a class="btn" href="https://z3-rpw.phreesia.net/selfscheduling.app/#/f92db4b6-741c-4b4f-8407-ea605ddafe57"><span>BOOK NOW WITH EASE ></span></a></p>
+                    <p><a class="btn" href="https://phreesia.me/premierderm-selfschedule-default"><span>BOOK NOW WITH EASE ></span></a></p>
                 </div>
             </div>
         </div>
@@ -146,7 +155,7 @@ $location = isset($_GET['l'])?$_GET['l']:'';
          <div class="small-12 large-6 columns">
             <div class="table" data-equalizer-watch="" style="height: 136px;">
                <div class="cell">
-                  <p><a class="btn" href="https://z3-rpw.phreesia.net/selfscheduling.app/#/f92db4b6-741c-4b4f-8407-ea605ddafe57"><span>BOOK NOW WITH EASE ></span></a></p>
+                  <p><a class="btn" href="https://phreesia.me/premierderm-selfschedule-default"><span>BOOK NOW WITH EASE ></span></a></p>
                </div>
             </div>
          </div>
